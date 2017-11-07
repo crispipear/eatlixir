@@ -45,7 +45,7 @@ class IngredientsTable extends Table
     {
         $validator
             ->integer('id')
-            ->allowEmpty('id', 'create');
+            ->allowEmpty('id');
 
         $validator
             ->scalar('common_name')

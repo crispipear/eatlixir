@@ -24,6 +24,7 @@
                 <th scope="col"><?= $this->Paginator->sort('flavor') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('functions') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('symptoms_key') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('img') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -39,6 +40,7 @@
                 <td><?= h($ingredient->flavor) ?></td>
                 <td><?= h($ingredient->functions) ?></td>
                 <td><?= h($ingredient->symptoms_key) ?></td>
+                <td><?= h($ingredient->img) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $ingredient->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $ingredient->id]) ?>

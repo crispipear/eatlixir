@@ -49,12 +49,12 @@
             <td><?= h($ingredient->symptoms_key) ?></td>
         </tr>
         <tr>
+            <th scope="row"><?= __('Img') ?></th>
+            <td><?= h($ingredient->img) ?></td>
+        </tr>
+        <tr>
             <th scope="row"><?= __('Id') ?></th>
             <td><?= $this->Number->format($ingredient->id) ?></td>
         </tr>
     </table>
-    <div class="row">
-        <h4><?= __('Img') ?></h4>
-        <?= $this->Text->autoParagraph(h($ingredient->img)); ?>
-    </div>
 </div>

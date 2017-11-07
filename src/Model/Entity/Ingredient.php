@@ -30,6 +30,7 @@ class Ingredient extends Entity
      * @var array
      */
     protected $_accessible = [
+        'id' => true,
         'common_name' => true,
         'scientific_name' => true,
         'chinese_name' => true,
