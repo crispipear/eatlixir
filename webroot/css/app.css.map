@@ -1,0 +1,1 @@
+{"version":3,"sources":["app.scss"],"names":[],"mappings":"AAAA;EACE,qCAAqC;CACtC;;AACD;EACE,mBAAmB;EACnB,gBAAgB;CACjB","file":"app.css","sourcesContent":["*{\n  font-family: 'Open Sans', sans-serif;\n}\nh1{\n  text-align: center;\n  font-size: 5rem;\n}\n"]}
