@@ -1,1 +1,1 @@
-{"version":3,"sources":["app.scss"],"names":[],"mappings":"AAAA;EACE,qCAAqC;CACtC;;AACD;EACE,mBAAmB;EACnB,gBAAgB;CACjB","file":"app.css","sourcesContent":["*{\n  font-family: 'Open Sans', sans-serif;\n}\nh1{\n  text-align: center;\n  font-size: 5rem;\n}\n"]}
+{"version":3,"sources":["app.scss"],"names":[],"mappings":"AAAA;EACE,qCAAqC;CACtC;;AACD;EACE,eAAe;EACf,mBAAmB;EACnB,kBAAkB;CACnB","file":"app.css","sourcesContent":["*{\n  font-family: 'Open Sans', sans-serif;\n}\nh1{\n  color: #41857c;\n  text-align: center;\n  font-size: 2.5rem;\n}\n"]}

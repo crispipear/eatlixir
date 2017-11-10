@@ -25,13 +25,16 @@ $title = 'Eatlixir';
     <title>
         <?= $title ?>
     </title>
-
     <?= $this->Html->meta('icon') ?>
     <?= $this->Html->css('base.css') ?>
     <?= $this->Html->css('app.css') ?>
     <link href="https://fonts.googleapis.com/css?family=Raleway:500i|Roboto:300,400,700|Roboto+Mono" rel="stylesheet">
 </head>
 <body>
-<h1>eatlixir home page</h1>
+  <?= $this->element('nav'); ?>
+<h1>landing page</h1>
+<div class="content">
+
+</div>
 </body>
 </html>

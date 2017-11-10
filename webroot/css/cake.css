@@ -10,7 +10,6 @@ a:hover {
 a {
     color: #1798A5;
 }
-
 .side-nav li a:not(.button) {
     color: #15848F;
 }
@@ -499,16 +498,16 @@ div.message.hidden {
 }
 
 .content h3 {
-    color: #be140b;
+    color: #5458ad;
     padding-bottom: 0.5rem;
     margin-bottom: 20px;
 }
 
 .content h4 {
-    color: #be140b;
+    color: #5458ad;
     padding-bottom: 0.5rem;
     margin-bottom: 20px;
-    border-bottom: 2px solid #be140b;
+    border-bottom: 2px solid #5458ad;
 }
 
 .content .related h4 {
