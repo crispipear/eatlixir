@@ -12,8 +12,8 @@
  * @since         0.10.0
  * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
+ $cakeDescription = 'Eatlixir: Cakephp';
 
-$cakeDescription = 'CakePHP: the rapid development php framework';
 ?>
 <!DOCTYPE html>
 <html>
@@ -21,37 +21,37 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->Html->charset() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        <?= $cakeDescription ?>:
         <?= $this->fetch('title') ?>
     </title>
     <?= $this->Html->meta('icon') ?>
 
     <?= $this->Html->css('base.css') ?>
     <?= $this->Html->css('cake.css') ?>
+    <?= $this->Html->css('app.css') ?>
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:500i|Roboto:300,400,700|Roboto+Mono" rel="stylesheet">
 </head>
 <body>
-    <nav class="top-bar expanded" data-topbar role="navigation">
-        <ul class="title-area large-3 medium-4 columns">
-            <li class="name">
-                <h1><a href=""><?= $this->fetch('title') ?></a></h1>
-            </li>
-        </ul>
-        <div class="top-bar-section">
-            <ul class="right">
-                <li><a target="_blank" href="https://book.cakephp.org/3.0/">Documentation</a></li>
-                <li><a target="_blank" href="https://api.cakephp.org/3.0/">API</a></li>
-            </ul>
-        </div>
+  <div class="container">
+    <nav>
+    <?php
+    $output = '<ul class="left">';
+    $output .= '<li class="nav-left">' . $this->Html->link('home','/',array('class' => 'nav-left')) . '</li>';
+    $output .= '<li class="nav-left">' . $this->Html->link('food',array('controller' => 'pages', 'action' => 'display', 'about'),array('class' => 'nav-left')) . '</li>';
+    $output .= '<li class="nav-left">' . $this->Html->link('about',array('controller' => 'pages', 'action' => 'display', 'about'),array('class' => 'nav-left')) . '</li>';
+    $output .= '<li class="nav-right">' . $this->Html->link('personal',array('controller' => 'pages', 'action' => 'display', 'about'),array('class' => 'nav-right')) . '</li>';
+    $output .= '<li class="nav-right">' . $this->Html->link('favorites',array('controller' => 'pages', 'action' => 'display', 'about'),array('class' => 'nav-right')) . '</li>';
+    $output .= '<li class="nav-right">' . $this->Html->link('discover',array('controller' => 'pages', 'action' => 'display', 'about'),array('class' => 'nav-right')) . '</li>';
+    $output .= '</ul>';
+    echo $output;
+    ?>
     </nav>
-    <?= $this->Flash->render() ?>
-    <div class="container clearfix">
-        <?= $this->fetch('content') ?>
-    </div>
-    <footer>
-    </footer>
+  <div class="content">
+    <?= $this->fetch('content') ?>
+  </div>
+</div>
 </body>
 </html>

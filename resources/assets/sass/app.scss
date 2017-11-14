@@ -1,16 +1,79 @@
+$baseColor: #404040;
+$baseGreen: #309c8d;
+$baseSize: 1rem;
+
 *{
   font-family: 'Open Sans', sans-serif;
+  color: $baseColor;
+  cursor: default;
+  transition: all 0.25s!important;
 }
 h1{
-  color: #41857c;
+  color: $baseGreen;
   text-align: center;
-  font-size: 2.5rem;
+  font-size: $baseSize*2.5;
+  margin-top: -15vh;
 }
-#navbar{
-  width: 100%;
-  text-align: center;
-  a{
-    display: inline-block;
-    padding: 2.5%;
+a{
+  color: $baseColor;
+  cursor: pointer;
+}
+nav{
+  margin: 0% 7.5% 0% 7.5%;
+  .nav-left{
+    text-align: left;
+  }
+  .nav-right{
+    float:right;
+  }
+  ul{
+    margin:0%;
+    width: 100%;
+    height: 7.5vh;
+    list-style: none;
+    height: auto;
+    box-sizing: border-box;
+  }
+  li{
+    cursor: pointer;
+    text-transform: uppercase;
+    display: inline-block!important;
+    padding: 2.25% 2.25% 0.75% 2.25%;
+    border-bottom: white 2px solid;
+    &:hover a{
+      color: $baseGreen;
+    }
+    &:hover{
+      border-color: $baseGreen;
+      -webkit-box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.1);
+    }
+  }
+}
+.container{
+  width: 100%!important;
+  height: 100vh!important;
+  margin:0!important;
+  box-sizing: border-box;
+}
+.content{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80.5%;
+  height: 93vh;
+  margin: 0% auto 0% auto;
+  padding: 0%;
+}
+
+.about-box{
+  width: 25%;
+  .about-img{
+    width: 100%;
+    height: 25vh;
+    background-color: gray;
+    margin-bottom: 7.5%;
+  }
+  p{
+    font-size: $baseSize*0.9;
   }
 }

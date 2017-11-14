@@ -1,22 +1,93 @@
 * {
   font-family: 'Open Sans', sans-serif;
-  font-size: 1rem;
+  color: #404040;
+  cursor: default;
+  transition: all 0.25s !important;
 }
 
 h1 {
-  color: #41857c;
+  color: #309c8d;
   text-align: center;
-  font-size: 3.5rem;
+  font-size: 2.5rem;
+  margin-top: -15vh;
 }
-#navbar{
+
+a {
+  color: #404040;
+  cursor: pointer;
+}
+
+nav {
+  margin: 0% 7.5% 0% 7.5%;
+}
+
+nav .nav-left {
+  text-align: left;
+}
+
+nav .nav-right {
+  float: right;
+}
+
+nav ul {
+  margin: 0%;
   width: 100%;
-  text-align: center;
+  height: 7.5vh;
+  list-style: none;
+  height: auto;
+  box-sizing: border-box;
 }
-#navbar a{
-    text-transform: uppercase;
-    letter-spacing: 0.15rem;
-    display: inline-block;
-    padding: 1.5%;
-    color: #3b3b3b;
-  }
+
+nav li {
+  cursor: pointer;
+  text-transform: uppercase;
+  display: inline-block !important;
+  padding: 2.25% 2.25% 0.75% 2.25%;
+  border-bottom: white 2px solid;
+}
+
+nav li:hover a {
+  color: #309c8d;
+}
+
+nav li:hover {
+  border-color: #309c8d;
+  -webkit-box-shadow: 0px 10px 5px 0px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  width: 100% !important;
+  height: 100vh !important;
+  margin: 0 !important;
+  box-sizing: border-box;
+}
+
+.content {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+  width: 80.5%;
+  height: 93vh;
+  margin: 0% auto 0% auto;
+  padding: 0%;
+}
+
+.about-box {
+  width: 25%;
+}
+
+.about-box .about-img {
+  width: 100%;
+  height: 25vh;
+  background-color: gray;
+  margin-bottom: 7.5%;
+}
+
+.about-box p {
+  font-size: 0.9rem;
+}
+
 /*# sourceMappingURL=app.css.map */
