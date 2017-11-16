@@ -10,6 +10,11 @@ $baseSize: 1rem;
   cursor: default;
   transition: all 0.25s!important;
 }
+p{
+  @include laptop{
+    font-size: $baseSize*0.9
+  }
+}
 a, i{
   color: $baseColor;
   cursor: pointer;
@@ -19,6 +24,7 @@ i{
 }
 nav{
   position: fixed;
+  z-index: 10;
   width: 1366px;
   .nav-left{
     text-align: left;
@@ -63,16 +69,7 @@ nav{
   }
 }
 
-.cta-button{
-    display: inline-block;
-    border: 3px solid #b9b9b9;
-    padding: 0.65%;
-    letter-spacing: 0.25rem;
-    &:hover{
-      border-color: $baseGreen;
-      color: $baseGreen;
-    }
-}
+
 .content{
   width: 96.25%;
   margin:0% auto 0% auto;
@@ -88,36 +85,37 @@ nav{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
   }
   #home{
-    display: block;
     *{
       position: absolute;
     }
     h1{
-      top: 33%;
-      left: 14.75%;
+      left: 0%;
+      top: 35%;
       font-size: $baseSize*8.5;
       letter-spacing: 0.25rem;
       &:hover{
         color: $baseGreen;
       }
+      @include laptop{
+        font-size: $baseSize*5.5
+      }
     }
     h5{
-      top: 52%;
-      left: 15.25%;
-
+      left: 0.75%;
+      top: 55%;
+      @include laptop{
+        font-size: $baseSize*1.15
+      }
     }
     img{
       top: 15%;
-      right: 15%;
+      right: 0%;
       @include laptop{
         width: 350px;
       }
-    }
-    .cta-button{
-      top: 60%;
-      left: 15.25%;
     }
   }
 }
