@@ -105,3 +105,4 @@ class AppController extends Controller
 //        	$this->set('usesMapToken', Configure::read('geology.google_maps_token'));
 //    	}
 	}
+}

@@ -71,6 +71,7 @@ nav li:hover {
 }
 
 .container {
+  position: relative;
   max-width: 1366px;
   margin: 0% auto 0% auto !important;
   box-sizing: border-box;
@@ -82,11 +83,24 @@ nav li:hover {
   }
 }
 
+.cta-button {
+  letter-spacing: 0.15rem;
+  font-size: 0.8rem;
+  border: 2px solid #a8a8a8;
+  padding: 0.75%;
+}
+
+.cta-button:hover {
+  border-color: #309c8d;
+  color: #309c8d;
+}
+
 .content {
   width: 96.25%;
   margin: 0% auto 0% auto;
   padding: 0%;
   margin-bottom: 0%;
+  position: relative;
 }
 
 .content h5 {
@@ -114,7 +128,7 @@ nav li:hover {
 
 .content #home h1 {
   left: 0%;
-  top: 35%;
+  top: 31%;
   font-size: 8.5rem;
   letter-spacing: 0.25rem;
 }
@@ -131,17 +145,17 @@ nav li:hover {
 
 .content #home h5 {
   left: 0.75%;
-  top: 55%;
+  top: 51%;
 }
 
 @media (min-width: 1024px) and (max-width: 1550px) {
   .content #home h5 {
-    font-size: 1.15rem;
+    font-size: 1.25rem;
   }
 }
 
 .content #home img {
-  top: 15%;
+  top: 17.5%;
   right: 0%;
 }
 
@@ -149,6 +163,11 @@ nav li:hover {
   .content #home img {
     width: 350px;
   }
+}
+
+.content #home .cta-button {
+  left: 0.75%;
+  top: 61%;
 }
 
 .box-wrapper {
@@ -165,11 +184,22 @@ nav li:hover {
   width: 30%;
 }
 
-.about-box .about-img {
+.about-img {
   width: 100%;
   height: 30vh;
   background-color: gray;
   margin-bottom: 7.5%;
+}
+
+#userinfo {
+  position: fixed;
+  top: 20%;
+  width: 20%;
+}
+
+#userinfo h5 {
+  font-size: 1.25rem;
+  text-align: center;
 }
 
 /*# sourceMappingURL=app.css.map */
