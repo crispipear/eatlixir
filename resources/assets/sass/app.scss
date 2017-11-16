@@ -62,13 +62,25 @@ nav{
     max-width: 966px;
   }
 }
+
+.cta-button{
+    display: inline-block;
+    border: 3px solid #b9b9b9;
+    padding: 0.65%;
+    letter-spacing: 0.25rem;
+    &:hover{
+      border-color: $baseGreen;
+      color: $baseGreen;
+    }
+}
 .content{
+  width: 96.25%;
+  margin:0% auto 0% auto;
   padding: 0%;
   margin-bottom:0%;
-  span{
-    margin-top: 5%;
+  h5{
     font-size: $baseSize*1.5;
-    color: lighten($baseColor, 25%);
+    color: lighten($baseColor, 15%);
   }
   section{
     min-height: 100vh;
@@ -77,13 +89,44 @@ nav{
     justify-content: center;
     align-items: center;
   }
+  #home{
+    display: block;
+    *{
+      position: absolute;
+    }
+    h1{
+      top: 33%;
+      left: 14.75%;
+      font-size: $baseSize*8.5;
+      letter-spacing: 0.25rem;
+      &:hover{
+        color: $baseGreen;
+      }
+    }
+    h5{
+      top: 52%;
+      left: 15.25%;
+
+    }
+    img{
+      top: 15%;
+      right: 15%;
+      @include laptop{
+        width: 350px;
+      }
+    }
+    .cta-button{
+      top: 60%;
+      left: 15.25%;
+    }
+  }
 }
 
 .box-wrapper{
   width: inherit;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: top;
 }
 .about-box{
   width: 30%;

@@ -3,34 +3,26 @@
     <?= $this->assign('title', 'Eatlixir'); ?>
 </title>
 <section>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-  magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-    magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-  magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-    magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-</section>
-<section>
-<div class="box-wrapper">
-<div class="about-box">
-  <div class="about-img"></div>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-    magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-  </p>
-</div>
-<div class="about-box">
-  <div class="about-img"></div>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-    magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-</p>
-</div>
-<div class="about-box">
-  <div class="about-img"></div>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-    magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-  </p>
-</div>
-</div>
+<p>Unhealthy eating habits often causes health problems such as indigestion, loss of sleep quality and loss of appetite.
+   They can also lead to major health issues such as obesity, heart diseases, strokes and more. An addition of an accessible and simple website regarding
+    medicinal diet information will be useful in the healthy diet sources. Study has shown that medicinal diet is capable of subtly improving human body health conditions.
+    In addition, the Chinese herbology studies believe that some food ingredients have their own characteristics and perform different tasks on the human body.
+  Eatlixir a website that provides medicinal diet information to the public. Users will be able to find the relief of health problems through diet.</p><br>
+    <div class="box-wrapper">
+    <div class="about-box">
+      <div class="about-img"></div>
+      <p>Look around the food directory to get more information about commonly used herbs and recipes in Chinese medicinal diets.
+      </p>
+    </div>
+    <div class="about-box">
+      <div class="about-img"></div>
+      <p>Start taking your personal body health test by creating a new account. Get an insight on your body health type!
+    </p>
+    </div>
+    <div class="about-box">
+      <div class="about-img"></div>
+      <p>Discover recipes recommended for your body health and explore articles about Chinese medicines.
+      </p>
+    </div>
+    </div>
 </section>

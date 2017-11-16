@@ -75,15 +75,28 @@ nav li:hover {
   }
 }
 
+.cta-button {
+  display: inline-block;
+  border: 3px solid #b9b9b9;
+  padding: 0.65%;
+  letter-spacing: 0.25rem;
+}
+
+.cta-button:hover {
+  border-color: #309c8d;
+  color: #309c8d;
+}
+
 .content {
+  width: 96.25%;
+  margin: 0% auto 0% auto;
   padding: 0%;
   margin-bottom: 0%;
 }
 
-.content span {
-  margin-top: 5%;
+.content h5 {
   font-size: 1.5rem;
-  color: gray;
+  color: #666666;
 }
 
 .content section {
@@ -99,14 +112,54 @@ nav li:hover {
   align-items: center;
 }
 
+.content #home {
+  display: block;
+}
+
+.content #home * {
+  position: absolute;
+}
+
+.content #home h1 {
+  top: 33%;
+  left: 14.75%;
+  font-size: 8.5rem;
+  letter-spacing: 0.25rem;
+}
+
+.content #home h1:hover {
+  color: #309c8d;
+}
+
+.content #home h5 {
+  top: 52%;
+  left: 15.25%;
+}
+
+.content #home img {
+  top: 15%;
+  right: 15%;
+}
+
+@media (min-width: 1024px) and (max-width: 1550px) {
+  .content #home img {
+    width: 350px;
+  }
+}
+
+.content #home .cta-button {
+  top: 60%;
+  left: 15.25%;
+}
+
 .box-wrapper {
   width: inherit;
   display: -webkit-box;
   display: flex;
   -webkit-box-pack: justify;
   justify-content: space-between;
-  -webkit-box-align: center;
-  align-items: center;
+  -webkit-box-align: top;
+  align-items: top;
 }
 
 .about-box {
