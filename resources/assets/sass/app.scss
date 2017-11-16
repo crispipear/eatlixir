@@ -1,3 +1,4 @@
+@import "mixins";
 $baseColor: #404040;
 $baseGreen: #309c8d;
 $baseSize: 1rem;
@@ -9,9 +10,12 @@ $baseSize: 1rem;
   cursor: default;
   transition: all 0.25s!important;
 }
-a{
+a, i{
   color: $baseColor;
   cursor: pointer;
+}
+i{
+  font-size: 1.5rem!important;
 }
 nav{
   position: fixed;
@@ -39,18 +43,24 @@ nav{
     a{
       letter-spacing: 0.15rem;
     }
-    &:hover a{
+    &:hover a, &:hover i{
       color: $baseGreen;
     }
     &:hover{
       border-color: $baseGreen;
     }
   }
+  @include laptop{
+    width: 966px;
+  }
 }
 .container{
   max-width: 1366px;
   margin:0% auto 0% auto!important;
   box-sizing: border-box;
+  @include laptop{
+    max-width: 966px;
+  }
 }
 .content{
   padding: 0%;

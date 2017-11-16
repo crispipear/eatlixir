@@ -6,9 +6,13 @@
   transition: all 0.25s !important;
 }
 
-a {
+a, i {
   color: #404040;
   cursor: pointer;
+}
+
+i {
+  font-size: 1.5rem !important;
 }
 
 nav {
@@ -45,7 +49,7 @@ nav li a {
   letter-spacing: 0.15rem;
 }
 
-nav li:hover a {
+nav li:hover a, nav li:hover i {
   color: #309c8d;
 }
 
@@ -53,10 +57,22 @@ nav li:hover {
   border-color: #309c8d;
 }
 
+@media (min-width: 1024px) and (max-width: 1550px) {
+  nav {
+    width: 966px;
+  }
+}
+
 .container {
   max-width: 1366px;
   margin: 0% auto 0% auto !important;
   box-sizing: border-box;
+}
+
+@media (min-width: 1024px) and (max-width: 1550px) {
+  .container {
+    max-width: 966px;
+  }
 }
 
 .content {
