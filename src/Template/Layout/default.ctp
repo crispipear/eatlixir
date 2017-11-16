@@ -40,11 +40,11 @@
     <?php
     $output = '<ul class="left">';
     $output .= '<li class="nav-left">' . $this->Html->link('home','/',array('class' => 'nav-left')) . '</li>';
-    $output .= '<li class="nav-left">' . $this->Html->link('food',array('controller' => 'pages', 'action' => 'display', 'about'),array('class' => 'nav-left')) . '</li>';
+    $output .= '<li class="nav-left">' . $this->Html->link('food',array('controller' => 'pages', 'action' => 'display', 'food'),array('class' => 'nav-left')) . '</li>';
     $output .= '<li class="nav-left">' . $this->Html->link('about',array('controller' => 'pages', 'action' => 'display', 'about'),array('class' => 'nav-left')) . '</li>';
-    $output .= '<li class="nav-right">' . $this->Html->link('personal',array('controller' => 'pages', 'action' => 'display', 'about'),array('class' => 'nav-right')) . '</li>';
-    $output .= '<li class="nav-right">' . $this->Html->link('favorites',array('controller' => 'pages', 'action' => 'display', 'about'),array('class' => 'nav-right')) . '</li>';
-    $output .= '<li class="nav-right">' . $this->Html->link('discover',array('controller' => 'pages', 'action' => 'display', 'about'),array('class' => 'nav-right')) . '</li>';
+    $output .= '<li class="nav-right">' . $this->Html->link('personal',array('controller' => 'pages', 'action' => 'display', 'personal'),array('class' => 'nav-right')) . '</li>';
+    $output .= '<li class="nav-right">' . $this->Html->link('favorites',array('controller' => 'pages', 'action' => 'display', 'favorites'),array('class' => 'nav-right')) . '</li>';
+    $output .= '<li class="nav-right">' . $this->Html->link('discover',array('controller' => 'pages', 'action' => 'display', 'discover'),array('class' => 'nav-right')) . '</li>';
     $output .= '</ul>';
     echo $output;
     ?>

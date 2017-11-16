@@ -2,4 +2,7 @@
 <title>
     <?= $this->assign('title', 'Eatlixir'); ?>
 </title>
-<h1>landing page logo and then some description</h1>
+<section>
+<img src="img/elx-logo.png">
+<span>start improving your health through improving your diet</span>
+</section>
