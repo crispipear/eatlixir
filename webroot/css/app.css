@@ -6,6 +6,12 @@
   transition: all 0.25s !important;
 }
 
+@media (min-width: 1024px) and (max-width: 1550px) {
+  p {
+    font-size: 0.9rem;
+  }
+}
+
 a, i {
   color: #404040;
   cursor: pointer;
@@ -17,6 +23,7 @@ i {
 
 nav {
   position: fixed;
+  z-index: 10;
   width: 1366px;
 }
 
@@ -75,18 +82,6 @@ nav li:hover {
   }
 }
 
-.cta-button {
-  display: inline-block;
-  border: 3px solid #b9b9b9;
-  padding: 0.65%;
-  letter-spacing: 0.25rem;
-}
-
-.cta-button:hover {
-  border-color: #309c8d;
-  color: #309c8d;
-}
-
 .content {
   width: 96.25%;
   margin: 0% auto 0% auto;
@@ -110,10 +105,7 @@ nav li:hover {
   justify-content: center;
   -webkit-box-align: center;
   align-items: center;
-}
-
-.content #home {
-  display: block;
+  position: relative;
 }
 
 .content #home * {
@@ -121,8 +113,8 @@ nav li:hover {
 }
 
 .content #home h1 {
-  top: 33%;
-  left: 14.75%;
+  left: 0%;
+  top: 35%;
   font-size: 8.5rem;
   letter-spacing: 0.25rem;
 }
@@ -131,25 +123,32 @@ nav li:hover {
   color: #309c8d;
 }
 
+@media (min-width: 1024px) and (max-width: 1550px) {
+  .content #home h1 {
+    font-size: 5.5rem;
+  }
+}
+
 .content #home h5 {
-  top: 52%;
-  left: 15.25%;
+  left: 0.75%;
+  top: 55%;
+}
+
+@media (min-width: 1024px) and (max-width: 1550px) {
+  .content #home h5 {
+    font-size: 1.15rem;
+  }
 }
 
 .content #home img {
   top: 15%;
-  right: 15%;
+  right: 0%;
 }
 
 @media (min-width: 1024px) and (max-width: 1550px) {
   .content #home img {
     width: 350px;
   }
-}
-
-.content #home .cta-button {
-  top: 60%;
-  left: 15.25%;
 }
 
 .box-wrapper {
