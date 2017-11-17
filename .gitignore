@@ -2,6 +2,7 @@
 .github/
 **/.htaccess
 .htaccess
+gulpfile.js
 
 # CakePHP specific files #
 ##########################

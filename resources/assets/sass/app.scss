@@ -12,21 +12,23 @@ $baseSize: 1rem;
   transition: all 0.25s!important;
 }
 p{
+  margin: 2.5% 0% 5% 0%;
   @include laptop{
     font-size: $baseSize*0.9
   }
 }
-a, i{
+a, a i{
   color: $baseColor;
   cursor: pointer;
 }
-i{
-  font-size: 1.5rem!important;
-}
 nav{
+  i{
+    font-size: 1.5rem!important;
+  }
+  background-color: white;
   position: fixed;
   z-index: 10;
-  width: 1366px;
+  width: 100vw;
   .nav-left{
     text-align: left;
   }
@@ -34,21 +36,20 @@ nav{
     float:right;
   }
   ul{
-    margin:0%;
-    width: 100%;
-    height: 7.5vh;
+    margin: auto;
+    width: 966px;
     list-style: none;
-    height: auto;
     box-sizing: border-box;
   }
   li{
     cursor: pointer;
     text-transform: uppercase;
     display: inline-block!important;
-    padding: 3% 2% 0.75% 2%;
+    padding: 2.5% 2% 1% 2%;
     border-bottom: transparent 2px solid;
     a{
       letter-spacing: 0.15rem;
+      margin-bottom: -2.5px!important;
     }
     &:hover a, &:hover i{
       color: $baseGreen;
@@ -57,11 +58,9 @@ nav{
       border-color: $baseGreen;
     }
   }
-  @include laptop{
-    width: 966px;
-  }
 }
 .container{
+  min-height: 100vh;
   position: relative;
   max-width: 1366px;
   margin:0% auto 0% auto!important;
@@ -99,8 +98,10 @@ nav{
     justify-content: center;
     align-items: center;
     position: relative;
+    margin-bottom: 3.5%;
   }
   #home{
+    margin-bottom: 0%;
     *{
       position: absolute;
     }
@@ -136,7 +137,22 @@ nav{
     }
   }
 }
-
+footer{
+  text-align: right;
+  width: 100%;
+  letter-spacing: 0.075rem;
+  font-size: $baseSize*0.9;
+  position: absolute;
+  bottom: 0%;
+  padding-bottom: 1.5%;
+  i{
+    font-size:  $baseSize*1.125!important;
+    margin: 0% 0.25% 0% 0.25%;
+  }
+  a i:hover{
+    color: $baseGreen;
+  }
+}
 .box-wrapper{
   width: inherit;
   display: flex;
@@ -164,5 +180,29 @@ nav{
   }
   .cta-button{
     padding: 5% 24% 5% 24%;
+  }
+}
+#banner{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 100px 0px 25px 0px;
+  height: 300px;
+  width: 100%;
+  background-position: center;
+  background-image: url('../img/about-banner.png');
+  h5{
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.05);
+    margin-top: -2.5%;
+    background-color: rgba($baseWhite, 0.65);
+    height: $baseSize*3.25;
+    padding: 1.5%;
+    display: inline;
+    font-size: $baseSize*1.15;
+    color: darken($baseColor, 12.5%);
+    font-weight: 600;
+    &:hover{
+      background-color: $baseWhite;
+    }
   }
 }

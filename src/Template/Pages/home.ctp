@@ -2,6 +2,11 @@
 <title>
     <?= $this->assign('title', 'Eatlixir'); ?>
 </title>
+<style>
+footer{
+  display: none;
+}
+</style>
 <section id="home">
   <h1>EATLIXIR</h1>
   <h5>improve your health through medicinal diet</h5>

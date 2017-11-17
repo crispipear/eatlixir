@@ -37,10 +37,9 @@
     <?= $this->fetch('script') ?>
 </head>
 <body>
-  <div class="container">
-    <nav>
+  <nav>
     <?php
-    $output = '<ul class="left">';
+    $output = '<ul>';
     $output .= '<li class="nav-left">' . $this->Html->link('home','/',array('class' => 'nav-left')) . '</li>';
     $output .= '<li class="nav-left">' . $this->Html->link('food',array('controller' => 'pages', 'action' => 'display', 'food'),array('class' => 'nav-left')) . '</li>';
     $output .= '<li class="nav-left">' . $this->Html->link('about',array('controller' => 'pages', 'action' => 'display', 'about'),array('class' => 'nav-left')) . '</li>';
@@ -50,10 +49,18 @@
     $output .= '</ul>';
     echo $output;
     ?>
-    </nav>
+  </nav>
+  <div class="container">
   <div class="content">
     <?= $this->fetch('content') ?>
   </div>
+  <footer>
+    Copyright Su Li 2017
+    <?php
+    echo $this->Html->link('<i class="fa fa-share" aria-hidden="true"></i>','https://suyli.me',array('escape'=>false, 'target'=>'_blank'));
+    echo $this->Html->link('<i class="fa fa-github" aria-hidden="true"></i>','https://github.com/crispipear/eatlixir',array('escape'=>false, 'target'=>'_blank'));
+    ?>
+  </footer>
 </div>
 </body>
 </html>
