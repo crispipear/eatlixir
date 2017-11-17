@@ -1,6 +1,7 @@
 @import "mixins";
 $baseColor: #404040;
 $baseGreen: #309c8d;
+$baseWhite: #fcfcfc;
 $baseSize: 1rem;
 
 *{
@@ -73,8 +74,9 @@ nav{
 .cta-button{
   letter-spacing: 0.15rem;
   font-size: $baseSize*0.8;
-  border: 2px solid #a8a8a8;
-  padding: 0.75%;
+  border: 1px solid #b5b5b5;
+  padding: 0.75% 1.25% 0.75% 1.25%;
+  color: $baseColor;
   &:hover{
     border-color: $baseGreen;
     color: $baseGreen;
@@ -151,11 +153,16 @@ nav{
   margin-bottom: 7.5%;
 }
 #userinfo{
+  text-align: center;
   position: fixed;
   top: 20%;
-  width: 20%;
+  width: 15%;
   h5{
     font-size: $baseSize*1.25;
     text-align: center;
+    margin: 25px 0 25px 0;
+  }
+  .cta-button{
+    padding: 5% 24% 5% 24%;
   }
 }
