@@ -62,7 +62,7 @@ $output .= '</ul>';
   <footer>
     Copyright Su Li 2017
     <?php
-    echo $this->Html->link('<i class="fa fa-share" aria-hidden="true"></i>','https://suyli.me',array('escape'=>false, 'target'=>'_blank'));
+    echo $this->Html->link('<i class="fa fa-share" aria-hidden="true"></i>','http://suyli.me',array('escape'=>false, 'target'=>'_blank'));
     echo $this->Html->link('<i class="fa fa-github" aria-hidden="true"></i>','https://github.com/crispipear/eatlixir',array('escape'=>false, 'target'=>'_blank'));
     ?>
   </footer>

@@ -1,53 +1,105 @@
-
 <?php
-namespace App\Model\Entity;
+namespace App\Model\Table;
 
-use Cake\ORM\Entity;
-use Cake\Auth\DefaultPasswordHasher; //include this line
+use Cake\ORM\Query;
+use Cake\ORM\RulesChecker;
+use Cake\ORM\Table;
+use Cake\Validation\Validator;
 
 /**
- * User Entity
+ * Users Model
  *
- * @property int $id
- * @property string $username
- * @property string $name
- * @property string $email
- * @property string $password
- * @property string $role
- * @property string $valid_state
- * @property \Cake\I18n\Time $last_login
- * @property int $fail_count
- * @property \Cake\I18n\Time $created
- * @property \Cake\I18n\Time $modified
+ * @method \App\Model\Entity\User get($primaryKey, $options = [])
+ * @method \App\Model\Entity\User newEntity($data = null, array $options = [])
+ * @method \App\Model\Entity\User[] newEntities(array $data, array $options = [])
+ * @method \App\Model\Entity\User|bool save(\Cake\Datasource\EntityInterface $entity, $options = [])
+ * @method \App\Model\Entity\User patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
+ * @method \App\Model\Entity\User[] patchEntities($entities, array $data, array $options = [])
+ * @method \App\Model\Entity\User findOrCreate($search, callable $callback = null)
+ *
+ * @mixin \Cake\ORM\Behavior\TimestampBehavior
  */
-class User extends Entity
+class UsersTable extends Table
 {
 
-	/**
-     * Fields that can be mass assigned using newEntity() or patchEntity().
- 	*
- 	* Note that when '*' is set to true, this allows all unspecified fields to
- 	* be mass assigned. For security purposes, it is advised to set '*' to false
- 	* (or remove it), and explicitly make individual fields accessible as needed.
- 	*
- 	* @var array
- 	*/
-	protected $_accessible = [
-    	'*' => true,
-    	'id' => false
+    /**
+     * Initialize method
+     *
+     * @param array $config The configuration for the Table.
+     * @return void
+     */
+    public function initialize(array $config)
+    {
+        parent::initialize($config);
 
-	];
+        $this->table('users');
+        $this->displayField('name');
+        $this->primaryKey('id');
 
-	protected function _setPassword($value)
-	{
-    	$hasher = new DefaultPasswordHasher();
-    	return $hasher->hash($value);
-	}	/**
- 	* Fields that are excluded from JSON versions of the entity.
- 	*
- 	* @var array
- 	*/
-	protected $_hidden = [
-    	'password'
-	];
+        $this->addBehavior('Timestamp');
+    }
+
+    /**
+     * Default validation rules.
+     *
+     * @param \Cake\Validation\Validator $validator Validator instance.
+     * @return \Cake\Validation\Validator
+     */
+    public function validationDefault(Validator $validator)
+    {
+        $validator
+            ->integer('id')
+            ->allowEmpty('id', 'create');
+
+        $validator
+            ->requirePresence('username', 'create')
+            ->notEmpty('username')
+            ->add('username', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
+
+        $validator
+            ->requirePresence('name', 'create')
+            ->notEmpty('name');
+
+        $validator
+            ->email('email')
+            ->allowEmpty('email')
+            ->add('email', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
+
+        $validator
+            ->requirePresence('password', 'create')
+            ->notEmpty('password');
+
+        $validator
+            ->requirePresence('role', 'create')
+            ->notEmpty('role');
+
+        $validator
+            ->allowEmpty('valid_state');
+
+        $validator
+            ->dateTime('last_login')
+            ->allowEmpty('last_login');
+
+        $validator
+            ->integer('fail_count')
+            ->requirePresence('fail_count', 'create')
+            ->notEmpty('fail_count');
+
+        return $validator;
+    }
+
+    /**
+     * Returns a rules checker object that will be used for validating
+     * application integrity.
+     *
+     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
+     * @return \Cake\ORM\RulesChecker
+     */
+    public function buildRules(RulesChecker $rules)
+    {
+        $rules->add($rules->isUnique(['username']));
+        $rules->add($rules->isUnique(['email']));
+
+        return $rules;
+    }
 }

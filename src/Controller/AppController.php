@@ -29,76 +29,82 @@ use Cake\Event\Event;
 class AppController extends Controller
 {
 
-	/**
- 	* Initialization hook method.
- 	*
- 	* Use this method to add common initialization code like loading components.
- 	*
- 	* e.g. `$this->loadComponent('Security');`
- 	*
- 	* @return void
- 	*/
-	public function initialize()
-	{
-    	parent::initialize();
+    /**
+     * Initialization hook method.
+     *
+     * Use this method to add common initialization code like loading components.
+     *
+     * e.g. `$this->loadComponent('Security');`
+     *
+     * @return void
+     */
+    public function initialize()
+    {
+        parent::initialize();
 
-    	$this->loadComponent('RequestHandler');
-    	$this->loadComponent('Flash');
-    	$this->loadComponent('Auth', [
-        	'authenticate' => [
-            	'Form' => [
-                	'fields' => [
-                    	'username' => 'username',
-                    	'password' => 'password'
-                	]
-            	]
-        	],
-        	'loginAction' => [
-            	'controller' => 'Users',
-            	'action' => 'login'
-        	],
-        	'logoutRedirect' => [
-            	'controller' => 'Pages',
-            	'action' => 'display',
-            	'home'
-        	],
-        	'unauthorizedRedirect' => $this->referer() // If unauthorized, return them to page they were just on
-  	  ]);
+        $this->loadComponent('RequestHandler');
+        $this->loadComponent('Flash');
+        $this->loadComponent('Auth', [
+            'authenticate' => [
+                'Form' => [
+                    'fields' => [
+                        'username' => 'username',
+                        'password' => 'password'
+                    ]
+                ]
+            ],
+            'loginAction' => [
+                'controller' => 'Users',
+                'action' => 'login'
+            ],
+            'logoutRedirect' => [
+                'controller' => 'Pages',
+                'action' => 'display',
+                'home'
+            ],
+            'unauthorizedRedirect' => $this->referer() // If unauthorized, return them to page they were just on
+        ]);
 
-    	// Allow the display action so our pages controller
-    	// continues to work.
-    	$this->Auth->allow(['display']);
+        // Allow the display action so our pages controller
+        // continues to work.
+        $this->Auth->allow(['display']);
 
-	}
+    }
 
-	public function beforeFilter(Event $event)
-	{
-    	$this->Auth->allow(['display']);
-	}
+    public function beforeFilter(Event $event)
+    {
+		$this->set('currentUser', $this->Auth->user());
+		$this->set('currentRole', $this->Auth->user('role'));
+		$this->Auth->allow(['display']);
+    }
 
 	public function isAuthorized($user)
-	{
-	// Admin can access every action
-	if (isset($user['role']) && $user['role'] === 'admin') {
-    	return true;
-	}
+{
+    // Admin can access every action
+    if (isset($user['role']) && $user['role'] === 'admin') {
+        return true;
+    }
 
-	// Default deny
-	return false;
-	}
+    // Default deny
+    return false;
+}
 
-	/**
- 	* Before render callback.
- 	*
- 	* @param \Cake\Event\Event $event The beforeRender event.
- 	* @return void
- 	*/
-	public function beforeRender(Event $event)
-	{
-    	if (!array_key_exists('_serialize', $this->viewVars) &&
-        	in_array($this->response->type(), ['application/json', 'application/xml'])
-    	) {
-        	$this->set('_serialize', true);
-    	}
-	}
+    /**
+     * Before render callback.
+     *
+     * @param \Cake\Event\Event $event The beforeRender event.
+     * @return void
+     */
+    public function beforeRender(Event $event)
+    {
+        if (!array_key_exists('_serialize', $this->viewVars) &&
+            in_array($this->response->type(), ['application/json', 'application/xml'])
+        ) {
+            $this->set('_serialize', true);
+        }
+        //$this->set('usesMap',$this->usesMap);
+//        if ($this->usesMap) {
+//            $this->set('usesMapToken', Configure::read('geology.google_maps_token'));
+//        }
+    }
 }
