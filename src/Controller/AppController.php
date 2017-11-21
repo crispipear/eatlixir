@@ -100,9 +100,5 @@ class AppController extends Controller
     	) {
         	$this->set('_serialize', true);
     	}
-    	//$this->set('usesMap',$this->usesMap);
-//    	if ($this->usesMap) {
-//        	$this->set('usesMapToken', Configure::read('geology.google_maps_token'));
-//    	}
 	}
 }

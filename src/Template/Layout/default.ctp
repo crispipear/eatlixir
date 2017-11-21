@@ -46,7 +46,12 @@
     $output .= '<li class="nav-right">' . $this->Html->link('<i class="fa fa-user" aria-hidden="true"></i>',array('controller' => 'pages', 'action' => 'display', 'personal'),array('class' => 'nav-right', 'escape'=>false)) . '</li>';
     $output .= '<li class="nav-right">' . $this->Html->link('<i class="fa fa-heart" aria-hidden="true"></i>',array('controller' => 'pages', 'action' => 'display', 'favorites'),array('class' => 'nav-right', 'escape'=>false)) . '</li>';
     $output .= '<li class="nav-right">' . $this->Html->link('<i class="fa fa-compass" aria-hidden="true"></i>',array('controller' => 'pages', 'action' => '', 'discover'),array('class' => 'nav-right', 'escape'=>false)) . '</li>';
-    $output .= '</ul>';
+if (!is_null($this->request->session()->read('Auth.User.username'))) {
+    $output .= '<li class="nav-right">' . $this->Html->link('Logout',array('controller' => 'users', 'action' => 'logout'),array('class' => 'nav-right')) . '</li>';
+} else {
+    $output .= '<li class="nav-right">' . $this->Html->link('Login',array('controller' => 'users', 'action' => 'login'),array('class' => 'menu_top_item')) . '</li>';
+}
+$output .= '</ul>';
     echo $output;
     ?>
   </nav>
