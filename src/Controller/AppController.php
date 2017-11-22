@@ -67,7 +67,7 @@ class AppController extends Controller
 
         // Allow the display action so our pages controller
         // continues to work.
-        $this->Auth->allow(['display']);
+        $this->Auth->allow(['display','index','view']);
 
     }
 
@@ -75,7 +75,7 @@ class AppController extends Controller
     {
 		$this->set('currentUser', $this->Auth->user());
 		$this->set('currentRole', $this->Auth->user('role'));
-		$this->Auth->allow(['display']);
+		$this->Auth->allow(['display','index','view']);
     }
 
 	public function isAuthorized($user)
