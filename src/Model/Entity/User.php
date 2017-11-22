@@ -1,105 +1,54 @@
 <?php
-namespace App\Model\Table;
+namespace App\Model\Entity;
 
-use Cake\ORM\Query;
-use Cake\ORM\RulesChecker;
-use Cake\ORM\Table;
-use Cake\Validation\Validator;
+use Cake\ORM\Entity;
 
 /**
- * Users Model
+ * User Entity
  *
- * @method \App\Model\Entity\User get($primaryKey, $options = [])
- * @method \App\Model\Entity\User newEntity($data = null, array $options = [])
- * @method \App\Model\Entity\User[] newEntities(array $data, array $options = [])
- * @method \App\Model\Entity\User|bool save(\Cake\Datasource\EntityInterface $entity, $options = [])
- * @method \App\Model\Entity\User patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
- * @method \App\Model\Entity\User[] patchEntities($entities, array $data, array $options = [])
- * @method \App\Model\Entity\User findOrCreate($search, callable $callback = null)
- *
- * @mixin \Cake\ORM\Behavior\TimestampBehavior
+ * @property int $id
+ * @property string $username
+ * @property string $name
+ * @property string $email
+ * @property string $password
+ * @property string $role
+ * @property string $valid_state
+ * @property \Cake\I18n\FrozenTime $last_login
+ * @property int $fail_count
+ * @property \Cake\I18n\FrozenTime $created
+ * @property \Cake\I18n\FrozenTime $modified
  */
-class UsersTable extends Table
+class User extends Entity
 {
 
     /**
-     * Initialize method
+     * Fields that can be mass assigned using newEntity() or patchEntity().
      *
-     * @param array $config The configuration for the Table.
-     * @return void
+     * Note that when '*' is set to true, this allows all unspecified fields to
+     * be mass assigned. For security purposes, it is advised to set '*' to false
+     * (or remove it), and explicitly make individual fields accessible as needed.
+     *
+     * @var array
      */
-    public function initialize(array $config)
-    {
-        parent::initialize($config);
-
-        $this->table('users');
-        $this->displayField('name');
-        $this->primaryKey('id');
-
-        $this->addBehavior('Timestamp');
-    }
+    protected $_accessible = [
+        'username' => true,
+        'name' => true,
+        'email' => true,
+        'password' => true,
+        'role' => true,
+        'valid_state' => true,
+        'last_login' => true,
+        'fail_count' => true,
+        'created' => true,
+        'modified' => true
+    ];
 
     /**
-     * Default validation rules.
+     * Fields that are excluded from JSON versions of the entity.
      *
-     * @param \Cake\Validation\Validator $validator Validator instance.
-     * @return \Cake\Validation\Validator
+     * @var array
      */
-    public function validationDefault(Validator $validator)
-    {
-        $validator
-            ->integer('id')
-            ->allowEmpty('id', 'create');
-
-        $validator
-            ->requirePresence('username', 'create')
-            ->notEmpty('username')
-            ->add('username', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
-
-        $validator
-            ->requirePresence('name', 'create')
-            ->notEmpty('name');
-
-        $validator
-            ->email('email')
-            ->allowEmpty('email')
-            ->add('email', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
-
-        $validator
-            ->requirePresence('password', 'create')
-            ->notEmpty('password');
-
-        $validator
-            ->requirePresence('role', 'create')
-            ->notEmpty('role');
-
-        $validator
-            ->allowEmpty('valid_state');
-
-        $validator
-            ->dateTime('last_login')
-            ->allowEmpty('last_login');
-
-        $validator
-            ->integer('fail_count')
-            ->requirePresence('fail_count', 'create')
-            ->notEmpty('fail_count');
-
-        return $validator;
-    }
-
-    /**
-     * Returns a rules checker object that will be used for validating
-     * application integrity.
-     *
-     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
-     * @return \Cake\ORM\RulesChecker
-     */
-    public function buildRules(RulesChecker $rules)
-    {
-        $rules->add($rules->isUnique(['username']));
-        $rules->add($rules->isUnique(['email']));
-
-        return $rules;
-    }
+    protected $_hidden = [
+        'password'
+    ];
 }

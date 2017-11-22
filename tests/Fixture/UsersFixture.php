@@ -37,7 +37,7 @@ class UsersFixture extends TestFixture
             'email' => ['type' => 'unique', 'columns' => ['email'], 'length' => []],
         ],
         '_options' => [
-            'engine' => 'InnoDB',
+            'engine' => 'MyISAM',
             'collation' => 'latin1_swedish_ci'
         ],
     ];
@@ -57,10 +57,10 @@ class UsersFixture extends TestFixture
             'password' => 'Lorem ipsum dolor sit amet',
             'role' => 'Lorem ipsum dolor ',
             'valid_state' => 'Lorem ipsum dolor sit amet',
-            'last_login' => '2017-11-21 21:58:58',
+            'last_login' => '2017-11-22 01:42:11',
             'fail_count' => 1,
-            'created' => '2017-11-21 21:58:58',
-            'modified' => '2017-11-21 21:58:58'
+            'created' => '2017-11-22 01:42:11',
+            'modified' => '2017-11-22 01:42:11'
         ],
     ];
 }
