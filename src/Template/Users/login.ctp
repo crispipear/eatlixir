@@ -1,3 +1,6 @@
+<title>
+  <?php $this->assign('title', 'Eatlixir'); ?>
+</title>
 <div>
 
 <h1>Login</h1>

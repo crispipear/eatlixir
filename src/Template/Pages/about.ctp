@@ -1,6 +1,6 @@
 <?php $title = 'Eatlixir';?>
 <title>
-    <?= $this->assign('title', 'Eatlixir'); ?>
+  <?php $this->assign('title', 'Eatlixir'); ?>
 </title>
 <section>
 <div id="banner">
