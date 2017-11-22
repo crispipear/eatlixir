@@ -2,6 +2,7 @@
 $baseColor: #404040;
 $baseGreen: #309c8d;
 $baseWhite: #fcfcfc;
+$baseBlue: #2EA1B3;
 $baseSize: 1rem;
 
 *{
@@ -71,6 +72,7 @@ nav{
 }
 
 .cta-button{
+  text-transform: uppercase;
   letter-spacing: 0.15rem;
   font-size: $baseSize*0.8;
   border: 1px solid #b5b5b5;
@@ -98,7 +100,7 @@ nav{
     justify-content: center;
     align-items: center;
     position: relative;
-    margin-bottom: 3.5%;
+    padding-top: 10%;
   }
   #home{
     margin-bottom: 0%;
@@ -107,7 +109,7 @@ nav{
     }
     h1{
       left: 0%;
-      top: 31%;
+      top: 30%;
       font-size: $baseSize*8.5;
       letter-spacing: 0.25rem;
       &:hover{
@@ -119,13 +121,13 @@ nav{
     }
     h5{
       left: 0.75%;
-      top: 51%;
+      top: 50%;
       @include laptop{
         font-size: $baseSize*1.25
       }
     }
     img{
-      top: 17.5%;
+      top: 15.5%;
       right: 0%;
       @include laptop{
         width: 350px;
@@ -133,24 +135,31 @@ nav{
     }
     .cta-button{
       left: 0.75%;
-      top: 61%;
+      top: 60%;
     }
   }
 }
 footer{
   text-align: right;
-  width: 100%;
   letter-spacing: 0.075rem;
   font-size: $baseSize*0.9;
-  position: absolute;
-  bottom: 0%;
-  padding-bottom: 1.5%;
-  i{
-    font-size:  $baseSize*1.125!important;
-    margin: 0% 0.25% 0% 0.25%;
+  ul{
+    margin: auto;
+    width: 966px;
+    list-style: none;
+    box-sizing: border-box;
   }
-  a i:hover{
-    color: $baseGreen;
+  li{
+    cursor: pointer;
+    text-transform: uppercase;
+    display: inline-block!important;
+    padding: 1.5% 0% 1.5% 0.75%;
+    i{
+      font-size:  $baseSize*1.125!important;
+    }
+    a i:hover{
+      color: $baseGreen;
+    }
   }
 }
 .box-wrapper{
@@ -186,7 +195,7 @@ footer{
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 100px 0px 25px 0px;
+  margin: 0px 0px 25px 0px;
   height: 300px;
   width: 100%;
   background-position: center;
@@ -205,4 +214,24 @@ footer{
       background-color: $baseWhite;
     }
   }
+}
+label{
+  cursor: default;
+}
+input{
+  background: transparent!important;
+  box-shadow: none!important;
+  border: 0px transparent!important;
+  border-bottom: 1px solid #ccc!important;
+  cursor: text;
+  &:focus{
+    border-color: $baseGreen!important;
+  }
+}
+button[type="submit"]{
+  @extend .cta-button;
+  width: 100%;
+  margin-top: 12.5%;
+  padding: 5%;
+  background-color: transparent;
 }

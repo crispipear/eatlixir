@@ -82,7 +82,8 @@ nav li:hover {
   }
 }
 
-.cta-button {
+.cta-button, button[type="submit"] {
+  text-transform: uppercase;
   letter-spacing: 0.15rem;
   font-size: 0.8rem;
   border: 1px solid #b5b5b5;
@@ -90,7 +91,7 @@ nav li:hover {
   color: #404040;
 }
 
-.cta-button:hover {
+.cta-button:hover, button[type="submit"]:hover {
   border-color: #309c8d;
   color: #309c8d;
 }
@@ -120,7 +121,7 @@ nav li:hover {
   -webkit-box-align: center;
   align-items: center;
   position: relative;
-  margin-bottom: 3.5%;
+  padding-top: 10%;
 }
 
 .content #home {
@@ -133,7 +134,7 @@ nav li:hover {
 
 .content #home h1 {
   left: 0%;
-  top: 31%;
+  top: 30%;
   font-size: 8.5rem;
   letter-spacing: 0.25rem;
 }
@@ -150,7 +151,7 @@ nav li:hover {
 
 .content #home h5 {
   left: 0.75%;
-  top: 51%;
+  top: 50%;
 }
 
 @media (min-width: 1024px) and (max-width: 1550px) {
@@ -160,7 +161,7 @@ nav li:hover {
 }
 
 .content #home img {
-  top: 17.5%;
+  top: 15.5%;
   right: 0%;
 }
 
@@ -170,27 +171,36 @@ nav li:hover {
   }
 }
 
-.content #home .cta-button {
+.content #home .cta-button, .content #home button[type="submit"] {
   left: 0.75%;
-  top: 61%;
+  top: 60%;
 }
 
 footer {
   text-align: right;
-  width: 100%;
   letter-spacing: 0.075rem;
   font-size: 0.9rem;
-  position: absolute;
-  bottom: 0%;
-  padding-bottom: 1.5%;
 }
 
-footer i {
+footer ul {
+  margin: auto;
+  width: 966px;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+footer li {
+  cursor: pointer;
+  text-transform: uppercase;
+  display: inline-block !important;
+  padding: 1.5% 0% 1.5% 0.75%;
+}
+
+footer li i {
   font-size: 1.125rem !important;
-  margin: 0% 0.25% 0% 0.25%;
 }
 
-footer a i:hover {
+footer li a i:hover {
   color: #309c8d;
 }
 
@@ -228,7 +238,7 @@ footer a i:hover {
   margin: 25px 0 25px 0;
 }
 
-#userinfo .cta-button {
+#userinfo .cta-button, #userinfo button[type="submit"] {
   padding: 5% 24% 5% 24%;
 }
 
@@ -239,7 +249,7 @@ footer a i:hover {
   align-items: center;
   -webkit-box-pack: center;
   justify-content: center;
-  margin: 100px 0px 25px 0px;
+  margin: 0px 0px 25px 0px;
   height: 300px;
   width: 100%;
   background-position: center;
@@ -260,6 +270,29 @@ footer a i:hover {
 
 #banner h5:hover {
   background-color: #fcfcfc;
+}
+
+label {
+  cursor: default;
+}
+
+input {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: 0px transparent !important;
+  border-bottom: 1px solid #ccc !important;
+  cursor: text;
+}
+
+input:focus {
+  border-color: #309c8d !important;
+}
+
+button[type="submit"] {
+  width: 100%;
+  margin-top: 12.5%;
+  padding: 5%;
+  background-color: transparent;
 }
 
 /*# sourceMappingURL=app.css.map */
