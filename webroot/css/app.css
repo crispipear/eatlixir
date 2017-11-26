@@ -42,9 +42,15 @@ nav .nav-right {
 
 nav ul {
   margin: auto;
-  width: 966px;
+  width: 1366px;
   list-style: none;
   box-sizing: border-box;
+}
+
+@media (min-width: 1024px) and (max-width: 1550px) {
+  nav ul {
+    width: 966px;
+  }
 }
 
 nav li {
@@ -83,6 +89,7 @@ nav li:hover {
 }
 
 .cta-button, button[type="submit"] {
+  background-color: transparent;
   text-transform: uppercase;
   letter-spacing: 0.15rem;
   font-size: 0.8rem;
@@ -92,6 +99,7 @@ nav li:hover {
 }
 
 .cta-button:hover, button[type="submit"]:hover {
+  background-color: transparent;
   border-color: #309c8d;
   color: #309c8d;
 }
@@ -173,7 +181,7 @@ nav li:hover {
 
 .content #home .cta-button, .content #home button[type="submit"] {
   left: 0.75%;
-  top: 60%;
+  top: 58%;
 }
 
 footer {
@@ -184,9 +192,15 @@ footer {
 
 footer ul {
   margin: auto;
-  width: 966px;
+  width: 1366px;
   list-style: none;
   box-sizing: border-box;
+}
+
+@media (min-width: 1024px) and (max-width: 1550px) {
+  footer ul {
+    width: 966px;
+  }
 }
 
 footer li {
@@ -286,6 +300,13 @@ input {
 
 input:focus {
   border-color: #309c8d !important;
+  background: white !important;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  background-color: transparent !important;
 }
 
 button[type="submit"] {
@@ -293,6 +314,10 @@ button[type="submit"] {
   margin-top: 12.5%;
   padding: 5%;
   background-color: transparent;
+}
+
+form {
+  width: 25%;
 }
 
 /*# sourceMappingURL=app.css.map */

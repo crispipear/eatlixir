@@ -46,7 +46,6 @@ class UsersController extends AppController
 			$this->Flash->error('Your username or password is incorrect.');
 		}
 	}
-
     /**
      * View method
      *
