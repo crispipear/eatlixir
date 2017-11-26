@@ -1,6 +1,8 @@
 <?php
 namespace App\Controller;
+
 use App\Controller\AppController;
+
 /**
  * Users Controller
  *
@@ -10,6 +12,7 @@ use App\Controller\AppController;
  */
 class UsersController extends AppController
 {
+
     /**
      * Index method
      *
@@ -18,31 +21,35 @@ class UsersController extends AppController
     public function index()
     {
         $users = $this->paginate($this->Users);
+
         $this->set(compact('users'));
         $this->set('_serialize', ['users']);
     }
+
     public function initialize()
-	  {
+	{
     	parent::initialize();
     	$this->Auth->allow(['logout', 'add', 'configure']);
-	  }
+	}
 
-	  public function logout()
-    {
+	public function logout()
+	{
       $this->Flash->success('You are now logged out.');
     	return $this->redirect($this->Auth->logout());
-	  }
-	  public function login()
-    {
-      if ($this->request->is('post')) {
-        $user = $this->Auth->identify();
-          if ($user) {
+	}
+	public function login()
+	{
+    	if ($this->request->is('post')) {
+        	$user = $this->Auth->identify();
+        	if ($user) {
             	$this->Auth->setUser($user);
+              $this->log(var_export($user,true),'debug');
             	return $this->redirect($this->Auth->redirectUrl());
         	}
-        $this->Flash->error('Your username or password is incorrect.');
+        	$this->Flash->error('Your username or password is incorrect.');
     	}
-	 }
+	}
+
 
     /**
      * View method
@@ -56,42 +63,45 @@ class UsersController extends AppController
         $user = $this->Users->get($id, [
             'contain' => []
         ]);
+
         $this->set('user', $user);
         $this->set('_serialize', ['user']);
     }
+
     public function configure()
-{
-  // Check for User Already Setup
-  $query = $this->Users->find('all')->where(['Users.id' => 1]);
-  $user = $query->first();
-  if ($user) {
-      $this->Flash->error(
-          __('This application has already been configured.')
-          );
-      $this->redirect('/');
-  }
+	{
+    	// Check for User Already Setup
+    	$query = $this->Users->find('all')->where(['Users.id' => 1]);
+    	$user = $query->first();
+    	if ($user) {
+        	$this->Flash->error(
+    	        __('This application has already been configured.')
+            	);
+        	$this->redirect('/');
+    	}
 
-  // COnfigure New User
-  $user = $this->Users->newEntity();
-  if ($this->request->is('post')) {
-     $user = $this->Users->patchEntity($user, $this->request->data);
-      $user->id = 1;
-      $user->username = $user->email;
-      $user->name = 'Administrator';
-      $user->role = 'admin';
-      $user->fail_count = 0;
-     $this->log(var_export($user,true),'debug');
-      if ($this->Users->save($user)) {
-          $this->Flash->success(__('The user has been saved.'));
+    	// COnfigure New User
+    	$user = $this->Users->newEntity();
+    	if ($this->request->is('post')) {
+     	   $user = $this->Users->patchEntity($user, $this->request->data);
+        	$user->id = 1;
+        	$user->username = $user->username;
+        	$user->name = 'Administrator';
+        	$user->role = 'admin';
+        	$user->fail_count = 0;
+ 	        $this->log(var_export($user,true),'debug');
+        	if ($this->Users->save($user)) {
+            	$this->Flash->success(__('The user has been saved.'));
+            	return $this->redirect(['action' => 'index']);
+        	} else {
+	            $this->Flash->error(__('The user could not be saved. Please, try again.'));
+        	}
+    	}
+    	$this->set(compact('user'));
+    	$this->set('_serialize', ['user']);
+	}
 
-          return $this->redirect(['action' => 'index']);
-      } else {
-          $this->Flash->error(__('The user could not be saved. Please, try again.'));
-      }
-  }
-  $this->set(compact('user'));
-  $this->set('_serialize', ['user']);
-}
+
     /**
      * Add method
      *
@@ -104,6 +114,7 @@ class UsersController extends AppController
             $user = $this->Users->patchEntity($user, $this->request->getData());
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('The user has been saved.'));
+
                 return $this->redirect(['action' => 'index']);
             }
             $this->Flash->error(__('The user could not be saved. Please, try again.'));
@@ -111,6 +122,7 @@ class UsersController extends AppController
         $this->set(compact('user'));
         $this->set('_serialize', ['user']);
     }
+
     /**
      * Edit method
      *
@@ -127,6 +139,7 @@ class UsersController extends AppController
             $user = $this->Users->patchEntity($user, $this->request->getData());
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('The user has been saved.'));
+
                 return $this->redirect(['action' => 'index']);
             }
             $this->Flash->error(__('The user could not be saved. Please, try again.'));
@@ -134,6 +147,7 @@ class UsersController extends AppController
         $this->set(compact('user'));
         $this->set('_serialize', ['user']);
     }
+
     /**
      * Delete method
      *
@@ -150,6 +164,7 @@ class UsersController extends AppController
         } else {
             $this->Flash->error(__('The user could not be deleted. Please, try again.'));
         }
+
         return $this->redirect(['action' => 'index']);
     }
 }

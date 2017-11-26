@@ -4,6 +4,7 @@
  * @var \App\Model\Entity\Ingredient $ingredient
  */
 ?>
+<section>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
@@ -58,3 +59,4 @@
         </tr>
     </table>
 </div>
+</section>

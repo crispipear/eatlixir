@@ -13,8 +13,10 @@
  * @license   https://opensource.org/licenses/mit-license.php MIT License
  */
 namespace App\Controller;
+
 use Cake\Controller\Controller;
 use Cake\Event\Event;
+
 /**
  * Application Controller
  *
@@ -25,6 +27,7 @@ use Cake\Event\Event;
  */
 class AppController extends Controller
 {
+
     /**
      * Initialization hook method.
      *
@@ -37,6 +40,7 @@ class AppController extends Controller
     public function initialize()
     {
         parent::initialize();
+
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
         $this->loadComponent('Auth', [
@@ -60,14 +64,13 @@ class AppController extends Controller
         	'unauthorizedRedirect' => $this->referer() // If unauthorized, return them to page they were just on
   	  ]);
 
-        /*
-         * Enable the following components for recommended CakePHP security settings.
-         * see https://book.cakephp.org/3.0/en/controllers/components/security.html
-         */
-        //$this->loadComponent('Security');
-        //$this->loadComponent('Csrf');
-    }
-    public function beforeFilter(Event $event)
+    	// Allow the display action so our pages controller
+    	// continues to work.
+    	$this->Auth->allow(['display']);
+
+	}
+
+	public function beforeFilter(Event $event)
 	{
     	$this->Auth->allow(['display']);
 	}
@@ -75,10 +78,22 @@ class AppController extends Controller
 	public function isAuthorized($user)
 	{
 	// Admin can access every action
-	 if (isset($user['role']) && $user['role'] === 'admin') {
+	if (isset($user['role']) && $user['role'] === 'admin') {
     	return true;
-	 }
-  }
+	}
+
+	// Default deny
+	return false;
+	}
+
+
+        /*
+         * Enable the following components for recommended CakePHP security settings.
+         * see https://book.cakephp.org/3.0/en/controllers/components/security.html
+         */
+        //$this->loadComponent('Security');
+        //$this->loadComponent('Csrf');
+
 
     /**
      * Before render callback.

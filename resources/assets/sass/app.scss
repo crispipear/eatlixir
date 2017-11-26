@@ -244,11 +244,12 @@ input:-webkit-autofill:focus{
 }
 button[type="submit"]{
   @extend .cta-button;
-  width: 100%;
-  margin-top: 12.5%;
-  padding: 5%;
+  width: 50%;
+  margin-top: 5%;
+  padding: 2.5%;
   background-color: transparent;
 }
 form{
-  width: 25%;
+  margin-top: -7.5%;
+  width: 50%;
 }

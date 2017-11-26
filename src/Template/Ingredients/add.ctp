@@ -4,12 +4,8 @@
  * @var \App\Model\Entity\Ingredient $ingredient
  */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('List Ingredients'), ['action' => 'index']) ?></li>
-    </ul>
-</nav>
+<section>
+  <button class="cta-button"><?= $this->Html->link(__('List Ingredient'), ['action' => 'index']) ?></button>
 <div class="ingredients form large-9 medium-8 columns content">
     <?= $this->Form->create($ingredient) ?>
     <fieldset>
@@ -29,3 +25,4 @@
     <?= $this->Form->button(__('Submit')) ?>
     <?= $this->Form->end() ?>
 </div>
+</section>
