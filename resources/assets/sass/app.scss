@@ -242,12 +242,16 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus{
   background-color: transparent!important;
 }
-button[type="submit"]{
+button[type="submit"], #signup{
   @extend .cta-button;
-  width: 50%;
+  width: 200px;
   margin-top: 5%;
   padding: 2.5%;
   background-color: transparent;
+}
+
+#signup{
+  margin-left: 5%;
 }
 form{
   margin-top: -7.5%;

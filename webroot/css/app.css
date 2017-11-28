@@ -88,7 +88,7 @@ nav li:hover {
   }
 }
 
-.cta-button, button[type="submit"] {
+.cta-button, button[type="submit"], #signup {
   background-color: transparent;
   text-transform: uppercase;
   letter-spacing: 0.15rem;
@@ -98,7 +98,7 @@ nav li:hover {
   color: #404040;
 }
 
-.cta-button:hover, button[type="submit"]:hover {
+.cta-button:hover, button[type="submit"]:hover, #signup:hover {
   background-color: transparent;
   border-color: #309c8d;
   color: #309c8d;
@@ -179,7 +179,7 @@ nav li:hover {
   }
 }
 
-.content #home .cta-button, .content #home button[type="submit"] {
+.content #home .cta-button, .content #home button[type="submit"], .content #home #signup {
   left: 0.75%;
   top: 58%;
 }
@@ -252,7 +252,7 @@ footer li a i:hover {
   margin: 25px 0 25px 0;
 }
 
-#userinfo .cta-button, #userinfo button[type="submit"] {
+#userinfo .cta-button, #userinfo button[type="submit"], #userinfo #signup {
   padding: 5% 24% 5% 24%;
 }
 
@@ -309,11 +309,15 @@ input:-webkit-autofill:focus {
   background-color: transparent !important;
 }
 
-button[type="submit"] {
-  width: 50%;
+button[type="submit"], #signup {
+  width: 200px;
   margin-top: 5%;
   padding: 2.5%;
   background-color: transparent;
+}
+
+#signup {
+  margin-left: 5%;
 }
 
 form {

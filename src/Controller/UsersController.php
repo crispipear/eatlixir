@@ -44,7 +44,7 @@ class UsersController extends AppController
         	if ($user) {
             	$this->Auth->setUser($user);
               $this->log(var_export($user,true),'debug');
-            	return $this->redirect($this->Auth->redirectUrl());
+            	return $this->redirect('/');
         	}
         	$this->Flash->error('Your username or password is incorrect.');
     	}
@@ -67,9 +67,8 @@ class UsersController extends AppController
         $this->set('user', $user);
         $this->set('_serialize', ['user']);
     }
-
     public function configure()
-	{
+	   {
     	// Check for User Already Setup
     	$query = $this->Users->find('all')->where(['Users.id' => 1]);
     	$user = $query->first();
@@ -112,6 +111,9 @@ class UsersController extends AppController
         $user = $this->Users->newEntity();
         if ($this->request->is('post')) {
             $user = $this->Users->patchEntity($user, $this->request->getData());
+            $user->name = 'Registered User';
+            $user->role = 'user';
+            $user->fail_count = 0;
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('The user has been saved.'));
 

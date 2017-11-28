@@ -11,6 +11,7 @@ footer{
 <?= $this->Form->input('username') ?>
 <?= $this->Form->input('password') ?>
 <?= $this->Form->button('Login') ?>
-<!-- $this->Html->link('SIGN UP',array('controller' => 'users', 'action' => 'signup'),array('escape'=>false)); -->
+<?= $this->Html->link('SIGN UP',array('controller' => 'users', 'action' => 'add'),array('class' => 'cta-button', 'id' => 'signup', 'escape' => false));
+?>
 <?= $this->Form->end() ?>
 </section>
