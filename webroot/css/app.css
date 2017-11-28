@@ -325,4 +325,47 @@ form {
   width: 50%;
 }
 
+.foodinfo {
+  width: 100%;
+  margin-left: 1.5%;
+}
+
+.foodinfo .left, .foodinfo .right {
+  vertical-align: top;
+  margin: 2.5% 1.25% 2.5% 1.25%;
+}
+
+.foodinfo .left {
+  width: 35%;
+}
+
+.foodinfo .right {
+  width: 60%;
+}
+
+.foodinfo img {
+  max-width: 300px !important;
+}
+
+.foodinfo h3 {
+  margin: 5% 0% 2.5% 0%;
+  padding: 0%;
+  color: #309c8d;
+}
+
+.foodinfo h5 {
+  margin: 2.5% 0% 2.5% 0%;
+  font-size: 0.95rem;
+}
+
+.foodinfo p {
+  font-size: 1.05rem;
+  margin: 0% 0% 1.75% 0%;
+}
+
+.foodinfo p span {
+  color: #309c8d;
+  margin-right: 2.5%;
+}
+
 /*# sourceMappingURL=app.css.map */

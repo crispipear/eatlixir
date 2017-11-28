@@ -257,3 +257,37 @@ form{
   margin-top: -7.5%;
   width: 50%;
 }
+.foodinfo{
+  width: 100%;
+  margin-left: 1.5%;
+  .left,.right{
+    vertical-align: top;
+    margin: 2.5% 1.25% 2.5% 1.25%;
+  }
+  .left{
+    width: 35%;
+  }
+  .right{
+    width: 60%;
+  }
+  img{
+    max-width: 300px!important;
+  }
+  h3{
+    margin: 5% 0% 2.5% 0%;
+    padding: 0%;
+    color: $baseGreen;
+  }
+  h5{
+    margin: 2.5% 0% 2.5% 0%;
+    font-size: $baseSize*0.95;
+  }
+  p{
+    font-size: $baseSize*1.05;
+    span{
+      color: $baseGreen;
+      margin-right: 2.5%;
+    }
+    margin: 0% 0% 1.75% 0%;
+  }
+}

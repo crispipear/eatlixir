@@ -25,7 +25,11 @@ class IngredientsController extends AppController
         $this->set(compact('ingredients'));
         $this->set('_serialize', ['ingredients']);
     }
-
+    public function initialize()
+    {
+      parent::initialize();
+      $this->Auth->allow(['index']);
+    }
     /**
      * View method
      *

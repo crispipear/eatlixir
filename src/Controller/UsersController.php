@@ -111,6 +111,7 @@ class UsersController extends AppController
         $user = $this->Users->newEntity();
         if ($this->request->is('post')) {
             $user = $this->Users->patchEntity($user, $this->request->getData());
+            // $user->id = $total+1;
             $user->name = 'Registered User';
             $user->role = 'user';
             $user->fail_count = 0;
