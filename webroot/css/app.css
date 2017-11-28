@@ -282,7 +282,7 @@ footer li a i:hover {
   font-weight: 600;
 }
 
-#banner h5:hover {
+#banner:hover h5 {
   background-color: #fcfcfc;
 }
 
@@ -358,6 +358,11 @@ form {
   font-size: 0.95rem;
 }
 
+.foodinfo h5 span {
+  color: #309c8d;
+  margin-right: 2.5%;
+}
+
 .foodinfo p {
   font-size: 1.05rem;
   margin: 0% 0% 1.75% 0%;
@@ -366,6 +371,31 @@ form {
 .foodinfo p span {
   color: #309c8d;
   margin-right: 2.5%;
+}
+
+.foodcategory {
+  -webkit-box-shadow: inset 0px 0px 0px 10px rgba(255, 255, 255, 0);
+  width: 425px;
+  height: 325px;
+  margin: 0% 15px 2.5% 15px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  background-color: #0d0d0d;
+  float: left;
+}
+
+.foodcategory span {
+  color: #fcfcfc;
+  letter-spacing: 0.75rem;
+  font-size: 2rem;
+}
+
+.foodcategory:hover {
+  -webkit-box-shadow: inset 0px 0px 0px 10px #309c8d;
 }
 
 /*# sourceMappingURL=app.css.map */

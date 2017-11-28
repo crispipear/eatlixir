@@ -218,9 +218,9 @@ footer{
     font-size: $baseSize*1.15;
     color: darken($baseColor, 12.5%);
     font-weight: 600;
-    &:hover{
-      background-color: $baseWhite;
-    }
+  }
+  &:hover h5{
+    background-color: $baseWhite;
   }
 }
 label{
@@ -281,6 +281,10 @@ form{
   h5{
     margin: 2.5% 0% 2.5% 0%;
     font-size: $baseSize*0.95;
+    span{
+      color: $baseGreen;
+      margin-right: 2.5%;
+    }
   }
   p{
     font-size: $baseSize*1.05;
@@ -289,5 +293,24 @@ form{
       margin-right: 2.5%;
     }
     margin: 0% 0% 1.75% 0%;
+  }
+}
+.foodcategory{
+  -webkit-box-shadow:  inset 0px 0px 0px 10px rgba(255, 255, 255, 0);
+  width: 425px;
+  height: 325px;
+  margin: 0% 15px 2.5% 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0d0d0d;
+  float: left;
+  span{
+    color: $baseWhite;
+    letter-spacing: 0.75rem;
+    font-size: $baseSize*2;
+  }
+  &:hover{
+    -webkit-box-shadow: inset 0px 0px 0px 10px $baseGreen;
   }
 }
