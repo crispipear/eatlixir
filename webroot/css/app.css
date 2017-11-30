@@ -389,6 +389,7 @@ form {
 }
 
 .foodcategory span {
+  cursor: pointer;
   color: #fcfcfc;
   letter-spacing: 0.75rem;
   font-size: 2rem;

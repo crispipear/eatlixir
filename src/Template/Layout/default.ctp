@@ -42,6 +42,7 @@
     $output = '<ul>';
     $output .= '<li class="nav-left">' . $this->Html->link('home','/',array('class' => 'nav-left')) . '</li>';
     $output .= '<li class="nav-left">' . $this->Html->link('food',array('controller' => 'pages', 'action' => 'display', 'food'),array('class' => 'nav-left')) . '</li>';
+    $output .= '<li class="nav-left">' . $this->Html->link('health',array('controller' => 'pages', 'action' => 'display', 'health'),array('class' => 'nav-left')) . '</li>';
     $output .= '<li class="nav-left">' . $this->Html->link('about',array('controller' => 'pages', 'action' => 'display', 'about'),array('class' => 'nav-left')) . '</li>';
     if (!is_null($this->request->session()->read('Auth.User.email'))) {
       $output .= '<li class="nav-right">' . $this->Html->link('<i class="fa fa-sign-out" aria-hidden="true"></i>',array('controller' => 'users', 'action' => 'logout'),array('class' => 'nav-right', 'escape'=>false)) . '</li>';

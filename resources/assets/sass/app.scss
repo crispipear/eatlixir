@@ -306,6 +306,7 @@ form{
   background-color: #0d0d0d;
   float: left;
   span{
+    cursor: pointer;
     color: $baseWhite;
     letter-spacing: 0.75rem;
     font-size: $baseSize*2;
