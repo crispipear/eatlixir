@@ -23,12 +23,11 @@
     <title>
         <?= $this->fetch('title') ?>
     </title>
+    <?= $this->Html->script('jquery.js') ?>
     <?= $this->Html->meta('icon') ?>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway:500i|Roboto:300,400,700|Roboto+Mono" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <?= $this->Html->css('base.css') ?>
-    <?= $this->Html->css('cake.css') ?>
     <?= $this->Html->css('app.css') ?>
     <?= $this->Html->script('app.js') ?>
 
@@ -42,11 +41,10 @@
     $output = '<ul>';
     $output .= '<li class="nav-left">' . $this->Html->link('home','/',array('class' => 'nav-left')) . '</li>';
     $output .= '<li class="nav-left">' . $this->Html->link('food',array('controller' => 'pages', 'action' => 'display', 'food'),array('class' => 'nav-left')) . '</li>';
-    $output .= '<li class="nav-left">' . $this->Html->link('health',array('controller' => 'pages', 'action' => 'display', 'health'),array('class' => 'nav-left')) . '</li>';
     $output .= '<li class="nav-left">' . $this->Html->link('about',array('controller' => 'pages', 'action' => 'display', 'about'),array('class' => 'nav-left')) . '</li>';
     if (!is_null($this->request->session()->read('Auth.User.email'))) {
       $output .= '<li class="nav-right">' . $this->Html->link('<i class="fa fa-sign-out" aria-hidden="true"></i>',array('controller' => 'users', 'action' => 'logout'),array('class' => 'nav-right', 'escape'=>false)) . '</li>';
-      $output .= '<li class="nav-right">' . $this->Html->link('<i class="fa fa-user" aria-hidden="true"></i>',array('controller' => 'pages', 'action' => 'display', 'personal'),array('class' => 'nav-right', 'escape'=>false)) . '</li>';
+      $output .= '<li class="nav-right">' . $this->Html->link('<i class="fa fa-stethoscope" aria-hidden="true"></i>',array('controller' => 'pages', 'action' => 'display', 'health'),array('class' => 'nav-right', 'escape'=>false)) . '</li>';
       $output .= '<li class="nav-right">' . $this->Html->link('<i class="fa fa-heart" aria-hidden="true"></i>',array('controller' => 'pages', 'action' => 'display', 'favorites'),array('class' => 'nav-right', 'escape'=>false)) . '</li>';
       $output .= '<li class="nav-right">' . $this->Html->link('<i class="fa fa-compass" aria-hidden="true"></i>',array('controller' => 'pages', 'action' => '', 'discover'),array('class' => 'nav-right', 'escape'=>false)) . '</li>';
     } else {
