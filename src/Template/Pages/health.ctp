@@ -94,7 +94,7 @@
                 mode: "diagnosis",
                 webservice: "https://sandbox-healthservice.priaid.ch",
                 language: "en-gb",
-                specUrl: "sample_specialisation_page",
+                specUrl: "../sample_specialisation_page",
                 accessToken: userToken
             });
         });

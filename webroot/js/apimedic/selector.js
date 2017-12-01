@@ -659,7 +659,7 @@ var mode = "diagnosis";
         });
 
         skinLink.append(skinImage);
-        skinLink.append(skin_Text);
+        // skinLink.append(skin_Text);
 
         _plugin.find(".avatar-container").append(skinLink);
     }
@@ -2072,7 +2072,7 @@ var mode = "diagnosis";
         var bar = jQuery("<div/>", {
             "class": "progress-bar progress-bar-primary animate"
         });
-        console.log(accuracy);
+        // console.log(accuracy);
         var currentProgress = 0;
         bar.width(currentProgress + '%');
         var interval = setInterval(function () {
@@ -2103,8 +2103,8 @@ var mode = "diagnosis";
 					"href": specUrl  + "/" + "specId" + this.SpecialistID + ".html"
                 });
 
-                specListElement.append(spec);
-                specList.append(specListElement);
+                // specListElement.append(spec);
+                // specList.append(specListElement);
             });
         }
         else {

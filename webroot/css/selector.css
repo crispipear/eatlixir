@@ -73,8 +73,8 @@ td.avatar-container
     color: black;
 }
 .skin-image{
-	margin-top: 5px;
-	width:110px;
+	margin-top: 75px!important;
+	width:150px;
 	height: auto;
 }
 
@@ -278,7 +278,8 @@ input.symptom-search
 
 h4.header {
     color: #4d4d4d;
-    font-size:1.4em;
+    font-size:1rem;
+    font-weight: 500;
     margin:0;
 }
 
@@ -439,25 +440,19 @@ span.twitter-typeahead {
 
 .info_page
 {
+    width: 100%;
+    z-index: 50;
+    font-size: 0.95rem;
     position:absolute;
-    left:0px;
-    right:0px;
-    top:0px;
-    bottom:0px;
+    top: 0%;
+    left: 0%;
     background-color:white;
     display:none;
-    opacity:0.95;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=95)";
-    /* IE 5-7 */
-    filter: alpha(opacity=95);
-    /* Netscape */
-    -moz-opacity: 0.95;
-    /* Safari 1.x */
-    -khtml-opacity: 0.95;
     padding:10px;
     border: 1px solid #dfdfdf;
 }
 .btn_info{
+  z-index: 50;
     position:absolute;
     top:20px;
     font-size:30px;
@@ -465,6 +460,8 @@ span.twitter-typeahead {
 }
 #btnCloseInfo
 {
+  z-index: 50;
+
     right:20px;
 }
 #btnPrintInfo
@@ -473,7 +470,7 @@ span.twitter-typeahead {
 }
 #redFlagContent
 {
-    font-size:1.4em;
+    font-size:1em;
     padding:10px 10px;
     margin-top:30px;
     border: 1px solid;
@@ -481,7 +478,7 @@ span.twitter-typeahead {
 }
 #redFlagContent
 {
-    font-size:1.4em;
+    font-size:1em;
     padding:10px 10px;
     margin-top:30px;
     border: 1px solid;
