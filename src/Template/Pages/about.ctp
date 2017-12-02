@@ -13,7 +13,7 @@
     <div class="box-wrapper">
     <div class="about-box">
       <div class="about-img"></div>
-      <p>Look around the food directory to get more information about commonly used herbs and recipes in Chinese medicinal diets.
+      <p>Look around the food directory to get insights about commonly used herbs and recipes in Chinese medicinal diets.
       </p>
     </div>
     <div class="about-box">
@@ -23,7 +23,7 @@
     </div>
     <div class="about-box">
       <div class="about-img"></div>
-      <p>Discover recipes recommended for your body health and explore articles about Chinese medicines.
+      <p>Use the symptoms checker to find out what your possible health issue is.
       </p>
     </div>
     </div>

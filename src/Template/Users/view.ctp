@@ -4,18 +4,13 @@
  * @var \App\Model\Entity\User $user
  */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('Edit User'), ['action' => 'edit', $user->id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete User'), ['action' => 'delete', $user->id], ['confirm' => __('Are you sure you want to delete # {0}?', $user->id)]) ?> </li>
-        <li><?= $this->Html->link(__('List Users'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New User'), ['action' => 'add']) ?> </li>
-    </ul>
-</nav>
+<section>
+  <?php if(!($currentRole === 'admin')&& !($currentID == $user->id)) : ?>
+  <h3> You are not authorized for this action</h3>
+  <?php else : ?>
 <div class="users view large-9 medium-8 columns content">
     <h3><?= h($user->name) ?></h3>
-    <table class="vertical-table">
+    <table class="vertical-table" width="500px">
         <tr>
             <th scope="row"><?= __('Username') ?></th>
             <td><?= h($user->username) ?></td>
@@ -30,19 +25,11 @@
         </tr>
         <tr>
             <th scope="row"><?= __('Password') ?></th>
-            <td><?= h($user->password) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Role') ?></th>
-            <td><?= h($user->role) ?></td>
+            <td>******</td>
         </tr>
         <tr>
             <th scope="row"><?= __('Valid State') ?></th>
             <td><?= h($user->valid_state) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Id') ?></th>
-            <td><?= $this->Number->format($user->id) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Fail Count') ?></th>
@@ -61,4 +48,26 @@
             <td><?= h($user->modified) ?></td>
         </tr>
     </table>
+    <?php if ($currentRole === 'admin'): ?>
+    <button class="cta-button"><?= $this->Html->link(__('Edit User'), ['action' => 'edit', $user->id]) ?></button>
+    <button class="cta-button"><?= $this->Html->link(__('New User'), ['action' => 'add']) ?></button>
+    <button class="cta-button"><?= $this->Html->link(__('List Users'), ['action' => 'index']) ?></button>
+    <button class="cta-button"><?= $this->Form->postLink(
+            __('Delete'),
+            ['action' => 'delete', $user->id],
+            ['confirm' => __('Are you sure you want to delete # {0}?', $user->id)]
+        )
+    ?></button>
+    <?php endif; ?>
+    <?php if (($currentRole === 'user')&&($currentID == $user->id)): ?>
+      <button class="cta-button"><?= $this->Html->link(__('Edit User'), ['action' => 'edit', $user->id]) ?></button>
+      <button class="cta-button"><?= $this->Form->postLink(
+              __('Delete'),
+              ['action' => 'delete', $user->id],
+              ['confirm' => __('Are you sure you want to delete # {0}?', $user->id)]
+          )
+      ?></button>
+    <?php endif; ?>
 </div>
+<?php endif ?>
+</section>

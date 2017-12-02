@@ -59,22 +59,21 @@ td.avatar-container
         bottom:0px;
     }
 .skin-link{
-	display: inline;
+    display: inline;
     position: absolute;
     color: #525252;
-    left: 0;
-    bottom: -65px;
+    left: 25%;
+    bottom: -22.5%;
     width: 130px;
-    text-decoration:none;
-	padding-bottom: 0;
-	text-align: center;
+    text-decoration: none;
+    padding-bottom: 0;
+    text-align: center;
 }
 .skin-link:hover{
     color: black;
 }
 .skin-image{
-	margin-top: 75px!important;
-	width:150px;
+	width:100px;
 	height: auto;
 }
 
@@ -107,6 +106,10 @@ input.symptom-search
     background-image: none;
     border: 1px solid #ccc;
 }
+#prefetch input:focus{
+  outline: none;
+  border-color: #309c8d;
+}
 .year-container
 {
     padding: 5px 0;
@@ -132,7 +135,7 @@ input.symptom-search
     line-height: 20px;
     color: #fff;
     text-align: center;
-    background-color: #428bca;
+    background-color: #309c8d;
     border-bottom-left-radius:2px;
     border-top-left-radius:2px;
 }
@@ -158,7 +161,7 @@ input.symptom-search
 }
 
 .location_list, location_list li, .symptom_list, .symptom_list li, .selected_list, .selected_list li,.proposed_list, proposed_list li, .diagnosis_list, .diagnosis_list li {
-  padding: 0;
+  padding: 0.5px 2px 0.5px 2px;
   margin: 0;
   list-style: none;
   color:#555;
@@ -171,7 +174,7 @@ input.symptom-search
 }
 
 .location_list li:hover {
-  color: #4193d0;
+  color: #309c8d;
 }
 .location_list li:before {
   content: '\f054'; /* fa-chevron-right */
@@ -194,10 +197,12 @@ input.symptom-search
 }
 
 .symptom_list li, .selected_list li, .proposed_list li {
-  padding:2px 0px;
+  padding: 4px;
   cursor:pointer;
 }
-
+.proposed_list_header{
+  padding: 4px;
+}
 .selected_list li
 {
     cursor:default;
@@ -231,7 +236,7 @@ input.symptom-search
   margin-left: 1.5em;
 }
 .proposed_list li:hover {
-  color:#4193d0;
+  color:#309c8d;
 }
 
 .proposed_list li:before {
@@ -250,7 +255,7 @@ input.symptom-search
 }
 .spec_list li a {
   margin-left: 10px;
-  color: #4193d0;
+  color: #309c8d;
   text-decoration:none;
 }
 .spec_list li a:hover {
@@ -266,7 +271,7 @@ input.symptom-search
 
 .suggested_spec {
   margin-left: 5px;
-  color: #4193d0;
+  color: #309c8d;
   text-decoration:none;
 }
 
@@ -277,7 +282,7 @@ input.symptom-search
 }
 
 h4.header {
-    color: #4d4d4d;
+    color: #309c8d;
     font-size:1rem;
     font-weight: 500;
     margin:0;
@@ -293,6 +298,7 @@ h4.diagnosis_name_header
 {
     padding:0.5em 0em 0em 0em;
     margin-right:30px;
+    color: #4d4d4d;
 }
 h4.diagnosis_profname_header
 {
@@ -305,9 +311,12 @@ h4.diagnosis_name_header .fa
     float:right;
     margin-right:-30px;
     cursor:pointer;
-    color: #4193d0;
+    color: #4d4d4d;
 }
+h4.diagnosis_name_header .fa:hover{
+  color: #309c8d;
 
+}
 span.message{
     float: left;
     margin: 5px;
@@ -316,7 +325,6 @@ span.message{
     border-style: solid;
 }
 .info{
-
     color: #8a6d3b;
     background-color: #fcf8e3;
     border-color: #faebcc;
@@ -351,16 +359,16 @@ table.container-table {
     border-spacing: 5px;
     border-collapse: separate;
     background-color:#ebeff2;
-    height:92.5vh;
+    min-height: 87.5vh;
 }
 .container-table .td-header
 {
     height:15px;
 }
-.container-table .td-header h4
+/*.container-table .td-header h4
 {
     padding:5px;
-}
+}*/
 
 .container-table .selector_container
 {
@@ -440,33 +448,46 @@ span.twitter-typeahead {
 
 .info_page
 {
-    width: 100%;
+    margin: 2.5%;
+    width: 75%;
     z-index: 50;
-    font-size: 0.95rem;
+    font-size: 1rem;
     position:absolute;
     top: 0%;
-    left: 0%;
+    left: 10%;
     background-color:white;
     display:none;
-    padding:10px;
+    padding:50px;
     border: 1px solid #dfdfdf;
 }
+.info_page_content h1{
+  font-size: 2.75rem;
+  color: #309c8d;
+}
+.info_page_content h4{
+  font-size: 2rem;
+}
+.info_page_content h3{
+  font-size: 1.25rem;
+}
 .btn_info{
-  z-index: 50;
+    z-index: 50;
     position:absolute;
     top:20px;
-    font-size:30px;
+    font-size:25px;
     cursor:pointer;
 }
 #btnCloseInfo
 {
   z-index: 50;
-
-    right:20px;
+  right:20px;
 }
 #btnPrintInfo
 {
     right:50px;
+}
+#btnCloseInfo:hover, #btnPrintInfo:hover{
+  color: #309c8d;
 }
 #redFlagContent
 {
@@ -540,10 +561,6 @@ span.twitter-typeahead {
 	text-align:center;
 	padding-top:8px;
 }
-
-.logo{
-	float: right;
-	width: 87px;
-	height: 23px;
-	vertical-align:middle;
+.healthIssueInfo{
+  margin: 1% 2.5% 1% 2.5%;
 }

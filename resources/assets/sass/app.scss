@@ -244,18 +244,24 @@ input:-webkit-autofill:focus{
 }
 button[type="submit"], #signup{
   @extend .cta-button;
-  width: 200px;
+  width: 240px;
   margin-top: 5%;
   padding: 2.5%;
   background-color: transparent;
 }
 
 #signup{
-  margin-left: 5%;
+  margin-left: 20px;
+  a{
+    letter-spacing: 0.15rem;
+  }
+  &:hover a{
+    color: $baseGreen;
+  }
 }
 form{
   margin-top: -7.5%;
-  width: 50%;
+  width: 500px;
 }
 .foodinfo{
   width: 100%;
@@ -271,23 +277,33 @@ form{
     width: 60%;
   }
   img{
-    max-width: 300px!important;
+    max-width: 90%;
   }
   h3{
     margin: 5% 0% 2.5% 0%;
     padding: 0%;
     color: $baseGreen;
+    font-size:  $baseSize*2;
+    @include laptop{
+      font-size: $baseSize*1.75;
+    }
   }
   h5{
     margin: 2.5% 0% 2.5% 0%;
-    font-size: $baseSize*0.95;
+    font-size: $baseSize*1.05;
     span{
       color: $baseGreen;
       margin-right: 2.5%;
     }
+    @include laptop{
+      font-size: $baseSize*.915;
+    }
   }
   p{
-    font-size: $baseSize*1.05;
+    font-size: $baseSize*1.25;
+    @include laptop{
+      font-size: $baseSize;
+    }
     span{
       color: $baseGreen;
       margin-right: 2.5%;
@@ -297,9 +313,13 @@ form{
 }
 .foodcategory{
   -webkit-box-shadow:  inset 0px 0px 0px 10px rgba(255, 255, 255, 0);
-  width: 425px;
-  height: 325px;
+  width: 600px;
+  height: 450px;
   margin: 0% 15px 2.5% 15px;
+  @include laptop{
+    width: 425px;
+    height: 325px;
+  }
   display: flex;
   justify-content: center;
   align-items: center;
@@ -309,7 +329,10 @@ form{
     cursor: pointer;
     color: $baseWhite;
     letter-spacing: 0.75rem;
-    font-size: $baseSize*2;
+    font-size: $baseSize*2.5;
+    @include laptop{
+      font-size: $baseSize*1.75;
+    }
   }
   &:hover{
     -webkit-box-shadow: inset 0px 0px 0px 10px $baseGreen;

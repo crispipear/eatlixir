@@ -310,19 +310,27 @@ input:-webkit-autofill:focus {
 }
 
 button[type="submit"], #signup {
-  width: 200px;
+  width: 240px;
   margin-top: 5%;
   padding: 2.5%;
   background-color: transparent;
 }
 
 #signup {
-  margin-left: 5%;
+  margin-left: 20px;
+}
+
+#signup a {
+  letter-spacing: 0.15rem;
+}
+
+#signup:hover a {
+  color: #309c8d;
 }
 
 form {
   margin-top: -7.5%;
-  width: 50%;
+  width: 500px;
 }
 
 .foodinfo {
@@ -344,18 +352,25 @@ form {
 }
 
 .foodinfo img {
-  max-width: 300px !important;
+  max-width: 90%;
 }
 
 .foodinfo h3 {
   margin: 5% 0% 2.5% 0%;
   padding: 0%;
   color: #309c8d;
+  font-size: 2rem;
+}
+
+@media (min-width: 1024px) and (max-width: 1550px) {
+  .foodinfo h3 {
+    font-size: 1.75rem;
+  }
 }
 
 .foodinfo h5 {
   margin: 2.5% 0% 2.5% 0%;
-  font-size: 0.95rem;
+  font-size: 1.05rem;
 }
 
 .foodinfo h5 span {
@@ -363,9 +378,21 @@ form {
   margin-right: 2.5%;
 }
 
+@media (min-width: 1024px) and (max-width: 1550px) {
+  .foodinfo h5 {
+    font-size: 0.915rem;
+  }
+}
+
 .foodinfo p {
-  font-size: 1.05rem;
+  font-size: 1.25rem;
   margin: 0% 0% 1.75% 0%;
+}
+
+@media (min-width: 1024px) and (max-width: 1550px) {
+  .foodinfo p {
+    font-size: 1rem;
+  }
 }
 
 .foodinfo p span {
@@ -375,8 +402,8 @@ form {
 
 .foodcategory {
   -webkit-box-shadow: inset 0px 0px 0px 10px rgba(255, 255, 255, 0);
-  width: 425px;
-  height: 325px;
+  width: 600px;
+  height: 450px;
   margin: 0% 15px 2.5% 15px;
   display: -webkit-box;
   display: flex;
@@ -388,11 +415,24 @@ form {
   float: left;
 }
 
+@media (min-width: 1024px) and (max-width: 1550px) {
+  .foodcategory {
+    width: 425px;
+    height: 325px;
+  }
+}
+
 .foodcategory span {
   cursor: pointer;
   color: #fcfcfc;
   letter-spacing: 0.75rem;
-  font-size: 2rem;
+  font-size: 2.5rem;
+}
+
+@media (min-width: 1024px) and (max-width: 1550px) {
+  .foodcategory span {
+    font-size: 1.75rem;
+  }
 }
 
 .foodcategory:hover {

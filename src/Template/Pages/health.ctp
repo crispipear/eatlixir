@@ -1,7 +1,4 @@
 <?php $title = 'Eatlixir';?>
-<style>footer{
-  display: none;
-}</style>
 <title>
   <?php $this->assign('title', 'Eatlixir'); ?>
 </title>
@@ -113,4 +110,5 @@
             <td valign="top" class="selector_container bordered-box box-white width25"><div id="diagnosisList"></div></td>
         </tr>
     </table>
+    <span>API powered by <?= $this->Html->link('ApiMedic','http://apimedic.com',array('target' => '_blank'))?>, priaid inc.</span>
 </section>

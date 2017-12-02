@@ -659,7 +659,7 @@ var mode = "diagnosis";
         });
 
         skinLink.append(skinImage);
-        // skinLink.append(skin_Text);
+        skinLink.append(skin_Text);
 
         _plugin.find(".avatar-container").append(skinLink);
     }
@@ -1942,8 +1942,8 @@ var mode = "diagnosis";
         _loader = jQuery("<div/>", { "id": "diagnosisLoader", "class": "loader" });
         _loader.hide();
         _plugin.append(_loader);
-        _plugin.append(_diagnosisList);
         _plugin.append(_diagnosisMessage);
+        _plugin.append(_diagnosisList);
 
         _createIssueInfoPage();
     }

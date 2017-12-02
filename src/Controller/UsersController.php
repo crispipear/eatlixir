@@ -18,6 +18,12 @@ class UsersController extends AppController
      *
      * @return \Cake\Http\Response|void
      */
+     // public function beforeFilter(Event $event)
+     // {
+     //    parent::beforeFilter($event);
+     //    // Allow all users to index and view.
+     //    $this->Auth->allow(['index', 'view']);
+     //  }
     public function index()
     {
         $users = $this->paginate($this->Users);
@@ -25,7 +31,6 @@ class UsersController extends AppController
         $this->set(compact('users'));
         $this->set('_serialize', ['users']);
     }
-
     public function initialize()
 	{
     	parent::initialize();

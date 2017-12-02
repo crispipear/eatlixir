@@ -5,6 +5,7 @@
  */
 ?>
 <section>
+<?php if ($currentRole === 'admin'): ?>
 <div class="users index large-9 medium-8 columns content">
     <h3><?= __('Users') ?></h3>
     <button class="cta-button"><?= $this->Html->link(__('New User'), ['action' => 'add']) ?></button>
@@ -59,4 +60,8 @@
         <p><?= $this->Paginator->counter(['format' => __('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')]) ?></p>
     </div>
 </div>
+<?php endif; ?>
+<?php if ($currentRole === 'user'): ?>
+  <h3>You are not authorized to view this page</h3>
+<?php endif; ?>
 </section>
