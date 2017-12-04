@@ -5,15 +5,18 @@
  */
 ?>
 <section>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('Edit Ingredient'), ['action' => 'edit', $ingredient->id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete Ingredient'), ['action' => 'delete', $ingredient->id], ['confirm' => __('Are you sure you want to delete # {0}?', $ingredient->id)]) ?> </li>
-        <li><?= $this->Html->link(__('List Ingredients'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Ingredient'), ['action' => 'add']) ?> </li>
-    </ul>
-</nav>
+  <?php if ($currentRole === 'admin'): ?>
+    <div class="box-wrapper">
+    <button class="cta-button settings"><?= $this->Html->link(__('Edit'), ['action' => 'edit', $ingredient->id]) ?></button>
+    <button class="cta-button settings"><?= $this->Html->link(__('New'), ['action' => 'add']) ?></button>
+    <button class="cta-button settings"><?= $this->Html->link(__('List'), ['action' => 'index']) ?></button>
+    <button class="cta-button settings"><?= $this->Form->postLink(
+      __('Delete'),
+      ['action' => 'delete', $user->id],
+      ['confirm' => __('Are you sure you want to delete # {0}?', $user->id)]
+      )
+      ?></button>
+    </div>
 <div class="ingredients view large-9 medium-8 columns content">
     <h3><?= h($ingredient->id) ?></h3>
     <table class="vertical-table">
@@ -59,4 +62,7 @@
         </tr>
     </table>
 </div>
+<?php else :?>
+<h3>You are not authorized for this action</h3>
+<?php endif ?>
 </section>

@@ -5,22 +5,11 @@
  */
 ?>
 <section>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Form->postLink(
-                __('Delete'),
-                ['action' => 'delete', $ingredient->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $ingredient->id)]
-            )
-        ?></li>
-        <li><?= $this->Html->link(__('List Ingredients'), ['action' => 'index']) ?></li>
-    </ul>
-</nav>
+  <?php if ($currentRole === 'admin'): ?>
 <div class="ingredients form large-9 medium-8 columns content">
+    <h3>Edit Ingredient</h3><br>
     <?= $this->Form->create($ingredient) ?>
     <fieldset>
-        <legend><?= __('Edit Ingredient') ?></legend>
         <?php
             echo $this->Form->control('common_name');
             echo $this->Form->control('scientific_name');
@@ -36,4 +25,7 @@
     <?= $this->Form->button(__('Submit')) ?>
     <?= $this->Form->end() ?>
 </div>
+<?php else: ?>
+  <h3>You are not authorized for this action</h3>
+<?php endif ?>
 </section>

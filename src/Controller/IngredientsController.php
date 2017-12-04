@@ -18,17 +18,17 @@ class IngredientsController extends AppController
      *
      * @return \Cake\Http\Response|void
      */
+     public function initialize()
+     {
+       parent::initialize();
+       $this->Auth->allow(['index']);
+     }
     public function index()
     {
         $ingredients = $this->paginate($this->Ingredients);
 
         $this->set(compact('ingredients'));
         $this->set('_serialize', ['ingredients']);
-    }
-    public function initialize()
-    {
-      parent::initialize();
-      $this->Auth->allow(['index']);
     }
     /**
      * View method

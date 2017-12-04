@@ -445,4 +445,8 @@ form {
   -webkit-box-shadow: inset 0px 0px 0px 10px #309c8d;
 }
 
+.settings {
+  width: inherit;
+}
+
 /*# sourceMappingURL=app.css.map */
