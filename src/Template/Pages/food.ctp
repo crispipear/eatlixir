@@ -9,7 +9,7 @@ footer{
 </style>
 <section>
 <div class="box-wrapper" style="margin-top: -2.5%">
-  <?= $this->Html->link('<span>INGREDIENTS</span>',array('controller' => 'Ingredients', 'action' => 'index'),array('class'=>'foodcategory', 'escape' => false)) ?>
+  <?= $this->Html->link('<span>HERBS</span>',array('controller' => 'Ingredients', 'action' => 'index'),array('class'=>'foodcategory', 'escape' => false)) ?>
   <?= $this->Html->link('<span>RECIPES</span>',array('controller' => 'Ingredients', 'action' => 'index'),array('class'=>'foodcategory', 'escape' => false)) ?>
 </div>
 </section>

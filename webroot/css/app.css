@@ -96,11 +96,16 @@ nav li:hover {
   border: 1px solid #b5b5b5;
   padding: 0.75% 1.25% 0.75% 1.25%;
   color: #404040;
+  width: 100%;
 }
 
 .cta-button:hover, button[type="submit"]:hover, #signup:hover {
   background-color: transparent;
   border-color: #309c8d;
+  color: #309c8d;
+}
+
+.cta-button:hover a, button[type="submit"]:hover a, #signup:hover a {
   color: #309c8d;
 }
 
@@ -180,8 +185,9 @@ nav li:hover {
 }
 
 .content #home .cta-button, .content #home button[type="submit"], .content #home #signup {
+  width: inherit;
   left: 0.75%;
-  top: 58%;
+  top: 60%;
 }
 
 footer {
