@@ -11,7 +11,7 @@
 <?php foreach ($medrecipes as $medrecipe): ?>
 <div class="foodinfo">
   <div class="left">
-  <?= $this->Html->image('http://i0.kym-cdn.com/photos/images/facebook/000/674/934/422.jpg', ['alt' => 'CakePHP'])?>
+    <?= $this->Html->image($medrecipe->img, ['alt' => 'CakePHP'])?>
   <?php if ($currentRole === 'admin'): ?>
   <h3><?= h($medrecipe->name) ?> <?=  $this->Html->link('<i class="fa fa-pencil-square-o" aria-hidden="true"></i>', ['action' => 'view/'.$medrecipe->id], array('escape' => false))?></h3>
 <?php else :?>

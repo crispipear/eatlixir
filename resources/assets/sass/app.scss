@@ -178,10 +178,14 @@ footer{
   }
 }
 .box-wrapper{
-  width: inherit;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: top;
+  flex-wrap: wrap;
+  img{
+    margin: 1.25% 0% 1.25% 0%;
+  }
 }
 .about-box{
   text-align: center;
