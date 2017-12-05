@@ -4,7 +4,6 @@ $baseGreen: #309c8d;
 $baseWhite: #fcfcfc;
 $baseBlue: #2EA1B3;
 $baseSize: 1rem;
-
 *{
   letter-spacing: 0.035rem;
   font-family: 'Roboto', sans-serif;
@@ -35,6 +34,7 @@ nav{
   }
   .nav-right{
     float:right;
+    margin-top: -5px!important;
   }
   ul{
     margin: auto;
@@ -50,16 +50,12 @@ nav{
     text-transform: uppercase;
     display: inline-block!important;
     padding: 2.5% 2% 1% 2%;
-    border-bottom: transparent 2px solid;
     a{
       letter-spacing: 0.15rem;
-      margin-bottom: -2.5px!important;
+      padding: 10px;
     }
     &:hover a, &:hover i{
       color: $baseGreen;
-    }
-    &:hover{
-      border-color: $baseGreen;
     }
   }
 }
@@ -90,6 +86,13 @@ nav{
   }
   &:hover a{
     color: $baseGreen;
+  }
+}
+button{
+  &:hover, &:focus, &:active{
+    outline: none!important;
+    background-color: transparent!important;
+    color: $baseGreen!important;
   }
 }
 .content{
@@ -142,7 +145,7 @@ nav{
         width: 350px;
       }
     }
-    .cta-button{
+    #scroll{
       width: inherit;
       left: 0.75%;
       top: 60%;
@@ -215,9 +218,7 @@ footer{
   background-image: url('../img/about-banner.png');
   h5{
     -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.05);
-    margin-top: -2.5%;
     background-color: rgba($baseWhite, 0.65);
-    height: $baseSize*3.25;
     padding: 1.5%;
     display: inline;
     font-size: $baseSize*1.15;

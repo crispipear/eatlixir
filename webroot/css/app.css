@@ -38,6 +38,7 @@ nav .nav-left {
 
 nav .nav-right {
   float: right;
+  margin-top: -5px !important;
 }
 
 nav ul {
@@ -58,20 +59,15 @@ nav li {
   text-transform: uppercase;
   display: inline-block !important;
   padding: 2.5% 2% 1% 2%;
-  border-bottom: transparent 2px solid;
 }
 
 nav li a {
   letter-spacing: 0.15rem;
-  margin-bottom: -2.5px !important;
+  padding: 10px;
 }
 
 nav li:hover a, nav li:hover i {
   color: #309c8d;
-}
-
-nav li:hover {
-  border-color: #309c8d;
 }
 
 .container {
@@ -107,6 +103,12 @@ nav li:hover {
 
 .cta-button:hover a, button[type="submit"]:hover a, #signup:hover a {
   color: #309c8d;
+}
+
+button:hover, button:focus, button:active {
+  outline: none !important;
+  background-color: transparent !important;
+  color: #309c8d !important;
 }
 
 .content {
@@ -184,7 +186,7 @@ nav li:hover {
   }
 }
 
-.content #home .cta-button, .content #home button[type="submit"], .content #home #signup {
+.content #home #scroll {
   width: inherit;
   left: 0.75%;
   top: 60%;
@@ -278,9 +280,7 @@ footer li a i:hover {
 
 #banner h5 {
   -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.05);
-  margin-top: -2.5%;
   background-color: rgba(252, 252, 252, 0.65);
-  height: 3.25rem;
   padding: 1.5%;
   display: inline;
   font-size: 1.15rem;

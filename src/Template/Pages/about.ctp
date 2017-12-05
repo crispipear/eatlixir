@@ -12,17 +12,16 @@
     In addition, the Chinese herbology studies believe that some food ingredients have their own characteristics and perform different tasks on the human body.
     <div class="box-wrapper">
     <div class="about-box">
-      <div class="about-img"></div>
-      <p>Look around the food directory to get insights about commonly used herbs and recipes in Chinese medicinal diets.
+      <i class="fa fa-cutlery fa-5x" aria-hidden="true"></i>
+      <p>Look around the food directory to see commonly used herbs and recipes in Chinese medicinal diets.
       </p>
     </div>
     <div class="about-box">
-      <div class="about-img"></div>
-      <p>Start taking your personal body health test by creating a new account. Get an insight on your body health type!
-    </p>
+      <i class="fa fa-heart fa-5x" aria-hidden="true"></i>
+      <p>Save for favorites</p>
     </div>
     <div class="about-box">
-      <div class="about-img"></div>
+      <i class="fa fa-stethoscope fa-5x" aria-hidden="true"></i>
       <p>Use the symptoms checker to find out what your possible health issue is.
       </p>
     </div>
