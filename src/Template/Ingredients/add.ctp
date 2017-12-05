@@ -4,13 +4,12 @@
  * @var \App\Model\Entity\Ingredient $ingredient
  */
 ?>
-<section>
+<section style="padding-top: 10%">
   <?php if ($currentRole === 'admin'): ?>
     <div class="ingredients form large-9 medium-8 columns content">
-      <h3>Add new herb</h3>
-      <br>
     <?= $this->Form->create($ingredient) ?>
     <fieldset>
+      <legend><?= __('Add Ingredient') ?></legend>
         <?php
             echo $this->Form->control('common_name');
             echo $this->Form->control('scientific_name');

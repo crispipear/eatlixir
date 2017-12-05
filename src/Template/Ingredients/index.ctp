@@ -4,7 +4,7 @@
  * @var \App\Model\Entity\Ingredient[]|\Cake\Collection\CollectionInterface $ingredients
  */
 ?>
-<section>
+<section style="padding-top:10%">
   <?php if ($currentRole === 'admin'): ?>
     <?= '<button class="cta-button settings">' . $this->Html->link(__('New Herb'), ['action' => 'add']) . '</button>'?>
   <?php endif ?>

@@ -41,12 +41,12 @@
     $output = '<ul>';
     $output .= '<li class="nav-left">' . $this->Html->link('home','/',array('class' => 'nav-left')) . '</li>';
     $output .= '<li class="nav-left">' . $this->Html->link('food',array('controller' => 'pages', 'action' => 'display', 'food'),array('class' => 'nav-left')) . '</li>';
+    $output .= '<li class="nav-left">' . $this->Html->link('health',array('controller' => 'pages', 'action' => 'display', 'health'),array('class' => 'nav-left')) . '</li>';
     if (!is_null($this->request->session()->read('Auth.User.username'))) {
-      $output .= '<li class="nav-left">' . $this->Html->link('health',array('controller' => 'pages', 'action' => 'display', 'health'),array('class' => 'nav-left')) . '</li>';
       $output .= '<li class="nav-right">' . $this->Html->link('<i class="fa fa-sign-out" aria-hidden="true"></i>',array('controller' => 'users', 'action' => 'logout'),array('class' => 'nav-right', 'escape'=>false)) . '</li>';
       $output .= '<li class="nav-right">' . $this->Html->link('<i class="fa fa-user" aria-hidden="true"></i>',array('controller' => 'pages', 'action' => '', 'discover'),array('class' => 'nav-right', 'escape'=>false)) . '</li>';
     } else {
-      $output .= '<li class="nav-right">' . $this->Html->link('<i class="fa fa-sign-in" aria-hidden="true"></i>',array('controller' => 'users', 'action' => 'login'),array('class' => 'nav-right', 'escape'=>false)) . '</li>';
+      $output .= '<li class="nav-right">' . $this->Html->link('<i class="fa fa-sign-in fa-fw" aria-hidden="true"></i> LOGIN',array('controller' => 'users', 'action' => 'login'),array('class' => 'nav-right', 'escape'=>false)) . '</li>';
     }
     $output .= '</ul>';
     echo $output;
@@ -58,8 +58,8 @@
   </div>
   <footer>
     <?php
-    $output = '<ul> Copyright Su Li 2017';
-    $output .= '<li>' . $this->Html->link('<i class="fa fa-share" aria-hidden="true"></i>','http://suyli.me',array('escape'=>false, 'target'=>'_blank')) . '</li>';
+    $output = '<ul> Copyright 2017 | ';
+    $output .= '<span style="font-weight:bold">' . $this->Html->link('Su Li','http://suyli.me',array('escape'=>false, 'target'=>'_blank')) . '</span>';
     $output .= '<li>' . $this->Html->link('<i class="fa fa-github" aria-hidden="true"></i>','https://github.com/crispipear/eatlixir',array('escape'=>false, 'target'=>'_blank')) . '</li>';
     $output .= '</ul>';
     echo $output;

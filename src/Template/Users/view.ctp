@@ -49,10 +49,10 @@
         </tr>
     </table>
     <?php if ($currentRole === 'admin'): ?>
-    <button class="cta-button"><?= $this->Html->link(__('Edit User'), ['action' => 'edit', $user->id]) ?></button>
-    <button class="cta-button"><?= $this->Html->link(__('New User'), ['action' => 'add']) ?></button>
-    <button class="cta-button"><?= $this->Html->link(__('List Users'), ['action' => 'index']) ?></button>
-    <button class="cta-button"><?= $this->Form->postLink(
+    <button class="cta-button settings"><?= $this->Html->link(__('Edit User'), ['action' => 'edit', $user->id]) ?></button>
+    <button class="cta-button settings"><?= $this->Html->link(__('New User'), ['action' => 'add']) ?></button>
+    <button class="cta-button settings"><?= $this->Html->link(__('List Users'), ['action' => 'index']) ?></button>
+    <button class="cta-button settings"><?= $this->Form->postLink(
             __('Delete'),
             ['action' => 'delete', $user->id],
             ['confirm' => __('Are you sure you want to delete # {0}?', $user->id)]
@@ -60,11 +60,11 @@
     ?></button>
     <?php endif; ?>
     <?php if (($currentRole === 'user')&&($currentID == $user->id)): ?>
-      <button class="cta-button"><?= $this->Html->link(__('Edit User'), ['action' => 'edit', $user->id]) ?></button>
-      <button class="cta-button"><?= $this->Form->postLink(
+      <button class="cta-button settings"><?= $this->Html->link(__('Edit User'), ['action' => 'edit', $user->id]) ?></button>
+      <button class="cta-button settings"><?= $this->Form->postLink(
               __('Delete'),
               ['action' => 'delete', $user->id],
-              ['confirm' => __('Are you sure you want to delete # {0}?', $user->id)]
+              ['confirm' => __('Are you sure you want to delete this account?')]
           )
       ?></button>
     <?php endif; ?>

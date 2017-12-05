@@ -49,7 +49,7 @@ nav{
     cursor: pointer;
     text-transform: uppercase;
     display: inline-block!important;
-    padding: 2.5% 2% 1% 2%;
+    padding: 2.5% 1.5% 1% 1.5%;
     a{
       letter-spacing: 0.15rem;
       padding: 10px;
@@ -80,19 +80,19 @@ nav{
   color: $baseColor;
   width: 100%;
   &:hover{
-    background-color: transparent;
+    background-color: $baseGreen;
     border-color: $baseGreen;
-    color: $baseGreen;
+    color: $baseWhite;
   }
   &:hover a{
-    color: $baseGreen;
+    color: $baseWhite;
   }
 }
 button{
   &:hover, &:focus, &:active{
     outline: none!important;
-    background-color: transparent!important;
-    color: $baseGreen!important;
+    background-color: $baseGreen!important;
+    color: $baseWhite!important;
   }
 }
 .content{
@@ -112,7 +112,6 @@ button{
     justify-content: center;
     align-items: center;
     position: relative;
-    padding-top: 10%;
   }
   #home{
     margin-bottom: 0%;
@@ -148,7 +147,7 @@ button{
     #scroll{
       width: inherit;
       left: 0.75%;
-      top: 60%;
+      top: 57.5%;
     }
   }
 }
@@ -169,7 +168,7 @@ footer{
     cursor: pointer;
     text-transform: uppercase;
     display: inline-block!important;
-    padding: 1.5% 0% 1.5% 0.75%;
+    padding: 5% 0% 1.5% 0.75%;
     i{
       font-size:  $baseSize*1.125!important;
     }
@@ -185,19 +184,12 @@ footer{
   align-items: top;
 }
 .about-box{
+  text-align: center;
   width: 30%;
 }
-.about-img{
-  width: 100%;
-  height: 30vh;
-  background-color: gray;
-  margin-bottom: 7.5%;
-}
 #userinfo{
+  width: 20%;
   text-align: center;
-  position: fixed;
-  top: 20%;
-  width: 15%;
   h5{
     font-size: $baseSize*1.25;
     text-align: center;
@@ -261,9 +253,6 @@ button[type="submit"], #signup{
   a{
     letter-spacing: 0.15rem;
   }
-  &:hover a{
-    color: $baseGreen;
-  }
 }
 form{
   margin-top: -7.5%;
@@ -318,20 +307,23 @@ form{
   }
 }
 .foodcategory{
-  -webkit-box-shadow:  inset 0px 0px 0px 10px rgba(255, 255, 255, 0);
+  background-repeat: no-repeat;
+  background-size: contain;
+  -webkit-box-shadow:  0px 0px 15px 0px rgba(0, 0, 0, 0.05);
   width: 600px;
-  height: 450px;
+  height: 400px;
   margin: 0% 15px 2.5% 15px;
   @include laptop{
-    width: 425px;
-    height: 325px;
+    width: 450px;
+    height: 300px;
   }
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #0d0d0d;
   float: left;
   span{
+    background-color: rgba($baseColor, 0.35);
+    padding: 10px;
     cursor: pointer;
     color: $baseWhite;
     letter-spacing: 0.75rem;
@@ -341,9 +333,46 @@ form{
     }
   }
   &:hover{
-    -webkit-box-shadow: inset 0px 0px 0px 10px $baseGreen;
+    filter: brightness(80%);
+  }
+}
+#fc-herbs{
+  background-image: url('../img/food-herb.png');
+}
+#fc-recipes{
+  background-image: url('../img/food-recipes.png');
+}
+#signuptoday{
+  h3,a{
+    left: 10%;
+    position: absolute;
+  }
+  h3{
+    top: 32.5%;
+    @include laptop{
+      font-size: $baseSize*1.25;
+    }
+  }
+  a{
+    top: 47.5%;
+  }
+  min-height: 450px!important;
+  background-image: url('../img/bg.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  @include laptop{
+    min-height: 350px!important;
   }
 }
 .settings{
-  width: inherit;
+  width: auto!important;
+}
+input:-webkit-autofill {
+    -webkit-box-shadow: inset 0 0 0px 9999px white!important;
+}
+.fa-pencil-square-o{
+  font-size: $baseSize*1.25;
+  &:hover{
+    color: $baseGreen;
+  }
 }

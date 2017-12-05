@@ -4,19 +4,9 @@
  * @var \App\Model\Entity\Medrecipe $medrecipe
  */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Form->postLink(
-                __('Delete'),
-                ['action' => 'delete', $medrecipe->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $medrecipe->id)]
-            )
-        ?></li>
-        <li><?= $this->Html->link(__('List Medrecipes'), ['action' => 'index']) ?></li>
-    </ul>
-</nav>
-<div class="medrecipes form large-9 medium-8 columns content">
+<section style="padding-top: 10%">
+  <?php if ($currentRole === 'admin'): ?>
+  <div class="medrecipes form large-9 medium-8 columns content">
     <?= $this->Form->create($medrecipe) ?>
     <fieldset>
         <legend><?= __('Edit Medrecipe') ?></legend>
@@ -32,5 +22,15 @@
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
+    <button type="submit" class="cta-button"><?= $this->Form->postLink(
+            __('Delete'),
+            ['action' => 'delete', $medrecipe->id],
+            ['confirm' => __('Are you sure you want to delete {0}?', $medrecipe->name)]
+        )
+    ?></button>
     <?= $this->Form->end() ?>
 </div>
+<?php else: ?>
+  <h3>You are not authorized for this action</h3>
+<?php endif ?>
+</section>

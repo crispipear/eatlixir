@@ -4,12 +4,12 @@
  * @var \App\Model\Entity\Medrecipe $medrecipe
  */
 ?>
-<section>
+<section style="padding-top: 10%">
 <?php if ($currentRole === 'admin'): ?>
 <div class="medrecipes form large-9 medium-8 columns content">
-  <h3>Add new recipe</h3><br>
     <?= $this->Form->create($medrecipe) ?>
     <fieldset>
+      <legend><?= __('Add Medrecipe') ?></legend>
         <?php
             echo $this->Form->control('name');
             echo $this->Form->control('chinese_name');

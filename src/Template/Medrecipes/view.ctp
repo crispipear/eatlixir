@@ -6,17 +6,6 @@
 ?>
 <section>
   <?php if ($currentRole === 'admin'): ?>
-    <div class="box-wrapper">
-    <button class="cta-button settings"><?= $this->Html->link(__('Edit'), ['action' => 'edit', $medrecipe->id]) ?></button>
-    <button class="cta-button settings"><?= $this->Html->link(__('New'), ['action' => 'add']) ?></button>
-    <button class="cta-button settings"><?= $this->Html->link(__('List'), ['action' => 'index']) ?></button>
-    <button class="cta-button settings"><?= $this->Form->postLink(
-      __('Delete'),
-      ['action' => 'delete', $user->id],
-      ['confirm' => __('Are you sure you want to delete # {0}?', $user->id)]
-      )
-      ?></button>
-    </div>
 <div class="medrecipes view large-9 medium-8 columns content">
     <h3><?= h($medrecipe->name) ?></h3>
     <table class="vertical-table">
@@ -57,6 +46,15 @@
             <td><?= $this->Number->format($medrecipe->id) ?></td>
         </tr>
     </table>
+    <button class="cta-button settings"><?= $this->Html->link(__('Edit'), ['action' => 'edit', $medrecipe->id]) ?></button>
+    <button class="cta-button settings"><?= $this->Html->link(__('New'), ['action' => 'add']) ?></button>
+    <button class="cta-button settings"><?= $this->Html->link(__('List'), ['action' => 'index']) ?></button>
+    <button class="cta-button settings"><?= $this->Form->postLink(
+      __('Delete'),
+      ['action' => 'delete', $medrecipe->id],
+      ['confirm' => __('Are you sure you want to delete {0}?', $medrecipe->name)]
+      )
+      ?></button>
 </div>
 <?php else : ?>
 <h3>You are not authorized for this action</h3>

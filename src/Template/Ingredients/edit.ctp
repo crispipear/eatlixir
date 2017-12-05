@@ -4,12 +4,13 @@
  * @var \App\Model\Entity\Ingredient $ingredient
  */
 ?>
-<section>
+<section style="padding-top: 10%">
   <?php if ($currentRole === 'admin'): ?>
 <div class="ingredients form large-9 medium-8 columns content">
-    <h3>Edit Ingredient</h3><br>
+    <!-- <h3>Edit Ingredient</h3><br> -->
     <?= $this->Form->create($ingredient) ?>
     <fieldset>
+      <legend><?= __('Edit Ingredient') ?></legend>
         <?php
             echo $this->Form->control('common_name');
             echo $this->Form->control('scientific_name');
@@ -23,6 +24,12 @@
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
+    <button type="submit" class="cta-button"><?= $this->Form->postLink(
+            __('Delete'),
+            ['action' => 'delete', $ingredient->id],
+            ['confirm' => __('Are you sure you want to delete {0}?', $ingredient->common_name)]
+        )
+    ?></button>
     <?= $this->Form->end() ?>
 </div>
 <?php else: ?>

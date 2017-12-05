@@ -1,4 +1,3 @@
-<?php $title = 'Eatlixir';?>
 <title>
   <?php $this->assign('title', 'Eatlixir'); ?>
 </title>
@@ -96,7 +95,7 @@
             });
         });
     </script>
-<section>
+<section style="padding-top:10%">
     <table class="container-table">
         <tr>
             <td valign="middle" colspan="2" class="td-header box-white bordered-box width50"><h4 class="header" id="selectSymptomsTitle"><span class="badge pull-left badge-primary visible-lg margin5R">1</span></h4></td>
