@@ -4,7 +4,7 @@
  * @var \App\Model\Entity\Medrecipe[]|\Cake\Collection\CollectionInterface $medrecipes
  */
 ?>
-<section style="padding-top:10%">
+<section>
 <?php if ($currentRole === 'admin'): ?>
   <?= '<button class="cta-button settings">' . $this->Html->link(__('New Recipe'), ['action' => 'add']) . '</button>'?>
 <?php endif ?>

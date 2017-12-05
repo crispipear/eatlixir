@@ -36,7 +36,7 @@
     <?= $this->fetch('script') ?>
 </head>
 <body>
-  <nav>
+  <nav>    
     <?php
     $output = '<ul>';
     $output .= '<li class="nav-left">' . $this->Html->link('home','/',array('class' => 'nav-left')) . '</li>';

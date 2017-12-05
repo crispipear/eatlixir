@@ -49,7 +49,7 @@ nav{
     cursor: pointer;
     text-transform: uppercase;
     display: inline-block!important;
-    padding: 2.5% 1.5% 1% 1.5%;
+    padding: 2.5% 2.5% 1% 0%;
     a{
       letter-spacing: 0.15rem;
       padding: 10px;
@@ -96,8 +96,8 @@ button{
   }
 }
 .content{
-  width: 96.25%;
-  margin:0% auto 0% auto;
+  width: 100%;
+  margin:0%;
   padding: 0%;
   margin-bottom:0%;
   position: relative;
@@ -106,6 +106,7 @@ button{
     color: lighten($baseColor, 15%);
   }
   section{
+    padding-top: 10%;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -119,7 +120,7 @@ button{
       position: absolute;
     }
     h1{
-      left: 0%;
+      left: 1%;
       top: 30%;
       font-size: $baseSize*8.5;
       letter-spacing: 0.25rem;
@@ -131,7 +132,7 @@ button{
       }
     }
     h5{
-      left: 0.75%;
+      left: 1.75%;
       top: 50%;
       @include laptop{
         font-size: $baseSize*1.25
@@ -146,8 +147,8 @@ button{
     }
     #scroll{
       width: inherit;
-      left: 0.75%;
-      top: 57.5%;
+      left: 1.75%;
+      top: 60%;
     }
   }
 }
@@ -316,10 +317,9 @@ form{
   -webkit-box-shadow:  0px 0px 15px 0px rgba(0, 0, 0, 0.05);
   width: 600px;
   height: 400px;
-  margin: 0% 15px 2.5% 15px;
   @include laptop{
-    width: 450px;
-    height: 300px;
+    width: 468px;
+    height: 312px;
   }
   display: flex;
   justify-content: center;
@@ -341,9 +341,11 @@ form{
   }
 }
 #fc-herbs{
+  margin-right: 15px;
   background-image: url('../img/food-herb.png');
 }
 #fc-recipes{
+  margin-left: 15px;
   background-image: url('../img/food-recipes.png');
 }
 #signuptoday{

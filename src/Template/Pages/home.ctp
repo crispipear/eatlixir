@@ -23,26 +23,5 @@
     <?= $this->Html->link('SIGN UP TODAY','/',array('class' => 'cta-button settings', 'escape'=>false))?>
 </section>
 <script>
-! function() {
-    var e = !1;
-    $(document).on("mousewheel DOMMouseScroll", function(t) {
-        if (t.preventDefault(), !e) {
-            e = !0, setTimeout(function() {
-                e = !1
-            }, 100);
-            var n = t.originalEvent.wheelDelta || -t.originalEvent.detail,
-                o = document.getElementsByTagName("section");
-            if (n < 0)
-                for (l = 0; l < o.length && !((i = o[l].getClientRects()[0].top) >= 40); l++);
-            else
-                for (var l = o.length - 1; l >= 0; l--) {
-                    var i = o[l].getClientRects()[0].top;
-                    if (i < -20) break
-                }
-            l >= 0 && l < o.length && $("html,body").animate({
-                scrollTop: o[l].offsetTop
-            }, 750)
-        }
-    })
-}();
+!function(){var e=!1;$(document).on("mousewheel DOMMouseScroll",function(t){if(t.preventDefault(),!e){e=!0,setTimeout(function(){e=!1},50);var n=t.originalEvent.wheelDelta||-t.originalEvent.detail,o=document.getElementsByTagName("section");if(0>n)for(l=0;l<o.length&&!((i=o[l].getClientRects()[0].top)>=40);l++);else for(var l=o.length-1;l>=0;l--){var i=o[l].getClientRects()[0].top;if(-20>i)break}l>=0&&l<o.length&&$("html,body").animate({scrollTop:o[l].offsetTop},750)}})}();
 </script>

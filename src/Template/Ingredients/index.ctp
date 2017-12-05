@@ -4,7 +4,7 @@
  * @var \App\Model\Entity\Ingredient[]|\Cake\Collection\CollectionInterface $ingredients
  */
 ?>
-<section style="padding-top:10%">
+<section>
   <?php if ($currentRole === 'admin'): ?>
     <?= '<button class="cta-button settings">' . $this->Html->link(__('New Herb'), ['action' => 'add']) . '</button>'?>
   <?php endif ?>
@@ -27,5 +27,6 @@
         <p><span>Helps with: </span><?= h($ingredient->symptoms_key) ?></p>
       </div>
     </div>
+
   <?php endforeach; ?>
 </section>
