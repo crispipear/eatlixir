@@ -27,6 +27,14 @@ a, a i {
   text-decoration: none;
 }
 
+span a {
+  font-weight: bold;
+}
+
+span a:hover {
+  color: #5dc6b3;
+}
+
 button {
   text-align: center;
   cursor: pointer;
@@ -40,7 +48,7 @@ nav {
 }
 
 nav i {
-  font-size: 1.5rem !important;
+  font-size: 1.15rem !important;
 }
 
 nav .nav-left {
@@ -277,8 +285,16 @@ label {
   font-size: 1.15rem;
 }
 
+@media (min-width: 1024px) and (max-width: 1550px) {
+  label {
+    margin-top: 5%;
+    font-size: 1rem;
+  }
+}
+
 input {
-  background-color: transparent;
+  font-size: 1rem;
+  background-color: transparent !important;
   width: 100%;
   margin-top: 0.75%;
   padding: 2.5% 0% 2.5% 0%;
@@ -294,6 +310,14 @@ input:focus {
   border-color: #5dc6b3 !important;
 }
 
+@media (min-width: 1024px) and (max-width: 1550px) {
+  input {
+    margin-top: 0.5%;
+    padding: 1.75% 0% 1.75% 0%;
+    font-size: 0.9rem;
+  }
+}
+
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus {
@@ -304,6 +328,14 @@ button[type="submit"], #signup {
   width: 245px;
   margin-top: 12.5%;
   padding: 2.5%;
+}
+
+@media (min-width: 1024px) and (max-width: 1550px) {
+  button[type="submit"], #signup {
+    margin-top: 7.5%;
+    padding: 1.75%;
+    font-size: 0.9rem;
+  }
 }
 
 #signup {
@@ -483,6 +515,7 @@ button[type="submit"], #signup {
 
 .settings {
   width: inherit;
+  float: left;
 }
 
 .fa-pencil-square-o {
@@ -504,6 +537,12 @@ button[type="submit"], #signup {
   font-size: 5rem;
 }
 
+@media (min-width: 1024px) and (max-width: 1550px) {
+  #accountinfo h3 {
+    font-size: 3.5rem;
+  }
+}
+
 #accountinfo p {
   font-size: 1.5rem;
   line-height: 2.5rem;
@@ -514,10 +553,50 @@ button[type="submit"], #signup {
   margin-right: 2.5%;
 }
 
+@media (min-width: 1024px) and (max-width: 1550px) {
+  #accountinfo p {
+    font-size: 1.25rem;
+  }
+}
+
 #accountinfo button {
+  width: 50%;
   text-align: center;
   padding: 2.5%;
   margin-top: 5%;
+}
+
+#foodinfo .info {
+  margin: auto;
+  width: 500px;
+  text-align: left;
+  margin-top: 7.5%;
+}
+
+#foodinfo h3 {
+  margin-top: 0%;
+  color: #5dc6b3;
+  font-size: 2.5rem;
+}
+
+#foodinfo p {
+  padding: 1.5%;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  border-bottom: 1px #e6e6e6 solid;
+}
+
+#foodinfo p span {
+  font-weight: bold;
+  margin-right: 5%;
+}
+
+#foodinfo button {
+  width: 48%;
+  margin-left: 1%;
+  text-align: center;
+  padding: 1.75%;
+  margin-top: 2.5%;
 }
 
 .gradient {

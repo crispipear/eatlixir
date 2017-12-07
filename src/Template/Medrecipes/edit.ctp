@@ -6,10 +6,8 @@
 ?>
 <section style="padding-top: 10%">
   <?php if ($currentRole === 'admin'): ?>
-  <div class="medrecipes form large-9 medium-8 columns content">
+    <h3 class="formTitle">Edit Recipe</h3>
     <?= $this->Form->create($medrecipe) ?>
-    <fieldset>
-        <legend><?= __('Edit Medrecipe') ?></legend>
         <?php
             echo $this->Form->control('name');
             echo $this->Form->control('chinese_name');
@@ -20,7 +18,6 @@
             echo $this->Form->control('uses');
             echo $this->Form->control('img');
         ?>
-    </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
     <button type="submit" class="cta-button"><?= $this->Form->postLink(
             __('Delete'),
@@ -29,7 +26,6 @@
         )
     ?></button>
     <?= $this->Form->end() ?>
-</div>
 <?php else: ?>
   <h3>You are not authorized for this action</h3>
 <?php endif ?>

@@ -25,13 +25,19 @@ a, a i{
   cursor: pointer!important;
   text-decoration: none;
 }
+span a{
+  font-weight: bold;
+  &:hover{
+    color: $baseGreen;
+  }
+}
 button{
   text-align: center;
   cursor: pointer;
 }
 nav{
   i{
-    font-size: 1.5rem!important;
+    font-size: 1.15rem!important;
   }
   background-color: white;
   position: fixed;
@@ -215,9 +221,14 @@ label{
   display: block;
   cursor: default;
   font-size: 1.15rem;
+  @include laptop{
+    margin-top: 5%;
+    font-size: 1rem;
+  }
 }
 input{
-  background-color: transparent;
+  font-size: 1rem;
+  background-color: transparent!important;
   width: 100%;
   margin-top: 0.75%;
   padding: 2.5% 0% 2.5% 0%;
@@ -230,6 +241,11 @@ input{
   &:focus{
     border-color: $baseGreen!important;
   }
+  @include laptop{
+    margin-top: 0.5%;
+    padding: 1.75% 0% 1.75% 0%;
+    font-size: 0.9rem;
+  }
 }
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
@@ -241,6 +257,11 @@ button[type="submit"], #signup{
   width: 245px;
   margin-top: 12.5%;
   padding: 2.5%;
+  @include laptop{
+    margin-top: 7.5%;
+    padding: 1.75%;
+    font-size:0.9rem;
+  }
 }
 
 #signup{
@@ -372,6 +393,7 @@ button[type="submit"], #signup{
 }
 .settings{
   width: inherit;
+  float: left;
 }
 .fa-pencil-square-o{
   font-size: $baseSize*1.25;
@@ -388,6 +410,9 @@ button[type="submit"], #signup{
     margin-top: 0%;
     color: $baseGreen;
     font-size: $baseSize*5;
+    @include laptop{
+      font-size: $baseSize*3.5;
+    }
   }
   p{
     font-size: $baseSize*1.5;
@@ -396,11 +421,45 @@ button[type="submit"], #signup{
       font-weight: bold;
       margin-right: 2.5%;
     }
+    @include laptop{
+      font-size: $baseSize*1.25;
+    }
   }
   button{
+    width: 50%;
     text-align: center;
     padding: 2.5%;
     margin-top: 5%;
+  }
+}
+#foodinfo{
+  .info{
+    margin: auto;
+    width: 500px;
+    text-align: left;
+    margin-top: 7.5%;
+  }
+  h3{
+    margin-top: 0%;
+    color: $baseGreen;
+    font-size: $baseSize*2.5;
+  }
+  p{
+    padding: 1.5%;
+    font-size: $baseSize;
+    line-height: 1.5rem;
+    span{
+      font-weight: bold;
+      margin-right: 5%;
+    }
+    border-bottom: 1px #e6e6e6 solid;
+  }
+  button{
+    width: 48%;
+    margin-left: 1%;
+    text-align: center;
+    padding: 1.75%;
+    margin-top: 2.5%;
   }
 }
 .gradient{

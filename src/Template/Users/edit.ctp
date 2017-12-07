@@ -5,7 +5,7 @@
  */
 ?>
 
-<section class="gradient" style="padding-top: 0%">
+<section class="gradient" style="padding-top: 2.5%">
 <?php if(!($currentRole === 'admin')&& !($currentID == $user->id)) : ?>
 <h3> You are not authorized for this action</h3>
 <?php else : ?>

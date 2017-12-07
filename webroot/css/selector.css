@@ -375,11 +375,16 @@ span.message{
 }
 
 table.container-table {
-    margin-top: -2.5%;
     border-spacing: 5px;
     border-collapse: separate;
     background-color:#ebeff2;
     min-height: 87.5vh;
+}
+@media (min-width: 1024px) and (max-width: 1550px) {
+  table.container-table {
+    margin-top: 1.5%;
+    min-height: 92.5vh;
+  }
 }
 .container-table .td-header
 {
