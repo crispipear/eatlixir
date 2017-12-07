@@ -1,23 +1,34 @@
 * {
-  letter-spacing: 0.035rem;
-  font-family: 'Roboto', sans-serif;
-  color: #404040;
+  letter-spacing: 0.065rem;
+  line-height: 1.5rem;
+  font-family: 'Raleway', sans-serif;
+  color: #2a2a2a;
   cursor: default;
   transition: all 0.25s !important;
 }
 
-p {
-  margin: 2.5% 0% 5% 0%;
+body {
+  margin: 0%;
+}
+
+p, h1 {
+  margin: 0.5% 0% 01.5% 0%;
 }
 
 @media (min-width: 1024px) and (max-width: 1550px) {
-  p {
+  p, h1 {
     font-size: 0.9rem;
   }
 }
 
 a, a i {
-  color: #404040;
+  color: #2a2a2a;
+  cursor: pointer !important;
+  text-decoration: none;
+}
+
+button {
+  text-align: center;
   cursor: pointer;
 }
 
@@ -38,7 +49,7 @@ nav .nav-left {
 
 nav .nav-right {
   float: right;
-  margin-top: -5px !important;
+  margin-top: -1% !important;
 }
 
 nav ul {
@@ -67,53 +78,40 @@ nav li a {
 }
 
 nav li:hover a, nav li:hover i {
-  color: #309c8d;
-}
-
-.container {
-  min-height: 100vh;
-  position: relative;
-  max-width: 1366px;
-  margin: 0% auto 0% auto !important;
-  box-sizing: border-box;
-}
-
-@media (min-width: 1024px) and (max-width: 1550px) {
-  .container {
-    max-width: 966px;
-  }
+  color: #5dc6b3;
 }
 
 .cta-button, button[type="submit"], #signup {
-  background-color: transparent;
+  background-color: #5dc6b3;
   text-transform: uppercase;
   letter-spacing: 0.15rem;
-  font-size: 0.8rem;
-  border: 1px solid #b5b5b5;
+  font-size: 0.9rem;
+  border: 1px solid #5dc6b3;
   padding: 0.75% 1.25% 0.75% 1.25%;
-  color: #404040;
+  color: #fcfcfc;
   width: 100%;
 }
 
 .cta-button:hover, button[type="submit"]:hover, #signup:hover {
-  background-color: #309c8d;
-  border-color: #309c8d;
-  color: #fcfcfc;
+  background-color: transparent;
+  border-color: #2a2a2a;
+  color: #2a2a2a;
 }
 
 .cta-button:hover a, button[type="submit"]:hover a, #signup:hover a {
+  color: #2a2a2a;
+}
+
+.cta-button a, button[type="submit"] a, #signup a {
   color: #fcfcfc;
 }
 
 button:hover, button:focus, button:active {
   outline: none !important;
-  background-color: #309c8d !important;
-  color: #fcfcfc !important;
 }
 
 .content {
-  width: 100%;
-  margin: 0%;
+  margin: 0% auto 0% auto;
   padding: 0%;
   margin-bottom: 0%;
   position: relative;
@@ -121,11 +119,13 @@ button:hover, button:focus, button:active {
 
 .content h5 {
   font-size: 1.5rem;
-  color: #666666;
+  color: #505050;
 }
 
 .content section {
-  padding-top: 10%;
+  padding-top: 2.5%;
+  margin: 0% auto 0% auto;
+  max-width: 1366px;
   min-height: 100vh;
   display: -webkit-box;
   display: flex;
@@ -139,34 +139,33 @@ button:hover, button:focus, button:active {
   position: relative;
 }
 
+@media (min-width: 1024px) and (max-width: 1550px) {
+  .content section {
+    max-width: 966px;
+  }
+}
+
 .content #home {
+  font-weight: 300 !important;
   margin-bottom: 0%;
 }
 
-.content #home * {
-  position: absolute;
-}
-
 .content #home h1 {
-  left: 1%;
-  top: 30%;
-  font-size: 8.5rem;
-  letter-spacing: 0.25rem;
-}
-
-.content #home h1:hover {
-  color: #309c8d;
+  margin-bottom: 2.5%;
+  font-weight: 200;
+  font-size: 9rem;
+  letter-spacing: 0.5rem;
+  color: #5dc6b3;
 }
 
 @media (min-width: 1024px) and (max-width: 1550px) {
   .content #home h1 {
-    font-size: 5.5rem;
+    font-size: 6.5rem;
   }
 }
 
 .content #home h5 {
-  left: 1.75%;
-  top: 50%;
+  margin-top: 2.75%;
 }
 
 @media (min-width: 1024px) and (max-width: 1550px) {
@@ -175,27 +174,15 @@ button:hover, button:focus, button:active {
   }
 }
 
-.content #home img {
-  top: 15.5%;
-  right: 0%;
-}
-
-@media (min-width: 1024px) and (max-width: 1550px) {
-  .content #home img {
-    width: 350px;
-  }
-}
-
 .content #home #scroll {
+  margin-top: 1%;
   width: inherit;
-  left: 1.75%;
-  top: 60%;
 }
 
 footer {
   text-align: right;
   letter-spacing: 0.075rem;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
 }
 
 footer ul {
@@ -211,27 +198,31 @@ footer ul {
   }
 }
 
+footer span {
+  font-weight: 600;
+}
+
 footer li {
   cursor: pointer;
   text-transform: uppercase;
   display: inline-block !important;
-  padding: 5% 0% 1.5% 0.75%;
+  padding: 2.5% 0% 2.5% 0.75%;
 }
 
 footer li i {
   font-size: 1.125rem !important;
 }
 
-footer li a i:hover {
-  color: #309c8d;
+footer a:hover, footer a i:hover {
+  color: #5dc6b3;
 }
 
 .box-wrapper {
   width: 100%;
   display: -webkit-box;
   display: flex;
-  -webkit-box-pack: justify;
-  justify-content: space-between;
+  -webkit-box-pack: center;
+  justify-content: center;
   -webkit-box-align: top;
   align-items: top;
   flex-wrap: wrap;
@@ -244,21 +235,6 @@ footer li a i:hover {
 .about-box {
   text-align: center;
   width: 30%;
-}
-
-#userinfo {
-  width: 20%;
-  text-align: center;
-}
-
-#userinfo h5 {
-  font-size: 1.25rem;
-  text-align: center;
-  margin: 25px 0 25px 0;
-}
-
-#userinfo .cta-button, #userinfo button[type="submit"], #userinfo #signup {
-  padding: 5% 24% 5% 24%;
 }
 
 #banner {
@@ -281,7 +257,7 @@ footer li a i:hover {
   padding: 1.5%;
   display: inline;
   font-size: 1.15rem;
-  color: #202020;
+  color: #0a0a0a;
   font-weight: 600;
 }
 
@@ -289,21 +265,33 @@ footer li a i:hover {
   background-color: #fcfcfc;
 }
 
+form {
+  width: 500px;
+  padding: 2.5%;
+}
+
 label {
+  margin-top: 7.5%;
+  display: block;
   cursor: default;
+  font-size: 1.15rem;
 }
 
 input {
+  background-color: transparent;
+  width: 100%;
+  margin-top: 0.75%;
+  padding: 2.5% 0% 2.5% 0%;
+  outline: none;
   background: transparent !important;
   box-shadow: none !important;
   border: 0px transparent !important;
-  border-bottom: 1px solid #ccc !important;
+  border-bottom: 2px solid #aaaaaa !important;
   cursor: text;
 }
 
 input:focus {
-  border-color: #309c8d !important;
-  background: white !important;
+  border-color: #5dc6b3 !important;
 }
 
 input:-webkit-autofill,
@@ -313,23 +301,30 @@ input:-webkit-autofill:focus {
 }
 
 button[type="submit"], #signup {
-  width: 240px;
-  margin-top: 5%;
+  width: 245px;
+  margin-top: 12.5%;
   padding: 2.5%;
-  background-color: transparent;
 }
 
 #signup {
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
 #signup a {
+  color: #fcfcfc;
   letter-spacing: 0.15rem;
 }
 
-form {
-  margin-top: -7.5%;
-  width: 500px;
+#signup:hover a {
+  color: #2a2a2a;
+}
+
+.left {
+  float: left !important;
+}
+
+.right {
+  float: right !important;
 }
 
 .foodinfo {
@@ -351,13 +346,14 @@ form {
 }
 
 .foodinfo img {
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
   max-width: 90%;
 }
 
 .foodinfo h3 {
-  margin: 5% 0% 2.5% 0%;
+  margin: 5% 0% 5% 0%;
   padding: 0%;
-  color: #309c8d;
+  color: #5dc6b3;
   font-size: 2rem;
 }
 
@@ -373,7 +369,7 @@ form {
 }
 
 .foodinfo h5 span {
-  color: #309c8d;
+  color: #5dc6b3;
   margin-right: 2.5%;
 }
 
@@ -384,7 +380,7 @@ form {
 }
 
 .foodinfo p {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   margin: 0% 0% 1.75% 0%;
 }
 
@@ -395,7 +391,8 @@ form {
 }
 
 .foodinfo p span {
-  color: #309c8d;
+  font-weight: bold;
+  color: #5dc6b3;
   margin-right: 2.5%;
 }
 
@@ -422,7 +419,7 @@ form {
 }
 
 .foodcategory span {
-  background-color: rgba(64, 64, 64, 0.35);
+  background-color: rgba(42, 42, 42, 0.35);
   padding: 10px;
   cursor: pointer;
   color: #fcfcfc;
@@ -464,7 +461,8 @@ form {
 }
 
 #signuptoday h3 {
-  top: 32.5%;
+  font-size: 1.75rem;
+  top: 27.5%;
 }
 
 @media (min-width: 1024px) and (max-width: 1550px) {
@@ -474,7 +472,7 @@ form {
 }
 
 #signuptoday a {
-  top: 47.5%;
+  top: 45%;
 }
 
 @media (min-width: 1024px) and (max-width: 1550px) {
@@ -484,11 +482,7 @@ form {
 }
 
 .settings {
-  width: auto !important;
-}
-
-input:-webkit-autofill {
-  -webkit-box-shadow: inset 0 0 0px 9999px white !important;
+  width: inherit;
 }
 
 .fa-pencil-square-o {
@@ -496,7 +490,50 @@ input:-webkit-autofill {
 }
 
 .fa-pencil-square-o:hover {
-  color: #309c8d;
+  color: #5dc6b3;
+}
+
+#accountinfo .info {
+  width: 500px;
+  text-align: center;
+}
+
+#accountinfo h3 {
+  margin-top: 0%;
+  color: #5dc6b3;
+  font-size: 5rem;
+}
+
+#accountinfo p {
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+}
+
+#accountinfo p span {
+  font-weight: bold;
+  margin-right: 2.5%;
+}
+
+#accountinfo button {
+  text-align: center;
+  padding: 2.5%;
+  margin-top: 5%;
+}
+
+.gradient {
+  max-width: 100vw !important;
+  padding-top: 2.5%;
+  /* For Safari 5.1 to 6.0 */
+  /* For Opera 11.1 to 12.0 */
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, #e6fcf3, #e6eefc);
+  /* Standard syntax */
+}
+
+.formTitle {
+  color: #5dc6b3;
+  font-size: 2.5rem;
+  margin: 0%;
 }
 
 /*# sourceMappingURL=app.css.map */

@@ -14,4 +14,5 @@ $(document).ready(function() {
             scrollTop: ($('#about').offset().top)
         }, 750);
     });
+    $('#signup').attr('disabled','disabled');
 });

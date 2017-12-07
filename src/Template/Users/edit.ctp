@@ -5,14 +5,12 @@
  */
 ?>
 
-<section>
+<section class="gradient" style="padding-top: 0%">
 <?php if(!($currentRole === 'admin')&& !($currentID == $user->id)) : ?>
 <h3> You are not authorized for this action</h3>
 <?php else : ?>
-<div class="users form large-9 medium-8 columns content">
+  <h3 class="formTitle">Edit account info</h3>
     <?= $this->Form->create($user) ?>
-    <fieldset>
-        <legend><?= __('Edit User') ?></legend>
         <?php if ($currentRole === 'admin'){
           echo $this->Form->control('username');
           echo $this->Form->control('name');
@@ -29,15 +27,15 @@
           echo $this->Form->control('password');
         }
         ?>
-      </fieldset>
-      <?= $this->Form->button(__('Submit')) ?>
+      <div class="content" style="text-align:center">
+      <?= $this->Form->button(__('save')) ?>
       <button type="submit" class="cta-button"><?= $this->Form->postLink(
-              __('Delete'),
+              __('Delete account'),
               ['action' => 'delete', $user->id],
-              ['confirm' => __('Are you sure you want to delete # {0}?', $user->id)]
+              ['confirm' => __('Are you sure you want to delete this account?')]
           )
       ?></button>
+    </div>
       <?= $this->Form->end() ?>
-</div>
 <?php endif ?>
 </section>

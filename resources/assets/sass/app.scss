@@ -1,24 +1,32 @@
 @import "mixins";
-$baseColor: #404040;
-$baseGreen: #309c8d;
+$baseColor: #2a2a2a;
+$baseGreen: #5dc6b3;
 $baseWhite: #fcfcfc;
-$baseBlue: #2EA1B3;
 $baseSize: 1rem;
 *{
-  letter-spacing: 0.035rem;
-  font-family: 'Roboto', sans-serif;
+  letter-spacing: 0.065rem;
+  line-height: 1.5rem;
+  font-family: 'Raleway', sans-serif;
   color: $baseColor;
   cursor: default;
   transition: all 0.25s!important;
 }
-p{
-  margin: 2.5% 0% 5% 0%;
+body{
+  margin: 0%;
+}
+p, h1{
+  margin: 0.5% 0% 01.5% 0%;
   @include laptop{
     font-size: $baseSize*0.9
   }
 }
 a, a i{
   color: $baseColor;
+  cursor: pointer!important;
+  text-decoration: none;
+}
+button{
+  text-align: center;
   cursor: pointer;
 }
 nav{
@@ -34,7 +42,7 @@ nav{
   }
   .nav-right{
     float:right;
-    margin-top: -5px!important;
+    margin-top: -1%!important;
   }
   ul{
     margin: auto;
@@ -59,45 +67,34 @@ nav{
     }
   }
 }
-.container{
-  min-height: 100vh;
-  position: relative;
-  max-width: 1366px;
-  margin:0% auto 0% auto!important;
-  box-sizing: border-box;
-  @include laptop{
-    max-width: 966px;
-  }
-}
-
 .cta-button{
-  background-color: transparent;
+  background-color: $baseGreen;
   text-transform: uppercase;
   letter-spacing: 0.15rem;
-  font-size: $baseSize*0.8;
-  border: 1px solid #b5b5b5;
+  font-size: $baseSize*0.9;
+  border: 1px solid $baseGreen;
   padding: 0.75% 1.25% 0.75% 1.25%;
-  color: $baseColor;
+  color: $baseWhite;
   width: 100%;
   &:hover{
-    background-color: $baseGreen;
-    border-color: $baseGreen;
-    color: $baseWhite;
+    background-color: transparent;
+    border-color: $baseColor;
+    color: $baseColor;
+    a{
+      color: $baseColor;
+    }
   }
-  &:hover a{
+  a{
     color: $baseWhite;
   }
 }
 button{
   &:hover, &:focus, &:active{
     outline: none!important;
-    background-color: $baseGreen!important;
-    color: $baseWhite!important;
   }
 }
 .content{
-  width: 100%;
-  margin:0%;
+  margin:0% auto 0% auto;
   padding: 0%;
   margin-bottom:0%;
   position: relative;
@@ -106,7 +103,12 @@ button{
     color: lighten($baseColor, 15%);
   }
   section{
-    padding-top: 10%;
+    padding-top: 2.5%;
+    margin:0% auto 0% auto;
+    max-width: 1366px;
+    @include laptop{
+      max-width: 966px;
+    }
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -115,47 +117,34 @@ button{
     position: relative;
   }
   #home{
+    font-weight: 300!important;
     margin-bottom: 0%;
-    *{
-      position: absolute;
-    }
     h1{
-      left: 1%;
-      top: 30%;
-      font-size: $baseSize*8.5;
-      letter-spacing: 0.25rem;
-      &:hover{
-        color: $baseGreen;
-      }
+      margin-bottom: 2.5%;
+      font-weight: 200;
+      font-size: $baseSize*9;
+      letter-spacing: 0.5rem;
+      color: $baseGreen;
       @include laptop{
-        font-size: $baseSize*5.5
+        font-size: $baseSize*6.5
       }
     }
     h5{
-      left: 1.75%;
-      top: 50%;
+      margin-top: 2.75%;
       @include laptop{
         font-size: $baseSize*1.25
       }
     }
-    img{
-      top: 15.5%;
-      right: 0%;
-      @include laptop{
-        width: 350px;
-      }
-    }
     #scroll{
+      margin-top: 1%;
       width: inherit;
-      left: 1.75%;
-      top: 60%;
     }
   }
 }
 footer{
   text-align: right;
   letter-spacing: 0.075rem;
-  font-size: $baseSize*0.9;
+  font-size: $baseSize*0.95;
   ul{
     margin: auto;
     width: 1366px;
@@ -165,23 +154,26 @@ footer{
       width: 966px;
     }
   }
+  span{
+    font-weight: 600;
+  }
   li{
     cursor: pointer;
     text-transform: uppercase;
     display: inline-block!important;
-    padding: 5% 0% 1.5% 0.75%;
+    padding: 2.5% 0% 2.5% 0.75%;
     i{
       font-size:  $baseSize*1.125!important;
     }
-    a i:hover{
-      color: $baseGreen;
-    }
+  }
+  a:hover, a i:hover{
+    color: $baseGreen;
   }
 }
 .box-wrapper{
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: top;
   flex-wrap: wrap;
   img{
@@ -191,18 +183,6 @@ footer{
 .about-box{
   text-align: center;
   width: 30%;
-}
-#userinfo{
-  width: 20%;
-  text-align: center;
-  h5{
-    font-size: $baseSize*1.25;
-    text-align: center;
-    margin: 25px 0 25px 0;
-  }
-  .cta-button{
-    padding: 5% 24% 5% 24%;
-  }
 }
 #banner{
   display: flex;
@@ -226,18 +206,29 @@ footer{
     background-color: $baseWhite;
   }
 }
+form{
+  width: 500px;
+  padding: 2.5%;
+}
 label{
+  margin-top: 7.5%;
+  display: block;
   cursor: default;
+  font-size: 1.15rem;
 }
 input{
+  background-color: transparent;
+  width: 100%;
+  margin-top: 0.75%;
+  padding: 2.5% 0% 2.5% 0%;
+  outline: none;
   background: transparent!important;
   box-shadow: none!important;
   border: 0px transparent!important;
-  border-bottom: 1px solid #ccc!important;
+  border-bottom: 2px solid lighten($baseColor, 50%)!important;
   cursor: text;
   &:focus{
     border-color: $baseGreen!important;
-    background: white!important;
   }
 }
 input:-webkit-autofill,
@@ -247,21 +238,27 @@ input:-webkit-autofill:focus{
 }
 button[type="submit"], #signup{
   @extend .cta-button;
-  width: 240px;
-  margin-top: 5%;
+  width: 245px;
+  margin-top: 12.5%;
   padding: 2.5%;
-  background-color: transparent;
 }
 
 #signup{
-  margin-left: 20px;
+  margin-left: 10px;
   a{
+    color: $baseWhite;
     letter-spacing: 0.15rem;
   }
+  &:hover a{
+    color: $baseColor;
+  }
 }
-form{
-  margin-top: -7.5%;
-  width: 500px;
+
+.left{
+  float: left!important;
+}
+.right{
+  float: right!important;
 }
 .foodinfo{
   width: 100%;
@@ -277,10 +274,11 @@ form{
     width: 60%;
   }
   img{
+    -webkit-box-shadow:  0px 0px 15px 0px rgba(0, 0, 0, 0.1);
     max-width: 90%;
   }
   h3{
-    margin: 5% 0% 2.5% 0%;
+    margin: 5% 0% 5% 0%;
     padding: 0%;
     color: $baseGreen;
     font-size:  $baseSize*2;
@@ -300,11 +298,12 @@ form{
     }
   }
   p{
-    font-size: $baseSize*1.25;
+    font-size: $baseSize*1.15;
     @include laptop{
       font-size: $baseSize;
     }
     span{
+      font-weight: bold;
       color: $baseGreen;
       margin-right: 2.5%;
     }
@@ -354,13 +353,14 @@ form{
     position: absolute;
   }
   h3{
-    top: 32.5%;
+    font-size: $baseSize*1.75;
+    top: 27.5%;
     @include laptop{
       font-size: $baseSize*1.25;
     }
   }
   a{
-    top: 47.5%;
+    top: 45%;
   }
   min-height: 450px!important;
   background-image: url('../img/bg.png');
@@ -371,14 +371,48 @@ form{
   }
 }
 .settings{
-  width: auto!important;
-}
-input:-webkit-autofill {
-    -webkit-box-shadow: inset 0 0 0px 9999px white!important;
+  width: inherit;
 }
 .fa-pencil-square-o{
   font-size: $baseSize*1.25;
   &:hover{
     color: $baseGreen;
   }
+}
+#accountinfo{
+  .info{
+    width: 500px;
+    text-align: center;
+  }
+  h3{
+    margin-top: 0%;
+    color: $baseGreen;
+    font-size: $baseSize*5;
+  }
+  p{
+    font-size: $baseSize*1.5;
+    line-height: 2.5rem;
+    span{
+      font-weight: bold;
+      margin-right: 2.5%;
+    }
+  }
+  button{
+    text-align: center;
+    padding: 2.5%;
+    margin-top: 5%;
+  }
+}
+.gradient{
+  max-width: 100vw!important;
+  padding-top: 2.5%;
+  background: -webkit-linear-gradient(left, #e6fcf3, #e6eefc); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, #e6fcf3, #e6eefc); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, #e6fcf3, #e6eefc); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, #e6fcf3, #e6eefc); /* Standard syntax */
+}
+.formTitle{
+  color: $baseGreen;
+  font-size: $baseSize*2.5;
+  margin: 0%;
 }

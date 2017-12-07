@@ -16,13 +16,31 @@
  *
  * Authors: priaid inc, Switzerland
  */
+ input{
+   border:none!important;
+ }
+#btnGenerateDiagnosis, input[type="checkbox"]{
+  cursor: pointer;
+}
+#btnGenerateDiagnosis{
+  font-weight: 600;
+}
+#btnGenerateDiagnosis:hover{
+  color: #5dc6b3;
+}
 img{
     border:none;
+}
+select{
+  width: 100%;
+  padding: 2.5%;
+}
+option{
+  font-size: 1rem;
 }
 .selector_container table{
     background-color:#fff;
 }
-
 td.status-container
 {
     /*float:left;
@@ -63,7 +81,7 @@ td.avatar-container
     position: absolute;
     color: #525252;
     left: 25%;
-    bottom: -22.5%;
+    bottom: -25.5%;
     width: 130px;
     text-decoration: none;
     padding-bottom: 0;
@@ -108,7 +126,7 @@ input.symptom-search
 }
 #prefetch input:focus{
   outline: none;
-  border-color: #309c8d;
+  border-color: #5dc6b3;
 }
 .year-container
 {
@@ -135,7 +153,7 @@ input.symptom-search
     line-height: 20px;
     color: #fff;
     text-align: center;
-    background-color: #309c8d;
+    background-color: #5dc6b3;
     border-bottom-left-radius:2px;
     border-top-left-radius:2px;
 }
@@ -174,7 +192,7 @@ input.symptom-search
 }
 
 .location_list li:hover {
-  color: #309c8d;
+  color: #5dc6b3;
 }
 .location_list li:before {
   content: '\f054'; /* fa-chevron-right */
@@ -217,15 +235,15 @@ input.symptom-search
   margin-top: 5px;
 }
 .symptom_list li {
-  margin-left: 1.2em;
-  font-size:0.8em;
+  margin-left: 2em;
+  font-size:0.95em;
 }
 .symptom_list li:before {
   content: '\f055'; /* fa-plus-circle */
   font-family: 'FontAwesome';
   float: left;
   margin-left: -1em;
-  padding:0px;
+  padding-left:7.5px;
 }
 
 .proposed_list
@@ -233,10 +251,11 @@ input.symptom-search
     margin-top:5px;
 }
 .proposed_list li {
-  margin-left: 1.5em;
+  margin-left: 2.5em;
+  font-size: 0.9rem;
 }
 .proposed_list li:hover {
-  color:#309c8d;
+  color:#5dc6b3;
 }
 
 .proposed_list li:before {
@@ -255,7 +274,7 @@ input.symptom-search
 }
 .spec_list li a {
   margin-left: 10px;
-  color: #309c8d;
+  color: #5dc6b3;
   text-decoration:none;
 }
 .spec_list li a:hover {
@@ -271,7 +290,7 @@ input.symptom-search
 
 .suggested_spec {
   margin-left: 5px;
-  color: #309c8d;
+  color: #5dc6b3;
   text-decoration:none;
 }
 
@@ -282,15 +301,14 @@ input.symptom-search
 }
 
 h4.header {
-    color: #309c8d;
+    color: #5dc6b3;
     font-size:1rem;
-    font-weight: 500;
-    margin:0;
+    font-weight: 600;
+    margin:1.25% 0% 1.25% 1.5%;
 }
 
 h4.symptom_list_header
 {
-    background-color: #eee;
     padding:0.5em 1em;
 }
 
@@ -314,20 +332,22 @@ h4.diagnosis_name_header .fa
     color: #4d4d4d;
 }
 h4.diagnosis_name_header .fa:hover{
-  color: #309c8d;
+  color: #5dc6b3;
 
 }
 span.message{
+    font-size: 0.9rem;
     float: left;
     margin: 5px;
+    margin-bottom: 5%;
     padding: 10px;
     border-width: 1px;
     border-style: solid;
 }
 .info{
-    color: #8a6d3b;
-    background-color: #fcf8e3;
-    border-color: #faebcc;
+    color: #2a2a2a;
+    background-color: transparent;
+    border-color: #5dc6b3;
 }
 .warning
 {
@@ -462,7 +482,7 @@ span.twitter-typeahead {
 }
 .info_page_content h1{
   font-size: 2.75rem;
-  color: #309c8d;
+  color: #5dc6b3;
 }
 .info_page_content h4{
   font-size: 2rem;
@@ -487,7 +507,7 @@ span.twitter-typeahead {
     right:50px;
 }
 #btnCloseInfo:hover, #btnPrintInfo:hover{
-  color: #309c8d;
+  color: #5dc6b3;
 }
 #redFlagContent
 {
@@ -515,7 +535,7 @@ span.twitter-typeahead {
 #btnCloseRedFlag
 {
     float:right;
-    color: #a94442;
+    color: #5dc6b3;
     margin:5px;
     cursor:pointer;
 }
@@ -525,13 +545,14 @@ span.twitter-typeahead {
 }
 #terms label
 {
+    font-size: 0.9rem;
     font-weight:normal;
     display:inline;
     word-break: break-word;
 }
 #terms a {
     font-weight:700;
-    color: #8a6d3b;
+    color: #5dc6b3;
     text-decoration:underline;
 }
 #terms input {

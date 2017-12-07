@@ -95,7 +95,7 @@
             });
         });
     </script>
-<section>
+<section style="padding-top: 5%">
     <table class="container-table">
         <tr>
             <td valign="middle" colspan="2" class="td-header box-white bordered-box width50"><h4 class="header" id="selectSymptomsTitle"><span class="badge pull-left badge-primary visible-lg margin5R">1</span></h4></td>
@@ -109,5 +109,5 @@
             <td valign="top" class="selector_container bordered-box box-white width25"><div id="diagnosisList"></div></td>
         </tr>
     </table>
-    <span>API powered by <?= $this->Html->link('ApiMedic','http://apimedic.com',array('target' => '_blank'))?>, priaid inc.</span>
+    <span style="padding-top: 1.25%">API powered by <?= $this->Html->link('ApiMedic','http://apimedic.com',array('target' => '_blank'))?>, priaid inc.</span>
 </section>

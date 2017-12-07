@@ -48,8 +48,9 @@ class UsersController extends AppController
         	$user = $this->Auth->identify();
         	if ($user) {
             	$this->Auth->setUser($user);
-              $this->log(var_export($user,true),'debug');
-            	return $this->redirect('/');
+              // $this->log(var_export($user,true),'debug');
+              $uid = '/'.$this->Auth->user('id');
+            	return $this->redirect(['action' => 'view'.$uid]);
         	}
         	$this->Flash->error('Your username or password is incorrect.');
     	}
@@ -93,7 +94,6 @@ class UsersController extends AppController
         	$user->name = 'Administrator';
         	$user->role = 'admin';
         	$user->fail_count = 0;
- 	        $this->log(var_export($user,true),'debug');
         	if ($this->Users->save($user)) {
             	$this->Flash->success(__('The user has been saved.'));
             	return $this->redirect(['action' => 'index']);

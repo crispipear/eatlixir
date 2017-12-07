@@ -26,8 +26,7 @@
     <?= $this->Html->script('jquery.js') ?>
     <?= $this->Html->meta('icon') ?>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:500i|Roboto:300,400,700|Roboto+Mono" rel="stylesheet">
-    <?= $this->Html->css('base.css') ?>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400" rel="stylesheet">
     <?= $this->Html->css('app.css') ?>
     <?= $this->Html->script('app.js') ?>
 
@@ -36,15 +35,15 @@
     <?= $this->fetch('script') ?>
 </head>
 <body>
-  <nav>    
+  <nav>
     <?php
     $output = '<ul>';
     $output .= '<li class="nav-left">' . $this->Html->link('home','/',array('class' => 'nav-left')) . '</li>';
     $output .= '<li class="nav-left">' . $this->Html->link('food',array('controller' => 'pages', 'action' => 'display', 'food'),array('class' => 'nav-left')) . '</li>';
-    $output .= '<li class="nav-left">' . $this->Html->link('health',array('controller' => 'pages', 'action' => 'display', 'health'),array('class' => 'nav-left')) . '</li>';
+    $output .= '<li class="nav-left">' . $this->Html->link('checker',array('controller' => 'pages', 'action' => 'display', 'health'),array('class' => 'nav-left')) . '</li>';
     if (!is_null($this->request->session()->read('Auth.User.username'))) {
       $output .= '<li class="nav-right">' . $this->Html->link('<i class="fa fa-sign-out" aria-hidden="true"></i>',array('controller' => 'users', 'action' => 'logout'),array('class' => 'nav-right', 'escape'=>false)) . '</li>';
-      $output .= '<li class="nav-right">' . $this->Html->link('<i class="fa fa-user" aria-hidden="true"></i>',array('controller' => 'pages', 'action' => '', 'discover'),array('class' => 'nav-right', 'escape'=>false)) . '</li>';
+      $output .= '<li class="nav-right">' . $this->Html->link('<i class="fa fa-user" aria-hidden="true"></i>',array('controller' => 'users', 'action' => 'view/'.$currentID), array('class' => 'nav-right', 'escape'=>false)) . '</li>';
     } else {
       $output .= '<li class="nav-right">' . $this->Html->link('<i class="fa fa-sign-in fa-fw" aria-hidden="true"></i> LOGIN',array('controller' => 'users', 'action' => 'login'),array('class' => 'nav-right', 'escape'=>false)) . '</li>';
     }
@@ -52,14 +51,14 @@
     echo $output;
     ?>
   </nav>
-  <div class="container">
   <div class="content">
     <?= $this->fetch('content') ?>
   </div>
   <footer>
     <?php
     $output = '<ul> Copyright 2017 | ';
-    $output .= '<span style="font-weight:bold">' . $this->Html->link('Su Li','http://suyli.me',array('escape'=>false, 'target'=>'_blank')) . '</span>';
+    $output .= '<span style="float:left; padding-top:2.5%">Eatlixir</span>';
+    $output .= '<span>' . $this->Html->link('Su Li','http://suyli.me',array('escape'=>false, 'target'=>'_blank')) . '</span>';
     $output .= '<li>' . $this->Html->link('<i class="fa fa-github" aria-hidden="true"></i>','https://github.com/crispipear/eatlixir',array('escape'=>false, 'target'=>'_blank')) . '</li>';
     $output .= '</ul>';
     echo $output;
