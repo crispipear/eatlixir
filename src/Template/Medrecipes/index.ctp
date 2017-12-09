@@ -50,10 +50,16 @@
 <?php endforeach; ?>
 </section>
 <script>
+var url;
+if (location.hostname === "localhost" || location.hostname === "127.0.0.1"){
+ url = '/eatlixir/medrecipes/all';
+}else{
+  url = 'https://students.washington.edu/rice74/IMD351/eatlixir/medrecipes/all';
+}
 var recipeData=[];
 var results=[];
 $.ajax({
-  url: '/eatlixir/medrecipes/all',
+  url: url,
   dataType: "json",
   contentType: "application/json",
   success: (function(data){
