@@ -52,12 +52,13 @@
     ?>
   </nav>
   <div class="content">
+    <div id="pageloader"><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i></div>
     <?= $this->fetch('content') ?>
   </div>
   <footer>
     <?php
-    $output = '<ul> Copyright 2017 | ';
-    $output .= '<span style="float:left; padding-top:2.5%">Eatlixir</span>';
+    $output = '<ul> Copyright Eatlixir 2017 | ';
+    $output .= '<span style="float:left; padding-top:2.5%">Contact: rice74@uw.edu</span>';
     $output .= '<span>' . $this->Html->link('Su Li','http://suyli.me',array('escape'=>false, 'target'=>'_blank')) . '</span>';
     $output .= '<li>' . $this->Html->link('<i class="fa fa-github" aria-hidden="true"></i>','https://github.com/crispipear/eatlixir',array('escape'=>false, 'target'=>'_blank')) . '</li>';
     $output .= '</ul>';

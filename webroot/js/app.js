@@ -1,4 +1,7 @@
 $(document).ready(function() {
+  $('#pageloader').hide();
+  setTimeout(function () { $('#tableloader').hide(); $('#checker table').show(); }, 1500);
+  $('input').attr('autocomplete','off');
     console.log("Design and Developed by Su Li - http://suyli.me \nCakephp 3.0");
     $(window).scroll(function() {
         var scroll = $(window).scrollTop();
@@ -14,5 +17,8 @@ $(document).ready(function() {
             scrollTop: ($('#about').offset().top)
         }, 750);
     });
-    $('#signup').attr('disabled','disabled');
+    $('#signup').attr('disabled', 'disabled');
+    $('label[for=username]').text('Username *');
+    $('label[for=password]').text('Password *');
+
 });

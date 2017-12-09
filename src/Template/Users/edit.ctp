@@ -5,8 +5,8 @@
  */
 ?>
 
-<section class="gradient" style="padding-top: 2.5%">
-<?php if(!($currentRole === 'admin')&& !($currentID == $user->id)) : ?>
+<section class="gradient">
+<?php if(!($currentRole === 'admin')&&!($currentID == $user->id)) : ?>
 <h3> You are not authorized for this action</h3>
 <?php else : ?>
   <h3 class="formTitle">Edit account info</h3>
@@ -27,7 +27,6 @@
           echo $this->Form->control('password');
         }
         ?>
-      <div class="content" style="text-align:center">
       <?= $this->Form->button(__('save')) ?>
       <button type="submit" class="cta-button"><?= $this->Form->postLink(
               __('Delete account'),
@@ -35,7 +34,6 @@
               ['confirm' => __('Are you sure you want to delete this account?')]
           )
       ?></button>
-    </div>
       <?= $this->Form->end() ?>
 <?php endif ?>
 </section>

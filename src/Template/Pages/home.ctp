@@ -13,7 +13,7 @@
 <p>Unhealthy eating habits often causes health problems such as indigestion, loss of sleep quality and loss of appetite.
    They can also lead to major health issues such as obesity, heart diseases, strokes and more. An addition of an accessible and simple website regarding
     medicinal diet information will be useful in the healthy diet sources. Study has shown that medicinal diet is capable of subtly improving human body health conditions.
-    In addition, the Chinese herbology studies believe that some food ingredients have their own characteristics and perform different tasks on the human body.
+    In addition, the Chinese herbology studies believe that some food ingredients have their own characteristics and perform different tasks on the human body.</p>
 </section>
 <section id="signuptoday">
     <h3>START YOUR JOURNEY ON EATLIXIR</h3>

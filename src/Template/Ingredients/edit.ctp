@@ -4,7 +4,7 @@
  * @var \App\Model\Entity\Ingredient $ingredient
  */
 ?>
-<section style="padding-top: 10%">
+<section>
   <?php if ($currentRole === 'admin'): ?>
     <h3 class="formTitle">Edit Ingredient</h3>
     <?= $this->Form->create($ingredient) ?>

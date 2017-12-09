@@ -4,9 +4,10 @@
  * @var \App\Model\Entity\Ingredient[]|\Cake\Collection\CollectionInterface $ingredients
  */
 ?>
-<section style="padding-top: 7.5%">
+<section>
+  <h3 class="formTitle">Herb Ingredients Directory</h3>
   <?php if ($currentRole === 'admin'): ?>
-    <?= '<button class="cta-button settings">' . $this->Html->link(__('New Herb'), ['action' => 'add']) . '</button>'?>
+    <?= '<button class="cta-button settings" style="margin-top: 2%">' . $this->Html->link(__('New Herb'), ['action' => 'add']) . '</button>'?>
   <?php endif ?>
   <?php foreach ($ingredients as $ingredient): ?>
     <div class="foodinfo">

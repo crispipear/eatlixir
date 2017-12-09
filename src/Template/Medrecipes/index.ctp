@@ -4,9 +4,10 @@
  * @var \App\Model\Entity\Medrecipe[]|\Cake\Collection\CollectionInterface $medrecipes
  */
 ?>
-<section style="padding-top: 7.5%">
+<section>
+  <h3 class="formTitle">Medicinal Diet Recipes Directory</h3>
 <?php if ($currentRole === 'admin'): ?>
-  <?= '<button class="cta-button settings">' . $this->Html->link(__('New Recipe'), ['action' => 'add']) . '</button>'?>
+  <?= '<button class="cta-button settings" style="margin-top: 2%">' . $this->Html->link(__('New Recipe'), ['action' => 'add']) . '</button>'?>
 <?php endif ?>
 <?php foreach ($medrecipes as $medrecipe): ?>
 <div class="foodinfo">

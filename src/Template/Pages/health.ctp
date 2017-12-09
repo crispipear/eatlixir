@@ -95,7 +95,11 @@
             });
         });
     </script>
-<section style="padding-top: 5%">
+<section id="checker">
+  <div id="tableloader"><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i></div>
+    <h3 class="formTitle2">Symtomps checker: what are your possible health issues?</h3>
+    <span class='checkerMsg'>*Please be aware that this tool does not represent or repalce any legitimate medical diagnosis. This tool only provides estimate results, please
+      click on <i class="fa fa-info-circle" aria-hidden="true"></i> in possible diseases section for detailed estimate diagnosis information*</span>
     <table class="container-table">
         <tr>
             <td valign="middle" colspan="2" class="td-header box-white bordered-box width50"><h4 class="header" id="selectSymptomsTitle"><span class="badge pull-left badge-primary visible-lg margin5R">1</span></h4></td>
@@ -109,5 +113,5 @@
             <td valign="top" class="selector_container bordered-box box-white width25"><div id="diagnosisList"></div></td>
         </tr>
     </table>
-    <span style="padding-top: 1.25%">API powered by <?= $this->Html->link('ApiMedic','http://apimedic.com',array('target' => '_blank'))?>, priaid inc.</span>
+  <span class='checkerMsg'>Symtomps Checker API powered by <?= $this->Html->link('ApiMedic','http://apimedic.com',array('target' => '_blank'))?>, priaid inc.</span>
 </section>

@@ -1396,7 +1396,7 @@ var mode = "diagnosis";
                     console.log(xhr.responseText);
             },
             complete: function () {
-                $('#loader').hide();
+              $('#loader').hide();
             }
         });
     }

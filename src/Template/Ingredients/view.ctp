@@ -4,7 +4,7 @@
  * @var \App\Model\Entity\Medrecipe $ingredient
  */
 ?>
-<section id="foodinfo">
+<section class="gradient" id="foodinfo">
   <?php if ($currentRole === 'admin'): ?>
     <div class="info">
       <h3><?= h($ingredient->common_name) ?></h3>
@@ -17,10 +17,10 @@
     <p><span>Symptoms key</span> <?= h($ingredient->symptoms_key)  ?></p>
     <p><span>Img</span> <?= h($ingredient->img)  ?></p>
 
-        <button class="cta-button settings"><?= $this->Html->link(__('Edit'), ['action' => 'edit', $ingredient->id]) ?></button>
-        <button class="cta-button settings"><?= $this->Html->link(__('New'), ['action' => 'add']) ?></button>
-        <button class="cta-button settings"><?= $this->Html->link(__('List'), ['action' => 'index']) ?></button>
-        <button class="cta-button settings"><?= $this->Form->postLink(
+        <button class="cta-button"><?= $this->Html->link(__('Edit'), ['action' => 'edit', $ingredient->id]) ?></button>
+        <button class="cta-button"><?= $this->Html->link(__('New'), ['action' => 'add']) ?></button>
+        <button class="cta-button"><?= $this->Html->link(__('List'), ['action' => 'index']) ?></button>
+        <button class="cta-button"><?= $this->Form->postLink(
           __('Delete'),
           ['action' => 'delete', $ingredient->id],
           ['confirm' => __('Are you sure you want to delete {0}?', $ingredient->name)]

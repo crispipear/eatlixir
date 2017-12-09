@@ -4,7 +4,7 @@
  * @var \App\Model\Entity\Medrecipe $medrecipe
  */
 ?>
-<section style="padding-top: 10%">
+<section>
 <?php if ($currentRole === 'admin'): ?>
   <h3 class="formTitle">Add Recipe</h3>
     <?= $this->Form->create($medrecipe) ?>
