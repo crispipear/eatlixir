@@ -726,4 +726,47 @@ button[type="submit"], #signup {
   width: 1%;
 }
 
+.foodDir {
+  -webkit-box-pack: start !important;
+  justify-content: flex-start !important;
+}
+
+.foodDir table {
+  text-align: left;
+}
+
+.foodDir table td {
+  padding: 0.5%;
+}
+
+.foodDir table thead th {
+  padding: 2.5% 0.5% 2.5% 0.5%;
+}
+
+.foodDir table thead a {
+  color: #5dc6b3;
+}
+
+.foodDir table .actions a:hover {
+  color: #5dc6b3;
+}
+
+.paginator {
+  margin-top: 2.5%;
+  width: 100%;
+}
+
+.paginator ul {
+  padding-left: 0%;
+  list-style: none;
+}
+
+.paginator ul li {
+  display: inline;
+}
+
+.paginator ul li:hover a {
+  color: #5dc6b3;
+}
+
 /*# sourceMappingURL=app.css.map */

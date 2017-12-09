@@ -5,7 +5,7 @@
  */
 ?>
 <section id="accountinfo" class="gradient">
-  <?php if(!($currentRole === 'admin')&& !($currentID == $user->id)) : ?>
+  <?php if(!($currentRole === 'admin') && !($currentID == $user->id)) : ?>
   <h3> You are not authorized for this action</h3>
   <?php else : ?>
     <div class="info">
@@ -14,6 +14,9 @@
     <p><span>Joined since</span> <?= h($user->created) ?></p>
     <?php if (($currentRole === 'admin')||($currentRole === 'user')&&($currentID == $user->id)): ?>
       <button class="cta-button"><?= $this->Html->link(__('Edit Account'), ['action' => 'edit', $user->id]) ?></button>
+    <?php endif; ?>
+    <?php if ($currentRole === 'admin'): ?>
+      <button class="cta-button"><?= $this->Html->link(__('Admin Panel'), ['action' => 'index']) ?></button>
     <?php endif; ?>
   </div>
 <?php endif ?>

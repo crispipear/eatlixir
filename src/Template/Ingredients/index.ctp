@@ -4,7 +4,7 @@
  * @var \App\Model\Entity\Ingredient[]|\Cake\Collection\CollectionInterface $ingredients
  */
 ?>
-<section>
+<section class="foodDir">
   <h3 class="formTitle">Herb Ingredients Directory</h3>
   <div class="filter">
     <label for="flavor">flavor</label>
@@ -49,7 +49,7 @@
     </select>
     <input id="keyword" type="text" placeholder="&#xf002; search by keyword">
     <button class="cta-button" id="search">search</button>
-    <button class="cta-button" id="showall">all</button>
+    <button class="cta-button" id="showall">show all</button>
   </div>
   <?php if ($currentRole === 'admin'): ?>
     <?= '<button class="cta-button settings" style="margin-top: 2%">' . $this->Html->link(__('New Herb'), ['action' => 'add']) . '</button>'?>
@@ -106,8 +106,8 @@ $('select').change(function(){
 });
 
 $('#showall').click(function(){
-  $('.foodinfo').hide();
-  $('.foodinfo').show();
+  $('.foodinfo').fadeOut(100);
+  $('.foodinfo').fadeIn(100);
 });
 $('#search').click(function(){
   var keyword = $('#keyword').val();
@@ -124,9 +124,9 @@ $('#search').click(function(){
 });
 
 function renderResults(){
-  $('.foodinfo').hide();
+  $('.foodinfo').fadeOut(100);
   results.forEach(function(id){
-    $('div#'+id).show();
+    $('div#'+id).fadeIn(100);
   });
   results = [];
 }

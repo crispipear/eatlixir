@@ -562,3 +562,39 @@ button[type="submit"], #signup{
     width: 1%;
   }
 }
+.foodDir{
+  justify-content: flex-start!important;
+  table{
+    text-align: left;
+    td{
+      padding: 0.5%;
+    }
+    thead th{
+      padding: 2.5% 0.5% 2.5% 0.5%;
+    }
+    thead a{
+      color: $baseGreen;
+    }
+    .actions{
+      a{
+        &:hover{
+          color: $baseGreen;
+        }
+      }
+    }
+  }
+}
+.paginator{
+  margin-top: 2.5%;
+  width: 100%;
+  ul{
+    padding-left: 0%;
+    li{
+      display: inline;
+      &:hover a{
+        color: $baseGreen;
+      }
+    }
+    list-style: none;
+  }
+}
