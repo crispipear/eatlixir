@@ -35,10 +35,10 @@ function timedGreeting(){
   var morning = ['Mornin\'!','Good morning!','Rise and shine!','Hi early bird', 'Got your coffee yet?', 'What\'s for breakfast?'];
   var afternoon = ['Good afternoon!','Got lunch?', 'Sun\'s still shining?','Good day,'];
   var evening = ['Good evening!','What\'s for dinner?', 'Is it dark out?'];
-  var lateNight = ['Still awake?', 'Time to sleep!', 'Time for bed!', 'It\'s pretty late!', 'Why are you awake?', 'Hey night owl!'];
+  var lateNight = ['Still awake?', 'Time to sleep!', 'Time for bed!', 'It\'s pretty late!', 'Why staying up?', 'Hey night owl!'];
   var time = new Date();
   var hrs = time.getHours();
-  if(hrs > 0){
+  if(hrs >= 0){
     msg = lateNight[getRandomInt(0,lateNight.length)];
   }
   if (hrs > 6){

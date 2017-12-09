@@ -1,7 +1,7 @@
 * {
   letter-spacing: 0.065rem;
   line-height: 1.5rem;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Raleway', FontAwesome, sans-serif;
   color: #2a2a2a;
   cursor: default;
   transition: all 0.25s !important;
@@ -48,7 +48,7 @@ nav {
 }
 
 nav i {
-  font-size: 1.15rem !important;
+  font-size: 1.25rem !important;
 }
 
 nav .nav-left {
@@ -190,6 +190,12 @@ button:hover, button:focus, button:active {
   line-height: 1.75rem;
 }
 
+@media (min-width: 1024px) and (max-width: 1550px) {
+  .content #about p {
+    line-height: 1.5rem;
+  }
+}
+
 footer {
   text-align: right;
   letter-spacing: 0.075rem;
@@ -210,7 +216,7 @@ footer ul {
   }
 }
 
-footer span {
+footer span a {
   font-weight: 600;
 }
 
@@ -352,6 +358,27 @@ button[type="submit"], #signup {
 
 .right {
   float: right !important;
+}
+
+#aboutinfo {
+  width: 100%;
+}
+
+#aboutinfo .left, #aboutinfo .right {
+  width: 48%;
+  margin-top: 1.5%;
+}
+
+#aboutinfo .right {
+  height: 500px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("../img/home.jpg");
+  margin-left: 2.5%;
+}
+
+#aboutinfo .right img {
+  width: 100%;
 }
 
 .foodinfo {
@@ -646,6 +673,57 @@ button[type="submit"], #signup {
   width: 100%;
   height: 100vh;
   z-index: 5000;
+}
+
+.filter {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
+  width: 97.5%;
+  margin: 1.5% auto 2% auto;
+}
+
+.filter * {
+  padding: 0.5%;
+  margin: 0.5%;
+  width: inherit;
+  display: inline;
+  float: left;
+}
+
+.filter select {
+  outline: none;
+  width: 25%;
+  font-size: 0.95rem;
+}
+
+.filter select:hover, .filter select:focus {
+  border-color: #5dc6b3;
+}
+
+.filter option {
+  border-color: #5dc6b3;
+}
+
+.filter label {
+  font-size: 0.9rem;
+  font-weight: bold;
+  width: 5%;
+}
+
+.filter input {
+  width: 45%;
+  margin-left: 2.5%;
+}
+
+.filter button {
+  width: 25%;
+}
+
+.filter i {
+  width: 1%;
 }
 
 /*# sourceMappingURL=app.css.map */

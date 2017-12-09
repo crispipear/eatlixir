@@ -6,13 +6,32 @@
 ?>
 <section>
   <h3 class="formTitle">Medicinal Diet Recipes Directory</h3>
+  <div class="filter">
+    <label for="functions">functions</label>
+    <select id="functions">
+      <option>moisten lungs</option>
+      <option>tonify</option>
+      <option>soothe mind</option>
+    </select>
+    <label for="indications">indications</label>
+    <select id="indications">
+      <option>cough</option>
+      <option>insomnia</option>
+      <option>diarrhea</option>
+      <option>indigestion</option>
+      <option>loss of appetite</option>
+    </select>
+    <input id="keyword" type="text" placeholder="&#xf002; search by keyword">
+    <button class="cta-button" id="search">search</button>
+    <button class="cta-button" id="showall">all</button>
+  </div>
 <?php if ($currentRole === 'admin'): ?>
   <?= '<button class="cta-button settings" style="margin-top: 2%">' . $this->Html->link(__('New Recipe'), ['action' => 'add']) . '</button>'?>
 <?php endif ?>
 <?php foreach ($medrecipes as $medrecipe): ?>
-<div class="foodinfo">
+<div class="foodinfo" id=<?= h($medrecipe->id)?>>
   <div class="left">
-    <?= $this->Html->image($medrecipe->img, ['alt' => 'CakePHP'])?>
+    <?= $this->Html->image($medrecipe->img, ['alt' => 'Eatlixir'])?>
   <?php if ($currentRole === 'admin'): ?>
   <h3><?= h($medrecipe->name) ?> <?=  $this->Html->link('<i class="fa fa-pencil-square-o" aria-hidden="true"></i>', ['action' => 'view/'.$medrecipe->id], array('escape' => false))?></h3>
 <?php else :?>
@@ -30,3 +49,55 @@
 </div>
 <?php endforeach; ?>
 </section>
+<script>
+var recipeData=[];
+var results=[];
+$.ajax({
+  url: '/eatlixir/medrecipes/all',
+  dataType: "json",
+  contentType: "application/json",
+  success: (function(data){
+    recipeData = data.Medrecipes;
+  })
+});
+
+$('select').change(function(){
+  var category = this.id;
+  var value = $(this).val();
+  recipeData.forEach(function(data){
+    var id = JSON.stringify(data['id']);
+    var result = JSON.stringify(data[category]);
+    if (result.indexOf(value) !== -1) {
+        results.push(id);
+    }
+  });
+  renderResults();
+});
+
+$('#showall').click(function(){
+  $('.foodinfo').hide();
+  $('.foodinfo').show();
+});
+$('#search').click(function(){
+  console.log(recipeData);
+  var keyword = $('#keyword').val();
+  recipeData.forEach(function(data){
+    var id = JSON.stringify(data['id']);
+    for (var key in data) {
+      var result = JSON.stringify(data[key]);
+      if (result.indexOf(keyword) !== -1) {
+        results.push(id);
+      }
+    }
+  });
+  renderResults();
+});
+
+function renderResults(){
+  $('.foodinfo').hide();
+  results.forEach(function(id){
+    $('div#'+id).show();
+  });
+  results = [];
+}
+</script>

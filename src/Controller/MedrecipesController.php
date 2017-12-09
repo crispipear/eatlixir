@@ -21,7 +21,7 @@ class MedrecipesController extends AppController
      public function initialize()
      {
        parent::initialize();
-       $this->Auth->allow(['index']);
+       $this->Auth->allow(['index','all']);
      }
     public function index()
     {
@@ -112,5 +112,10 @@ class MedrecipesController extends AppController
         }
 
         return $this->redirect(['action' => 'index']);
+    }
+    public function all () {
+      $this->set('Medrecipes',$this->Medrecipes->find('all',array('recursive' => 0)));
+      $this->RequestHandler->renderAs($this, 'json');
+      $this->set('_serialize',array('Medrecipes'));
     }
 }

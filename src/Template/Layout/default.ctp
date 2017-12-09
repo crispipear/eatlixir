@@ -58,7 +58,7 @@
   <footer>
     <?php
     $output = '<ul> Copyright Eatlixir 2017 | ';
-    $output .= '<span style="float:left; padding-top:2.5%">Contact: rice74@uw.edu</span>';
+    $output .= '<span style="float:left; padding-top:2.5%">Contact: <a href="mailto:rice74@uw.edu">rice74@uw.edu</a></span>';
     $output .= '<span>' . $this->Html->link('Su Li','http://suyli.me',array('escape'=>false, 'target'=>'_blank')) . '</span>';
     $output .= '<li>' . $this->Html->link('<i class="fa fa-github" aria-hidden="true"></i>','https://github.com/crispipear/eatlixir',array('escape'=>false, 'target'=>'_blank')) . '</li>';
     $output .= '</ul>';

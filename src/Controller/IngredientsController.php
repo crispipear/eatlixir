@@ -21,7 +21,7 @@ class IngredientsController extends AppController
      public function initialize()
      {
        parent::initialize();
-       $this->Auth->allow(['index']);
+       $this->Auth->allow(['index','all']);
      }
     public function index()
     {
@@ -112,4 +112,9 @@ class IngredientsController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+    public function all () {
+  		$this->set('Ingredients',$this->Ingredients->find('all',array('recursive' => 0)));
+  		$this->RequestHandler->renderAs($this, 'json');
+  		$this->set('_serialize',array('Ingredients'));
+  	}
 }

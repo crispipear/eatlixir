@@ -14,11 +14,10 @@ $(document).ready(function() {
 
     $('#scroll').click(function() {
         $('html, body').animate({
-            scrollTop: ($('#about').offset().top)
+            scrollTop: ($('#about').offset().top-75)
         }, 750);
     });
     $('#signup').attr('disabled', 'disabled');
     $('label[for=username]').text('Username *');
     $('label[for=password]').text('Password *');
-
 });
