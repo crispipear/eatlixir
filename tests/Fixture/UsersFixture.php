@@ -28,6 +28,7 @@ class UsersFixture extends TestFixture
         'fail_count' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => '0', 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         'created' => ['type' => 'datetime', 'length' => null, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null],
         'modified' => ['type' => 'datetime', 'length' => null, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null],
+        'bodytype' => ['type' => 'string', 'length' => 100, 'null' => true, 'default' => null, 'collate' => 'latin1_swedish_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
         '_indexes' => [
             'state' => ['type' => 'index', 'columns' => ['valid_state'], 'length' => []],
         ],
@@ -57,10 +58,11 @@ class UsersFixture extends TestFixture
             'password' => 'Lorem ipsum dolor sit amet',
             'role' => 'Lorem ipsum dolor ',
             'valid_state' => 'Lorem ipsum dolor sit amet',
-            'last_login' => '2017-11-26 01:37:49',
+            'last_login' => '2017-12-10 07:01:52',
             'fail_count' => 1,
-            'created' => '2017-11-26 01:37:49',
-            'modified' => '2017-11-26 01:37:49'
+            'created' => '2017-12-10 07:01:52',
+            'modified' => '2017-12-10 07:01:52',
+            'bodytype' => 'Lorem ipsum dolor sit amet'
         ],
     ];
 }

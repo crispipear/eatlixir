@@ -360,19 +360,33 @@ button[type="submit"], #signup{
 }
 #aboutinfo{
   width: 100%;
+  margin-bottom: 5%;
   .left, .right{
     width: 48%;
     margin-top: 1.5%;
-  }
-  .right{
     img{
       width: 100%;
     }
-    height: 500px;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-image: url('../img/home.jpg');
-    margin-left: 2.5%;
+  }
+  .formTitle{
+    padding-top: 5%;
+  }
+}
+.full{
+  width: 100%;
+  p{
+    margin-top: 1.5%;
+  }
+  table{
+    border: 1px $baseGreen solid;
+    padding: 1.5%;
+    td{
+      padding: 1.5%;
+      border-bottom: 1px #ccc solid;
+    }
+    tr{
+      margin-bottom: 2.5%;
+    }
   }
 }
 .foodinfo{
@@ -788,5 +802,80 @@ button[type="submit"], #signup{
       }
     }
     list-style: none;
+  }
+}
+#bodytest{
+  padding-top:5%;
+
+  ul{
+    span{
+      color: #b92b2b;
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5%
+    }
+    list-style: none;
+    padding: 5%;
+  }
+  li{
+    margin: 0% 0% 7.5% 0%;
+    font-weight: bold;
+    font-size: $baseSize*1.15;
+  }
+  p{
+    font-size: $baseSize;
+    font-weight: 400;
+    margin-top: 1.5%;
+    display: flex;
+    flex-direction: row;
+    input[type=radio]{
+      width: 50px;
+    }
+  }
+  input{
+    cursor: pointer;
+  }
+  .cta-button{
+    margin-top: 2.5%;
+    width: inherit;
+  }
+  #bctest{
+    width: 750px;
+    margin-top: 2.5%;
+    border: 1px $baseGreen solid;
+    button{
+      width: 25%;
+      margin: -5% auto 5% auto;
+      display: block;
+    }
+  }
+  #resultMsg{
+    padding: 0% 5% .5% 5%;
+  }
+  #result{
+    display: block;
+    padding: 0% 5% 2.5% 5%;
+  }
+  #linktoEdit{
+    margin-top: 0.5%!important
+  }
+  #highestScore{
+    color: $baseGreen;
+    font-weight: bold;
+  }
+}
+#editAccount{
+  select{
+    font-size: $baseSize;
+    outline: none;
+    padding: 2.5%;
+    margin-top: 2.5%;
+    width: 100%;
+    &:focus{
+      border-color: $baseGreen;
+    }
+    option{
+      padding: 2.5%;
+    }
   }
 }

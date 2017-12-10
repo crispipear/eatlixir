@@ -90,6 +90,10 @@ class UsersTable extends Table
             ->requirePresence('fail_count', 'create')
             ->notEmpty('fail_count');
 
+        $validator
+            ->scalar('bodytype')
+            ->allowEmpty('bodytype');
+
         return $validator;
     }
 

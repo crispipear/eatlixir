@@ -11,9 +11,15 @@
     <div class="info">
       <h3><span id="greetMsg"></span> <?= h($user->username)?></h3>
     <p><span>Email</span> <?= h($user->email) ?></p>
+    <?php if(strlen($user->bodytype) == 0):?>
+      <p><span>Body constitution type</span> not set, go take the test!</p>
+    <?php else: ?>
+      <p><span>Body constitution type</span> <?= h($user->bodytype) ?></p>
+    <?php endif ?>
     <p><span>Joined since</span> <?= h($user->created) ?></p>
     <?php if (($currentRole === 'admin')||($currentRole === 'user')&&($currentID == $user->id)): ?>
       <button class="cta-button"><?= $this->Html->link(__('Edit Account'), ['action' => 'edit', $user->id]) ?></button>
+      <button class="cta-button"><?= $this->Html->link(__('Body Test'), ['controller'=>'pages','action' => 'display','bodytest']) ?></button>
     <?php endif; ?>
     <?php if ($currentRole === 'admin'): ?>
       <button class="cta-button"><?= $this->Html->link(__('Admin Panel'), ['action' => 'index']) ?></button>

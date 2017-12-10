@@ -454,6 +454,7 @@ button[type="submit"], #signup {
 
 #aboutinfo {
   width: 100%;
+  margin-bottom: 5%;
 }
 
 #aboutinfo .left, #aboutinfo .right {
@@ -461,16 +462,34 @@ button[type="submit"], #signup {
   margin-top: 1.5%;
 }
 
-#aboutinfo .right {
-  height: 500px;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-image: url("../img/home.jpg");
-  margin-left: 2.5%;
+#aboutinfo .left img, #aboutinfo .right img {
+  width: 100%;
 }
 
-#aboutinfo .right img {
+#aboutinfo .formTitle, #aboutinfo .formTitle2 {
+  padding-top: 5%;
+}
+
+.full {
   width: 100%;
+}
+
+.full p {
+  margin-top: 1.5%;
+}
+
+.full table {
+  border: 1px #5dc6b3 solid;
+  padding: 1.5%;
+}
+
+.full table td {
+  padding: 1.5%;
+  border-bottom: 1px #ccc solid;
+}
+
+.full table tr {
+  margin-bottom: 2.5%;
 }
 
 .foodinfo {
@@ -979,6 +998,98 @@ button[type="submit"], #signup {
 
 .paginator ul li:hover a {
   color: #5dc6b3;
+}
+
+#bodytest {
+  padding-top: 5%;
+}
+
+#bodytest ul {
+  list-style: none;
+  padding: 5%;
+}
+
+#bodytest ul span {
+  color: #b92b2b;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5%;
+}
+
+#bodytest li {
+  margin: 0% 0% 7.5% 0%;
+  font-weight: bold;
+  font-size: 1.15rem;
+}
+
+#bodytest p {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 1.5%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
+}
+
+#bodytest p input[type=radio] {
+  width: 50px;
+}
+
+#bodytest input {
+  cursor: pointer;
+}
+
+#bodytest .cta-button, #bodytest button[type="submit"], #bodytest #signup {
+  margin-top: 2.5%;
+  width: inherit;
+}
+
+#bodytest #bctest {
+  width: 750px;
+  margin-top: 2.5%;
+  border: 1px #5dc6b3 solid;
+}
+
+#bodytest #bctest button {
+  width: 25%;
+  margin: -5% auto 5% auto;
+  display: block;
+}
+
+#bodytest #resultMsg {
+  padding: 0% 5% .5% 5%;
+}
+
+#bodytest #result {
+  display: block;
+  padding: 0% 5% 2.5% 5%;
+}
+
+#bodytest #linktoEdit {
+  margin-top: 0.5% !important;
+}
+
+#bodytest #highestScore {
+  color: #5dc6b3;
+  font-weight: bold;
+}
+
+#editAccount select {
+  font-size: 1rem;
+  outline: none;
+  padding: 2.5%;
+  margin-top: 2.5%;
+  width: 100%;
+}
+
+#editAccount select:focus {
+  border-color: #5dc6b3;
+}
+
+#editAccount select option {
+  padding: 2.5%;
 }
 
 /*# sourceMappingURL=app.css.map */

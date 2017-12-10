@@ -13,6 +13,7 @@
                 <th width="10%" scope="col"><?= $this->Paginator->sort('username') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('name') ?></th>
                 <th width="15%" scope="col"><?= $this->Paginator->sort('email') ?></th>
+                <th width="15%" scope="col"><?= $this->Paginator->sort('bodytype') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('role') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('valid_state') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('last_login') ?></th>
@@ -28,6 +29,7 @@
                 <td width="10%"><?= h($user->username) ?></td>
                 <td><?= h($user->name) ?></td>
                 <td width="15%"><?= h($user->email) ?></td>
+                <td width="15%"><?= h($user->bodytype) ?></td>
                 <td><?= h($user->role) ?></td>
                 <td><?= h($user->valid_state) ?></td>
                 <td><?= h($user->last_login) ?></td>

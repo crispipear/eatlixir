@@ -5,27 +5,32 @@
  */
 ?>
 
-<section class="gradient">
+<section id="editAccount" class="gradient">
 <?php if(!($currentRole === 'admin')&&!($currentID == $user->id)) : ?>
 <h3 class="formTitle"> You are not authorized for this action</h3>
 <?php else : ?>
   <h3 class="formTitle">Edit account info</h3>
     <?= $this->Form->create($user) ?>
-        <?php if ($currentRole === 'admin'){
-          echo $this->Form->control('username');
-          echo $this->Form->control('name');
-          echo $this->Form->control('email');
-          echo $this->Form->control('password');
-          echo $this->Form->control('role');
-          echo $this->Form->control('valid_state');
-          echo $this->Form->control('fail_count');
-
-        }
-        if (($currentRole === 'user')&& ($currentID == $user->id)){
+        <?php
           echo $this->Form->control('username');
           echo $this->Form->control('email');
           echo $this->Form->control('password');
-        }
+          echo '<label>Body Constitution Type</label>';
+          $options = [
+            ['text' => 'Neutral', 'value' => 'Neutral'],
+            ['text' => 'Qi Deficient', 'value' => 'Qi Deficient'],
+            ['text' => 'Yang Deficient', 'value' => 'Yang Deficient'],
+            ['text' => 'Yin Deficient', 'value' => 'Yin Deficient'],
+            ['text' => 'Phlegm&Dampness', 'value' => 'Phlegm&Dampness'],
+            ['text' => 'Damp-heat', 'value' => 'Damp-heat'],
+            ['text' => 'Blood Stasis', 'value' => 'Blood Stasis'],
+            ['text' => 'Qi Stagnation', 'value' => 'Qi Stagnation'],
+            ['text' => 'Special Constitution', 'value' => 'Special Constitution']
+          ];
+          echo $this->Form->select('bodytype', $options);
+          if ($currentRole === 'admin'){
+            echo $this->Form->control('name');
+          }
         ?>
       <?= $this->Form->button(__('save')) ?>
       <button type="submit" class="cta-button"><?= $this->Form->postLink(
