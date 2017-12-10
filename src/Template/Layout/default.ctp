@@ -38,7 +38,9 @@
   <nav>
     <?php
     $output = '<ul>';
+    $output .= '<li id="bars" class="nav-left"><i class="fa fa-bars nav-left" aria-hidden="true"></i></li>';
     $output .= '<li class="nav-left">' . $this->Html->link('home','/',array('class' => 'nav-left')) . '</li>';
+    $output .= '<li class="nav-left">' . $this->Html->link('about',array('controller' => 'pages', 'action' => 'display', 'about'),array('class' => 'nav-left')) . '</li>';
     $output .= '<li class="nav-left">' . $this->Html->link('food',array('controller' => 'pages', 'action' => 'display', 'food'),array('class' => 'nav-left')) . '</li>';
     $output .= '<li class="nav-left">' . $this->Html->link('checker',array('controller' => 'pages', 'action' => 'display', 'health'),array('class' => 'nav-left')) . '</li>';
     if (!is_null($this->request->session()->read('Auth.User.username'))) {
@@ -57,11 +59,11 @@
   </div>
   <footer>
     <?php
-    $output = '<ul> Copyright Eatlixir 2017 | ';
-    $output .= '<span style="float:left; padding-top:2.5%">Contact: <a href="mailto:rice74@uw.edu">rice74@uw.edu</a></span>';
-    $output .= '<span>' . $this->Html->link('Su Li','http://suyli.me',array('escape'=>false, 'target'=>'_blank')) . '</span>';
-    $output .= '<li>' . $this->Html->link('<i class="fa fa-github" aria-hidden="true"></i>','https://github.com/crispipear/eatlixir',array('escape'=>false, 'target'=>'_blank')) . '</li>';
-    $output .= '</ul>';
+    $output = '<div>';
+    $output .= '<span style="float:left">Contact: <a href="mailto:rice74@uw.edu">rice74@uw.edu</a></span>';
+    $output .= '<span>Copyright Eatlixir 2017 | <span>' . $this->Html->link('Su Li','http://suyli.me',array('escape'=>false, 'target'=>'_blank')) . '</span>';
+    $output .=  $this->Html->link('<i class="fa fa-github" aria-hidden="true"></i>','https://github.com/crispipear/eatlixir',array('escape'=>false, 'target'=>'_blank')) . '</span>';
+    $output .= '</div>';
     echo $output;
     ?>
   </footer>

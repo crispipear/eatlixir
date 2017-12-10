@@ -115,3 +115,6 @@
     </table>
   <span class='checkerMsg'>Symtomps Checker API powered by <?= $this->Html->link('ApiMedic','http://apimedic.com',array('target' => '_blank'))?>, priaid inc.</span>
 </section>
+<section id="mobileChecker">
+  <h3 class="formTitle2">This tool is currently not supported by mobile. Recommended resolution: >750px</h3>
+</section>

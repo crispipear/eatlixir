@@ -7,7 +7,7 @@
 
 <section class="gradient">
 <?php if(!($currentRole === 'admin')&&!($currentID == $user->id)) : ?>
-<h3> You are not authorized for this action</h3>
+<h3 class="formTitle"> You are not authorized for this action</h3>
 <?php else : ?>
   <h3 class="formTitle">Edit account info</h3>
     <?= $this->Form->create($user) ?>

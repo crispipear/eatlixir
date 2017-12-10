@@ -28,6 +28,6 @@
           ?></button>
     </div>
   <?php else : ?>
-    <h3> You are not authorized for this action</h3>
+    <h3 class="formTitle"> You are not authorized for this action</h3>
 <?php endif ?>
 </section>

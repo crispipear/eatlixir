@@ -21,6 +21,13 @@
       <option>indigestion</option>
       <option>loss of appetite</option>
     </select>
+    <label for="name">type</label>
+    <select id="name">
+      <option>soup</option>
+      <option>tea</option>
+      <option>stew</option>
+      <option>congee</option>
+    </select>
     <input id="keyword" type="text" placeholder="&#xf002; search by keyword">
     <button class="cta-button" id="search">search</button>
     <button class="cta-button" id="showall">show all</button>

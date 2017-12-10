@@ -1,6 +1,19 @@
 $(document).ready(function() {
   $('#pageloader').hide();
-  setTimeout(function () { $('#tableloader').hide(); $('#checker table').show(); }, 1500);
+  if($(window).width()<=650){
+    mobileDisplay();
+  }else{
+    nonMobileDisplay();
+  }
+  $(window).resize(function() {
+    if($(window).width()>650){
+      nonMobileDisplay()
+    }
+    if($(window).width()<=650){
+      mobileDisplay();
+    }
+  });
+  
   $('input').attr('autocomplete','off');
     console.log("Design and Developed by Su Li - http://suyli.me \nCakephp 3.0");
     $(window).scroll(function() {
@@ -20,4 +33,20 @@ $(document).ready(function() {
     $('#signup').attr('disabled', 'disabled');
     $('label[for=username]').text('Username *');
     $('label[for=password]').text('Password *');
+
+    $('#bars').click(function(){
+      $('nav li').not('#bars').toggle();
+    })
+
+    function mobileDisplay(){
+      $('body').css('overflow-x','hidden');
+      $('#checker').hide();
+      $('#mobileChecker').show();
+    }
+    function nonMobileDisplay(){
+      $('#mobileChecker').hide();
+      $('#checker').show();
+      setTimeout(function () {$('#tableloader').hide(); $('#checker table').show(); }, 1500);
+      $('nav li').not('#bars').show();
+    }
 });

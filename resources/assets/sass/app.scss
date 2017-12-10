@@ -17,7 +17,10 @@ body{
 p, h1{
   margin: 0.5% 0% 01.5% 0%;
   @include laptop{
-    font-size: $baseSize*0.9
+    font-size: $baseSize*0.925
+  }
+  @include mobile{
+    font-size: $baseSize*0.875
   }
 }
 a, a i{
@@ -61,7 +64,7 @@ nav{
   li{
     cursor: pointer;
     text-transform: uppercase;
-    display: inline-block!important;
+    display: inline-block;
     padding: 1.5% 2.5% 1.5% 0%;
     a{
       letter-spacing: 0.15rem;
@@ -69,6 +72,21 @@ nav{
     }
     &:hover a, &:hover i{
       color: $baseGreen;
+    }
+  }
+  #bars{
+    display: none;
+  }
+  @include mobile{
+    .nav-right{
+      float: left;
+    }
+    li{
+      display: none;
+      width: 100%;
+    }
+    #bars{
+      display: inline-block;
     }
   }
 }
@@ -92,6 +110,9 @@ nav{
   a{
     color: $baseWhite;
   }
+  @include mobile{
+    font-size: $baseSize*0.75;
+  }
 }
 button{
   &:hover, &:focus, &:active{
@@ -110,9 +131,6 @@ button{
   section{
     margin:0% auto 0% auto;
     max-width: 1366px;
-    @include laptop{
-      max-width: 966px;
-    }
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -120,6 +138,13 @@ button{
     align-items: center;
     position: relative;
     padding: 2.5% 0% 2.5% 0%;
+    @include laptop{
+      max-width: 966px;
+    }
+    @include mobile{
+      max-width: 90%;
+      margin: auto;
+    }
   }
   #home{
     font-weight: 300!important;
@@ -130,25 +155,45 @@ button{
       font-size: $baseSize*9;
       letter-spacing: 0.5rem;
       color: $baseGreen;
-      @include laptop{
-        font-size: $baseSize*6.5
-      }
     }
     h5{
       margin-top: 2.75%;
-      @include laptop{
-        font-size: $baseSize*1.25
-      }
     }
     #scroll{
       margin-top: 1%;
       width: inherit;
     }
+    @include laptop{
+      h1{
+        font-size: $baseSize*6.5
+      }
+      h5{
+        font-size: $baseSize*1.25
+      }
+    }
+    @include mobile{
+      max-width: 100%;
+      h1{
+        margin-top: 2.5%;
+        font-size: $baseSize*4.5;
+      }
+      h5{
+        font-size: $baseSize*0.95;
+        margin-top: 7.5%;
+      }
+      #scroll{
+        margin-top: 0%;
+      }
+    }
   }
   #about{
+    padding-top: 5%;
+    min-height: 350px!important;
     p{
       line-height: 1.75rem;
-      @include laptop{
+    }
+    @include laptop{
+      p{
         line-height: 1.5rem;
       }
     }
@@ -158,8 +203,9 @@ footer{
   text-align: right;
   letter-spacing: 0.075rem;
   font-size: $baseSize*0.95;
-  ul{
-    padding: 0%;
+  div{
+    border-top: 1px lighten($baseColor, 50%) solid;
+    padding: 1.75% 0% 1.75% 0%;
     margin: auto;
     width: 1366px;
     list-style: none;
@@ -171,17 +217,22 @@ footer{
   span a{
     font-weight: 600;
   }
-  li{
-    cursor: pointer;
-    text-transform: uppercase;
-    display: inline-block!important;
-    padding: 2.5% 0% 2.5% 0.75%;
-    i{
-      font-size:  $baseSize*1.125!important;
-    }
+  a i{
+    margin-left: 0.5%;
   }
   a:hover, a i:hover{
     color: $baseGreen;
+  }
+  @include mobile{
+    float: none;
+    text-align: center;
+    div{
+      padding: 2.5%;
+      width: 100%;
+      span{
+        width: 100%;
+      }
+    }
   }
 }
 .about-box{
@@ -198,6 +249,7 @@ footer{
   background-position: center;
   background-image: url('../img/about-banner.png');
   h5{
+    text-align: center;
     -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.05);
     background-color: rgba($baseWhite, 0.65);
     padding: 1.5%;
@@ -208,6 +260,13 @@ footer{
   }
   &:hover h5{
     background-color: $baseWhite;
+  }
+  @include mobile{
+    height: 200px;
+    h5{
+      margin: 2.5%;
+      font-size: $baseSize*0.95;
+    }
   }
 }
 form{
@@ -276,7 +335,23 @@ button[type="submit"], #signup{
     color: $baseColor;
   }
 }
-
+@include mobile{
+  form{
+    width: 75%;
+    margin: 0%;
+  }
+  input, label, button[type="submit"],#signup{
+    margin: 2.5% 2.5% 0% 2.5%;
+  }
+  button[type="submit"],#signup{
+    width: 100%;
+    margin-top: 5%;
+  }
+  input, label{
+    padding: 1%;
+    font-size: $baseSize;
+  }
+}
 .left{
   float: left!important;
 }
@@ -322,9 +397,6 @@ button[type="submit"], #signup{
     padding: 0%;
     color: $baseGreen;
     font-size:  $baseSize*2;
-    @include laptop{
-      font-size: $baseSize*1.75;
-    }
   }
   h5{
     margin: 2.5% 0% 2.5% 0%;
@@ -333,15 +405,10 @@ button[type="submit"], #signup{
       color: $baseGreen;
       margin-right: 2.5%;
     }
-    @include laptop{
-      font-size: $baseSize*.915;
-    }
+
   }
   p{
     font-size: $baseSize*1.15;
-    @include laptop{
-      font-size: $baseSize;
-    }
     span{
       font-weight: bold;
       color: $baseGreen;
@@ -349,35 +416,72 @@ button[type="submit"], #signup{
     }
     margin: 0% 0% 1.75% 0%;
   }
+  @include laptop{
+    h3{
+      font-size: $baseSize*1.75;
+    }
+    h5{
+      font-size: $baseSize*.915;
+    }
+    p{
+      font-size: $baseSize;
+    }
+  }
+  @include mobile{
+    h3{
+      font-size: $baseSize*1.5;
+    }
+    h5{
+      font-size: $baseSize*.95;
+    }
+    p{
+      font-size: $baseSize*.95;
+    }
+    .left, .right{
+      margin: 0%;
+      width: 100%;
+    }
+    margin-top: 7.5%;
+    margin-bottom: 7.5%;
+    img{
+      max-width: 100%;
+    }
+  }
 }
 .foodcategory{
-  margin-top: -2.5%;
+  margin-top: -3.5%;
   background-repeat: no-repeat;
   background-size: contain;
   -webkit-box-shadow:  0px 0px 15px 0px rgba(0, 0, 0, 0.05);
   width: 600px;
   height: 400px;
-  @include laptop{
-    width: 468px;
-    height: 312px;
-  }
   display: flex;
   justify-content: center;
   align-items: center;
   float: left;
   span{
     background-color: rgba($baseColor, 0.35);
-    padding: 10px;
+    padding: 5%;
     cursor: pointer;
     color: $baseWhite;
     letter-spacing: 0.75rem;
     font-size: $baseSize*2.5;
-    @include laptop{
-      font-size: $baseSize*1.75;
-    }
   }
   &:hover{
     filter: brightness(80%);
+  }
+  @include laptop{
+    width: 468px;
+    height: 312px;
+    span{
+      font-size: $baseSize*1.75;
+    }
+  }
+  @include mobile{
+    width: 100%;
+    span{
+      margin-top: -15%;
+    }
   }
 }
 #fc-herbs{
@@ -388,27 +492,51 @@ button[type="submit"], #signup{
   margin-left: 15px;
   background-image: url('../img/food-recipes.png');
 }
+@include mobile{
+  #fc-herbs{
+    margin-top: 17.5%;
+  }
+  #fc-recipes{
+    margin-top: -17.5%;
+  }
+  #fc-herbs, #fc-recipes{
+    margin-left: 0%;
+    margin-right: 0%;
+  }
+}
 #signuptoday{
   h3,a{
-    left: 10%;
-    position: absolute;
+    margin-left: 7.5%;
   }
   h3{
     font-size: $baseSize*1.75;
-    top: 27.5%;
-    @include laptop{
-      font-size: $baseSize*1.25;
-    }
+    margin-top: -5%;
   }
-  a{
-    top: 45%;
-  }
-  min-height: 450px!important;
+  align-items: flex-start;
+  min-height: 450px;
   background-image: url('../img/bg.png');
   background-repeat: no-repeat;
   background-size: contain;
   @include laptop{
-    min-height: 350px!important;
+    h3{
+      font-size: $baseSize*1.5;
+    }
+    min-height: 350px;
+  }
+  @include mobile{
+    min-height: 175px;
+    align-items: center;
+    h3, a{
+      margin-left: 0%;
+    }
+    h3{
+      font-size: $baseSize*1.05;
+      margin-bottom: 1.5%;
+    }
+    a{
+      padding: 1%;
+      font-size: $baseSize*0.6
+    }
   }
 }
 .settings{
@@ -431,9 +559,6 @@ button[type="submit"], #signup{
     margin-top: 0%;
     color: $baseGreen;
     font-size: $baseSize*5;
-    @include laptop{
-      font-size: $baseSize*3.5;
-    }
     span{
       color: $baseGreen;
     }
@@ -445,15 +570,38 @@ button[type="submit"], #signup{
       font-weight: bold;
       margin-right: 2.5%;
     }
-    @include laptop{
-      font-size: $baseSize*1.25;
-    }
+
   }
   button{
     width: 200px;
     text-align: center;
     padding: 10px;
     margin-top: 5%;
+  }
+  @include laptop{
+    p{
+      font-size: $baseSize*1.25;
+    }
+    h3{
+      font-size: $baseSize*3.5;
+    }
+  }
+  @include mobile{
+    p,h3,button{
+      max-width: 75%!important;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    p{
+      font-size: $baseSize*1.05;
+    }
+    h3{
+      font-size: $baseSize*2.5;
+      line-height: 2.5rem;
+    }
+    button{
+      width: 100%;
+    }
   }
 }
 #foodinfo{
@@ -484,6 +632,16 @@ button[type="submit"], #signup{
     padding: 1.75%;
     margin-top: 1.5%;
   }
+  @include mobile{
+    .info{
+      width: 100%;
+    }
+    h3{
+      padding: 5% 0% 2.5% 2.5%;
+      margin-top: 12.5%;
+      font-size: $baseSize*1.5;
+    }
+  }
 }
 .gradient{
   max-width: 100vw!important;
@@ -494,14 +652,21 @@ button[type="submit"], #signup{
   background: linear-gradient(to right, #e6fcf3, #e6eefc); /* Standard syntax */
 }
 .formTitle{
+  text-align: center;
   color: $baseGreen;
   font-size: $baseSize*2.5;
   margin: 0%;
-  padding: 5% 0% 2.5% 0%;
+  padding: 2.5% 0% 1.5% 0%;
 }
 .formTitle2{
   @extend .formTitle;
   padding: 0%;
+  @include laptop{
+    font-size: $baseSize*1.75;
+  }
+  @include mobile{
+    margin-bottom: 5%;
+  }
 }
 #checker{
   .checkerMsg{
@@ -514,6 +679,11 @@ button[type="submit"], #signup{
     margin: 4.5% 0% 1% 0%;
   }
   padding-top: 2.5%;
+}
+#mobileChecker{
+  .formTitle2{
+    font-size: $baseSize;
+  }
 }
 #pageloader, #tableloader{
   display: flex;
@@ -543,9 +713,6 @@ button[type="submit"], #signup{
       border-color: $baseGreen;
     }
   }
-  option{
-    border-color: $baseGreen;
-  }
   label{
     font-size: $baseSize*0.9;
     font-weight: bold;
@@ -561,9 +728,27 @@ button[type="submit"], #signup{
   i{
     width: 1%;
   }
+  @include mobile{
+    width: 100%;
+    flex-direction: column;
+    select{
+      width: 100%;
+    }
+    input{
+      width: 100%;
+      margin: 7.5% 0% 2.5% 0%;
+    }
+    button{
+      margin-top: 2.5%;
+      width: 100%;
+    }
+  }
 }
 .foodDir{
   justify-content: flex-start!important;
+  .formTitle{
+    padding-top: 5%;
+  }
   table{
     text-align: left;
     td{
@@ -581,6 +766,13 @@ button[type="submit"], #signup{
           color: $baseGreen;
         }
       }
+    }
+  }
+  @include mobile{
+    .formTitle{
+      padding-top: 20%;
+      font-size: $baseSize*1.75;
+      line-height: 2rem;
     }
   }
 }

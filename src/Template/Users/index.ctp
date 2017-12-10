@@ -56,6 +56,6 @@
 </div>
 <?php endif; ?>
 <?php if ($currentRole === 'user'): ?>
-  <h3>You are not authorized to view this page</h3>
+  <h3 class="formTitle">You are not authorized to view this page</h3>
 <?php endif; ?>
 </section>

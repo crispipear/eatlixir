@@ -6,7 +6,7 @@
 ?>
 <section id="accountinfo" class="gradient">
   <?php if(!($currentRole === 'admin') && !($currentID == $user->id)) : ?>
-  <h3> You are not authorized for this action</h3>
+  <h3 class="formTitle"> You are not authorized for this action</h3>
   <?php else : ?>
     <div class="info">
       <h3><span id="greetMsg"></span> <?= h($user->username)?></h3>
@@ -36,8 +36,8 @@ $('#greetMsg').text(greetmsg);
 function timedGreeting(){
   var msg;
   var morning = ['Mornin\'!','Good morning!','Rise and shine!','Hi early bird', 'Got your coffee yet?', 'What\'s for breakfast?'];
-  var afternoon = ['Good afternoon!','Got lunch?', 'Sun\'s still shining?','Good day,'];
-  var evening = ['Good evening!','What\'s for dinner?', 'Is it dark out?'];
+  var afternoon = ['Good afternoon!','Got lunch?', 'Sun\'s still shining?','Good day,','It\'s tea time!'];
+  var evening = ['Good evening!','What\'s for dinner?', 'Is it dark out?','Dinner\'s ready?'];
   var lateNight = ['Still awake?', 'Time to sleep!', 'Time for bed!', 'It\'s pretty late!', 'Why staying up?', 'Hey night owl!'];
   var time = new Date();
   var hrs = time.getHours();
