@@ -34,7 +34,7 @@
       <option>soothe mind</option>
     </select>
     <label for="symptoms">symptoms</label>
-    <select id="symptoms">
+    <select id="symptoms_key">
       <option>sweats</option>
       <option>cough</option>
       <option>headache</option>
