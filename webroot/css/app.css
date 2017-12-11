@@ -314,7 +314,7 @@ footer a:hover, footer a i:hover {
   height: 300px;
   width: 100%;
   background-position: center;
-  background-image: url("../img/about-banner.png");
+  background-image: url("../img/1.jpg");
 }
 
 #banner h5 {
@@ -629,12 +629,12 @@ button[type="submit"], #signup {
 
 #fc-herbs {
   margin-right: 15px;
-  background-image: url("../img/food-herb.png");
+  background-image: url("../img/3.jpg");
 }
 
 #fc-recipes {
   margin-left: 15px;
-  background-image: url("../img/food-recipes.png");
+  background-image: url("../img/2.jpg");
 }
 
 @media (min-width: 275px) and (max-width: 650px) {
@@ -654,7 +654,7 @@ button[type="submit"], #signup {
   -webkit-box-align: start;
   align-items: flex-start;
   min-height: 450px;
-  background-image: url("../img/bg.png");
+  background-image: url("../img/4.jpg");
   background-repeat: no-repeat;
   background-size: contain;
 }
