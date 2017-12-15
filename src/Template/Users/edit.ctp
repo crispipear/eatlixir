@@ -15,19 +15,6 @@
           echo $this->Form->control('username');
           echo $this->Form->control('email');
           echo $this->Form->control('password');
-          echo '<label>Body Constitution Type</label>';
-          $options = [
-            ['text' => 'Neutral', 'value' => 'Neutral'],
-            ['text' => 'Qi Deficient', 'value' => 'Qi Deficient'],
-            ['text' => 'Yang Deficient', 'value' => 'Yang Deficient'],
-            ['text' => 'Yin Deficient', 'value' => 'Yin Deficient'],
-            ['text' => 'Phlegm&Dampness', 'value' => 'Phlegm&Dampness'],
-            ['text' => 'Damp-heat', 'value' => 'Damp-heat'],
-            ['text' => 'Blood Stasis', 'value' => 'Blood Stasis'],
-            ['text' => 'Qi Stagnation', 'value' => 'Qi Stagnation'],
-            ['text' => 'Special Constitution', 'value' => 'Special Constitution']
-          ];
-          echo $this->Form->select('bodytype', $options);
           if ($currentRole === 'admin'){
             echo $this->Form->control('name');
           }

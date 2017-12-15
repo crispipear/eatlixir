@@ -2038,6 +2038,12 @@ var mode = "diagnosis";
     }
 
     function _createDiagnosisNameElement(issueId, diagnosisName) {
+        var url;
+        if (location.hostname === "localhost" || location.hostname === "127.0.0.1"){
+         url = '/eatlixir/';
+        }else{
+          url = 'https://students.washington.edu/rice74/IMD351/eatlixir/';
+        }
         var diagnosisListElement = jQuery("<li/>", {
         });
 
@@ -2049,13 +2055,27 @@ var mode = "diagnosis";
         var issueInfo = jQuery("<i/>", {
             "class": "fa fa-info-circle ic-issue-info"
         });
+        var findRecipes = jQuery("<i/>", {
+          "class": "fa fa-cutlery"
+        });
+        var findHerbs = jQuery("<i/>", {
+            "class": "fa fa-search"
+        });
 
         issueInfo.bind('click', function () {
             _ajaxGetIssueInfo(issueId);
         });
-
+        findHerbs.bind('click',function(){
+          url = url+"ingredients?"+diagnosisName;
+          window.location.href = url;
+        });
+        findRecipes.bind('click',function(){
+          url = url+"medrecipes?"+diagnosisName;
+          window.location.href = url;
+        });
         diagnosisNameElement.append(issueInfo);
-
+        diagnosisNameElement.append(findRecipes);
+        diagnosisNameElement.append(findHerbs);
         diagnosisListElement.append(diagnosisNameElement);
 
         return diagnosisListElement;

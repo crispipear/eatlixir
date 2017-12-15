@@ -8,26 +8,30 @@
 }
 
 body {
-  margin: 0%;
+  margin: 0;
 }
 
-p, h1 {
-  margin: 0.5% 0% 01.5% 0%;
+h1,
+p {
+  margin: 0.5% 0 1.5%;
 }
 
 @media (min-width: 1024px) and (max-width: 1550px) {
-  p, h1 {
+  h1,
+  p {
     font-size: 0.925rem;
   }
 }
 
 @media (min-width: 275px) and (max-width: 650px) {
-  p, h1 {
+  h1,
+  p {
     font-size: 0.875rem;
   }
 }
 
-a, a i {
+a,
+a i {
   color: #2a2a2a;
   cursor: pointer !important;
   text-decoration: none;
@@ -82,7 +86,7 @@ nav li {
   cursor: pointer;
   text-transform: uppercase;
   display: inline-block;
-  padding: 1.5% 2.5% 1.5% 0%;
+  padding: 1.5% 2.5% 1.5% 0;
 }
 
 nav li a {
@@ -90,7 +94,8 @@ nav li a {
   padding: 10px;
 }
 
-nav li:hover a, nav li:hover i {
+nav li:hover a,
+nav li:hover i {
   color: #5dc6b3;
 }
 
@@ -105,51 +110,57 @@ nav #bars {
   nav li {
     display: none;
     width: 100%;
+    padding: 1% 2.5% 1% 0;
   }
   nav #bars {
     display: inline-block;
   }
 }
 
-.cta-button, button[type="submit"], #signup {
+.cta-button, #signup,
+button[type="submit"] {
   background-color: #5dc6b3;
   text-transform: uppercase;
   letter-spacing: 0.15rem;
   font-size: 0.9rem;
   border: 1px solid #5dc6b3;
-  padding: 0.75% 1.25% 0.75% 1.25%;
+  padding: 0.75% 1.25%;
   color: #fcfcfc;
   width: 100%;
 }
 
-.cta-button:hover, button[type="submit"]:hover, #signup:hover {
+.cta-button:hover, #signup:hover,
+button[type="submit"]:hover {
   background-color: transparent;
   border-color: #2a2a2a;
   color: #2a2a2a;
 }
 
-.cta-button:hover a, button[type="submit"]:hover a, #signup:hover a {
+.cta-button:hover a, #signup:hover a,
+button[type="submit"]:hover a {
   color: #2a2a2a;
 }
 
-.cta-button a, button[type="submit"] a, #signup a {
+.cta-button a, #signup a,
+button[type="submit"] a {
   color: #fcfcfc;
 }
 
 @media (min-width: 275px) and (max-width: 650px) {
-  .cta-button, button[type="submit"], #signup {
+  .cta-button, #signup,
+  button[type="submit"] {
     font-size: 0.75rem;
   }
 }
 
-button:hover, button:focus, button:active {
+button:active, button:focus, button:hover {
   outline: none !important;
 }
 
 .content {
-  margin: 0% auto 0% auto;
-  padding: 0%;
-  margin-bottom: 0%;
+  margin: 0 auto;
+  padding: 0;
+  margin-bottom: 0;
   position: relative;
 }
 
@@ -159,7 +170,7 @@ button:hover, button:focus, button:active {
 }
 
 .content section {
-  margin: 0% auto 0% auto;
+  margin: 0 auto;
   max-width: 1366px;
   min-height: 100vh;
   display: -webkit-box;
@@ -172,7 +183,7 @@ button:hover, button:focus, button:active {
   -webkit-box-align: center;
   align-items: center;
   position: relative;
-  padding: 2.5% 0% 2.5% 0%;
+  padding: 2.5% 0;
 }
 
 @media (min-width: 1024px) and (max-width: 1550px) {
@@ -190,7 +201,8 @@ button:hover, button:focus, button:active {
 
 .content #home {
   font-weight: 300 !important;
-  margin-bottom: 0%;
+  margin-bottom: 0;
+  text-align: center;
 }
 
 .content #home h1 {
@@ -224,15 +236,17 @@ button:hover, button:focus, button:active {
     max-width: 100%;
   }
   .content #home h1 {
-    margin-top: 2.5%;
+    margin-top: 7.5%;
     font-size: 4.5rem;
   }
   .content #home h5 {
     font-size: 0.95rem;
-    margin-top: 7.5%;
+    margin: 7.5%;
   }
   .content #home #scroll {
     margin-top: 0%;
+    padding: 1.25% 2.5% 1.25% 2.5%;
+    font-size: 0.65rem;
   }
 }
 
@@ -259,7 +273,7 @@ footer {
 
 footer div {
   border-top: 1px #aaaaaa solid;
-  padding: 1.75% 0% 1.75% 0%;
+  padding: 1.75% 0;
   margin: auto;
   width: 1366px;
   list-style: none;
@@ -280,7 +294,8 @@ footer a i {
   margin-left: 0.5%;
 }
 
-footer a:hover, footer a i:hover {
+footer a i:hover,
+footer a:hover {
   color: #5dc6b3;
 }
 
@@ -310,7 +325,7 @@ footer a:hover, footer a i:hover {
   align-items: center;
   -webkit-box-pack: center;
   justify-content: center;
-  margin: 0px 0px 25px 0px;
+  margin: 0 0 25px;
   height: 300px;
   width: 100%;
   background-position: center;
@@ -319,7 +334,7 @@ footer a:hover, footer a i:hover {
 
 #banner h5 {
   text-align: center;
-  -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.05);
+  -webkit-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.05);
   background-color: rgba(252, 252, 252, 0.65);
   padding: 1.5%;
   display: inline;
@@ -366,11 +381,11 @@ input {
   background-color: transparent !important;
   width: 100%;
   margin-top: 0.75%;
-  padding: 2.5% 0% 2.5% 0%;
+  padding: 2.5% 0;
   outline: none;
   background: transparent !important;
   box-shadow: none !important;
-  border: 0px transparent !important;
+  border: 0 transparent !important;
   border-bottom: 2px solid #aaaaaa !important;
   cursor: text;
 }
@@ -382,35 +397,38 @@ input:focus {
 @media (min-width: 1024px) and (max-width: 1550px) {
   input {
     margin-top: 0.5%;
-    padding: 1.75% 0% 1.75% 0%;
+    padding: 1.75% 0;
     font-size: 0.9rem;
   }
 }
 
 input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus {
+input:-webkit-autofill:focus,
+input:-webkit-autofill:hover {
   background-color: transparent !important;
 }
 
-button[type="submit"], #signup {
+#signup,
+button[type="submit"] {
   width: 245px;
   margin-top: 5%;
   padding: 2.5%;
 }
 
 @media (min-width: 1024px) and (max-width: 1550px) {
-  button[type="submit"], #signup {
+  #signup,
+  button[type="submit"] {
     margin-top: 7.5%;
     padding: 1.75%;
     font-size: 0.9rem;
   }
 }
 
-.success, .error {
+.error,
+.success {
   color: #5dc6b3;
   font-weight: bold;
-  padding: 5% 0% 0% 0%;
+  padding: 5% 0 0;
 }
 
 #signup {
@@ -429,16 +447,21 @@ button[type="submit"], #signup {
 @media (min-width: 275px) and (max-width: 650px) {
   form {
     width: 75%;
-    margin: 0%;
+    margin: 0;
   }
-  input, label, button[type="submit"], #signup {
-    margin: 2.5% 2.5% 0% 2.5%;
+  #signup,
+  button[type="submit"],
+  input,
+  label {
+    margin: 2.5% 2.5% 0;
   }
-  button[type="submit"], #signup {
+  #signup,
+  button[type="submit"] {
     width: 100%;
     margin-top: 5%;
   }
-  input, label {
+  input,
+  label {
     padding: 1%;
     font-size: 1rem;
   }
@@ -457,12 +480,14 @@ button[type="submit"], #signup {
   margin-bottom: 5%;
 }
 
-#aboutinfo .left, #aboutinfo .right {
+#aboutinfo .left,
+#aboutinfo .right {
   width: 48%;
   margin-top: 1.5%;
 }
 
-#aboutinfo .left img, #aboutinfo .right img {
+#aboutinfo .left img,
+#aboutinfo .right img {
   width: 100%;
 }
 
@@ -470,26 +495,40 @@ button[type="submit"], #signup {
   padding-top: 5%;
 }
 
-.full {
-  width: 100%;
+@media (min-width: 1024px) and (max-width: 1550px) {
+  #aboutinfo .formTitle, #aboutinfo .formTitle2 {
+    padding-top: 7.5%;
+  }
 }
 
-.full p {
-  margin-top: 1.5%;
+@media (min-width: 275px) and (max-width: 650px) {
+  #aboutinfo .formTitle, #aboutinfo .formTitle2 {
+    padding-top: 15%;
+  }
+  #aboutinfo .left, #aboutinfo .right {
+    width: 100%;
+  }
 }
 
-.full table {
-  border: 1px #5dc6b3 solid;
-  padding: 1.5%;
-}
-
-.full table td {
-  padding: 1.5%;
-  border-bottom: 1px #ccc solid;
-}
-
-.full table tr {
+.typeinfo {
   margin-bottom: 2.5%;
+}
+
+.typeinfo span {
+  display: block;
+  color: #5dc6b3;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin: 2.5% 0% 0.75% 0%;
+}
+
+@media (min-width: 275px) and (max-width: 650px) {
+  .typeinfo {
+    margin-bottom: 7.5%;
+  }
+  .typeinfo span {
+    margin: 2.5% 0% 1.5% 0%;
+  }
 }
 
 .foodinfo {
@@ -497,9 +536,10 @@ button[type="submit"], #signup {
   margin-left: 1.5%;
 }
 
-.foodinfo .left, .foodinfo .right {
+.foodinfo .left,
+.foodinfo .right {
   vertical-align: top;
-  margin: 2.5% 1.25% 2.5% 1.25%;
+  margin: 2.5% 1.25%;
 }
 
 .foodinfo .left {
@@ -511,19 +551,19 @@ button[type="submit"], #signup {
 }
 
 .foodinfo img {
-  -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
   max-width: 90%;
 }
 
 .foodinfo h3 {
-  margin: 5% 0% 5% 0%;
-  padding: 0%;
+  margin: 5% 0;
+  padding: 0;
   color: #5dc6b3;
   font-size: 2rem;
 }
 
 .foodinfo h5 {
-  margin: 2.5% 0% 2.5% 0%;
+  margin: 2.5% 0;
   font-size: 1.05rem;
 }
 
@@ -534,7 +574,7 @@ button[type="submit"], #signup {
 
 .foodinfo p {
   font-size: 1.15rem;
-  margin: 0% 0% 1.75% 0%;
+  margin: 0 0 1.75%;
 }
 
 .foodinfo p span {
@@ -569,8 +609,9 @@ button[type="submit"], #signup {
   .foodinfo p {
     font-size: 0.95rem;
   }
-  .foodinfo .left, .foodinfo .right {
-    margin: 0%;
+  .foodinfo .left,
+  .foodinfo .right {
+    margin: 0;
     width: 100%;
   }
   .foodinfo img {
@@ -581,8 +622,8 @@ button[type="submit"], #signup {
 .foodcategory {
   margin-top: -3.5%;
   background-repeat: no-repeat;
-  background-size: contain;
-  -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.05);
+  background-size: cover;
+  -webkit-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.05);
   width: 600px;
   height: 400px;
   display: -webkit-box;
@@ -620,10 +661,31 @@ button[type="submit"], #signup {
 
 @media (min-width: 275px) and (max-width: 650px) {
   .foodcategory {
-    width: 100%;
+    width: 90%;
+    height: 35vh;
   }
   .foodcategory span {
-    margin-top: -15%;
+    font-size: 1rem;
+  }
+  .foodcategory:hover {
+    -webkit-filter: none;
+    filter: none;
+  }
+}
+
+#food {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
+}
+
+@media (min-width: 275px) and (max-width: 650px) {
+  #food {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
   }
 }
 
@@ -638,15 +700,13 @@ button[type="submit"], #signup {
 }
 
 @media (min-width: 275px) and (max-width: 650px) {
-  #fc-herbs {
-    margin-top: 17.5%;
-  }
   #fc-recipes {
-    margin-top: -17.5%;
+    margin-top: 5%;
   }
-  #fc-herbs, #fc-recipes {
-    margin-left: 0%;
-    margin-right: 0%;
+  #fc-herbs,
+  #fc-recipes {
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
@@ -659,7 +719,8 @@ button[type="submit"], #signup {
   background-size: contain;
 }
 
-#signuptoday h3, #signuptoday a {
+#signuptoday a,
+#signuptoday h3 {
   margin-left: 7.5%;
 }
 
@@ -679,19 +740,20 @@ button[type="submit"], #signup {
 
 @media (min-width: 275px) and (max-width: 650px) {
   #signuptoday {
-    min-height: 175px;
+    min-height: 325px;
     -webkit-box-align: center;
     align-items: center;
   }
-  #signuptoday h3, #signuptoday a {
-    margin-left: 0%;
+  #signuptoday a,
+  #signuptoday h3 {
+    margin-left: 0;
   }
   #signuptoday h3 {
-    font-size: 1.05rem;
-    margin-bottom: 1.5%;
+    font-size: 0.9rem;
+    margin-bottom: 2.5%;
   }
   #signuptoday a {
-    padding: 1%;
+    padding: 1% 2.5% 1% 2.5%;
     font-size: 0.6rem;
   }
 }
@@ -716,7 +778,7 @@ button[type="submit"], #signup {
 
 #accountinfo h3 {
   width: 100%;
-  margin-top: 0%;
+  margin-top: 0;
   color: #5dc6b3;
   font-size: 5rem;
 }
@@ -752,7 +814,9 @@ button[type="submit"], #signup {
 }
 
 @media (min-width: 275px) and (max-width: 650px) {
-  #accountinfo p, #accountinfo h3, #accountinfo button {
+  #accountinfo button,
+  #accountinfo h3,
+  #accountinfo p {
     max-width: 75% !important;
     margin-left: auto;
     margin-right: auto;
@@ -761,8 +825,9 @@ button[type="submit"], #signup {
     font-size: 1.05rem;
   }
   #accountinfo h3 {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     line-height: 2.5rem;
+    padding-top: 15%;
   }
   #accountinfo button {
     width: 100%;
@@ -783,7 +848,7 @@ button[type="submit"], #signup {
 
 #foodinfo p {
   padding: 2.5%;
-  margin: 0% 0% 2.5% 0%;
+  margin: 0 0 2.5%;
   font-size: 1rem;
   border-bottom: 1px #5dc6b3 solid;
 }
@@ -806,7 +871,7 @@ button[type="submit"], #signup {
     width: 100%;
   }
   #foodinfo h3 {
-    padding: 5% 0% 2.5% 2.5%;
+    padding: 5% 0 2.5% 2.5%;
     margin-top: 12.5%;
     font-size: 1.5rem;
   }
@@ -826,22 +891,24 @@ button[type="submit"], #signup {
   text-align: center;
   color: #5dc6b3;
   font-size: 2.5rem;
-  margin: 0%;
-  padding: 2.5% 0% 1.5% 0%;
+  margin: 0;
+  padding: 0 0 1.5%;
 }
 
 .formTitle2 {
-  padding: 0%;
+  padding: 0;
 }
 
 @media (min-width: 1024px) and (max-width: 1550px) {
-  .formTitle2 {
-    font-size: 1.75rem;
+  .formTitle, .formTitle2 {
+    padding-top: 2.5%;
+    font-size: 2rem;
   }
 }
 
 @media (min-width: 275px) and (max-width: 650px) {
-  .formTitle2 {
+  .formTitle, .formTitle2 {
+    font-size: 1rem;
     margin-bottom: 5%;
   }
 }
@@ -851,7 +918,7 @@ button[type="submit"], #signup {
 }
 
 #checker .checkerMsg {
-  padding: 1.25% 0% 1.25% 0%;
+  padding: 1.25% 0;
 }
 
 #checker table {
@@ -859,14 +926,15 @@ button[type="submit"], #signup {
 }
 
 #checker .formTitle, #checker .formTitle2 {
-  margin: 4.5% 0% 1% 0%;
+  margin: 4.5% 0 1%;
 }
 
 #mobileChecker .formTitle2 {
   font-size: 1rem;
 }
 
-#pageloader, #tableloader {
+#pageloader,
+#tableloader {
   display: -webkit-box;
   display: flex;
   -webkit-box-pack: center;
@@ -879,69 +947,77 @@ button[type="submit"], #signup {
 }
 
 .filter {
+  width: 100%;
+  margin: 1.5% auto 2%;
+}
+
+.filter * {
+  padding: 0.75%;
+  margin: 0.5%;
+  width: inherit;
+  -webkit-box-flex: 1;
+  flex: 1;
+}
+
+.filter .row {
   display: -webkit-box;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   flex-direction: row;
-  width: 97.5%;
-  margin: 1.5% auto 2% auto;
-}
-
-.filter * {
-  padding: 0.5%;
-  margin: 0.5%;
-  width: inherit;
-  display: inline;
-  float: left;
+  flex-wrap: wrap;
+  margin-bottom: 1%;
+  box-sizing: border-box;
 }
 
 .filter select {
+  -webkit-box-flex: 0;
+  flex: 0 0 17%;
   outline: none;
-  width: 25%;
   font-size: 0.95rem;
 }
 
-.filter select:hover, .filter select:focus {
+.filter select:focus, .filter select:hover {
   border-color: #5dc6b3;
 }
 
 .filter label {
+  -webkit-box-flex: 0;
+  flex: 0 0 1%;
   font-size: 0.9rem;
   font-weight: bold;
-  width: 5%;
+  color: #5dc6b3;
 }
 
 .filter input {
-  width: 45%;
-  margin-left: 2.5%;
+  -webkit-box-flex: 0;
+  flex: 0 0 43.5%;
+  margin-right: 2.5%;
 }
 
 .filter button {
-  width: 25%;
+  -webkit-box-flex: 0;
+  flex: 0 0 25%;
 }
 
-.filter i {
-  width: 1%;
+@media (min-width: 1024px) and (max-width: 1550px) {
+  .filter select {
+    margin-left: -0.15%;
+    -webkit-box-flex: 0;
+    flex: 0 0 15.75%;
+  }
 }
 
 @media (min-width: 275px) and (max-width: 650px) {
-  .filter {
+  .filter select, .filter label, .filter input, .filter button {
+    -webkit-box-flex: 0;
+    flex: 0 0 100%;
     width: 100%;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    flex-direction: column;
-  }
-  .filter select {
-    width: 100%;
+    margin-top: 1.5%;
   }
   .filter input {
-    width: 100%;
-    margin: 7.5% 0% 2.5% 0%;
-  }
-  .filter button {
-    margin-top: 2.5%;
-    width: 100%;
+    margin-top: 7.5%;
+    margin-bottom: 2.5%;
   }
 }
 
@@ -963,7 +1039,7 @@ button[type="submit"], #signup {
 }
 
 .foodDir table thead th {
-  padding: 2.5% 0.5% 2.5% 0.5%;
+  padding: 2.5% 0.5%;
 }
 
 .foodDir table thead a {
@@ -988,7 +1064,7 @@ button[type="submit"], #signup {
 }
 
 .paginator ul {
-  padding-left: 0%;
+  padding-left: 0;
   list-style: none;
 }
 
@@ -1017,7 +1093,7 @@ button[type="submit"], #signup {
 }
 
 #bodytest li {
-  margin: 0% 0% 7.5% 0%;
+  margin: 0 0 7.5%;
   font-weight: bold;
   font-size: 1.15rem;
 }
@@ -1041,7 +1117,8 @@ button[type="submit"], #signup {
   cursor: pointer;
 }
 
-#bodytest .cta-button, #bodytest button[type="submit"], #bodytest #signup {
+#bodytest .cta-button, #bodytest #signup, #bodytest
+button[type="submit"] {
   margin-top: 2.5%;
   width: inherit;
 }
@@ -1054,17 +1131,22 @@ button[type="submit"], #signup {
 
 #bodytest #bctest button {
   width: 25%;
-  margin: -5% auto 5% auto;
+  margin: -5% auto 5%;
   display: block;
 }
 
 #bodytest #resultMsg {
-  padding: 0% 5% .5% 5%;
+  padding: 0 5% 0.5%;
 }
 
-#bodytest #result {
+#bodytest #result,
+#bodytest #status {
   display: block;
-  padding: 0% 5% 2.5% 5%;
+  padding: 0 5% 2.5%;
+}
+
+#bodytest #status {
+  font-style: italic;
 }
 
 #bodytest #linktoEdit {

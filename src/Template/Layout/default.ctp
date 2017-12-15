@@ -60,8 +60,8 @@
   <footer>
     <?php
     $output = '<div>';
-    $output .= '<span style="float:left">Contact: <a href="mailto:rice74@uw.edu">rice74@uw.edu</a></span>';
-    $output .= '<span>Copyright Eatlixir 2017 | <span>' . $this->Html->link('Su Li','http://suyli.me',array('escape'=>false, 'target'=>'_blank')) . '</span>';
+    $output .= '<span style="float:left"><a href="mailto:rice74@uw.edu">Contact</a> | Eatlixir is a student project and NOT an official resource</span>';
+    $output .= '<span><i class="fa fa-copyright" aria-hidden="true"></i> 2017 | <span>' . $this->Html->link('Su Li','http://suyli.me',array('escape'=>false, 'target'=>'_blank')) . '</span>';
     $output .=  $this->Html->link('<i class="fa fa-github" aria-hidden="true"></i>','https://github.com/crispipear/eatlixir',array('escape'=>false, 'target'=>'_blank')) . '</span>';
     $output .= '</div>';
     echo $output;

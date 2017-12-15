@@ -330,10 +330,16 @@ h4.diagnosis_profname_header
 }
 h4.diagnosis_name_header .fa
 {
+    margin-left: 5px;
     float:right;
-    margin-right:-30px;
     cursor:pointer;
     color: #4d4d4d;
+}
+h4.diagnosis_name_header .fa-cutlery{
+  margin-right:-10px;
+}
+h4.diagnosis_name_header .ic-issue-info{
+  margin-right:-30px;
 }
 h4.diagnosis_name_header .fa:hover{
   color: #5dc6b3;

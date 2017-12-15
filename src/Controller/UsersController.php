@@ -18,12 +18,6 @@ class UsersController extends AppController
      *
      * @return \Cake\Http\Response|void
      */
-     // public function beforeFilter(Event $event)
-     // {
-     //    parent::beforeFilter($event);
-     //    // Allow all users to index and view.
-     //    $this->Auth->allow(['index', 'view']);
-     //  }
     public function index()
     {
         $users = $this->paginate($this->Users);
@@ -34,7 +28,8 @@ class UsersController extends AppController
     public function initialize()
 	{
     	parent::initialize();
-    	$this->Auth->allow(['logout', 'add', 'configure']);
+      $this->Auth->allow(['logout', 'add', 'configure']);
+      $this->loadComponent('RequestHandler');
 	}
 
 	public function logout()
@@ -104,7 +99,27 @@ class UsersController extends AppController
     	$this->set(compact('user'));
     	$this->set('_serialize', ['user']);
 	}
+  public function addtype()
+    {
+      $id = $this->Auth->user('id');
+		  $this->RequestHandler->renderAs($this, 'json');
+      $user = $this->Users->get($id, [
+        'contain' => []
+      ]);
+      $this->log(var_export($user,true),'debug');
 
+      if ($this->request->is('post')) {
+			$data = $this->request->input('json_decode', true);
+			$user->bodytype = $data["body_type"];
+			  if($this->Users->save($user)) {
+          $this->set(compact('user'));
+          $this->set('_serialize', ['user']);
+        } else {
+				  $this->set('error',$this->error);
+				  $this->set('_serialize', ['error']);
+        }
+      }
+    }
 
     /**
      * Add method

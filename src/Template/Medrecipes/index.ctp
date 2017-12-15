@@ -7,30 +7,35 @@
 <section class="foodDir">
   <h3 class="formTitle">Medicinal Diet Recipes Directory</h3>
   <div class="filter">
-    <label for="functions">functions</label>
-    <select id="functions">
-      <option>moisten lungs</option>
-      <option>tonify</option>
-      <option>soothe mind</option>
-    </select>
-    <label for="indications">indications</label>
-    <select id="indications">
-      <option>cough</option>
-      <option>insomnia</option>
-      <option>diarrhea</option>
-      <option>indigestion</option>
-      <option>loss of appetite</option>
-    </select>
-    <label for="name">type</label>
-    <select id="name">
-      <option>soup</option>
-      <option>tea</option>
-      <option>stew</option>
-      <option>congee</option>
-    </select>
-    <input id="keyword" type="text" placeholder="&#xf002; search by keyword">
-    <button class="cta-button" id="search">search</button>
-    <button class="cta-button" id="showall">show all</button>
+    <div class="row">
+      <label for="functions">functions</label>
+      <select id="functions">
+        <option>moisten lungs</option>
+        <option>tonify</option>
+        <option>soothe mind</option>
+      </select>
+      <label for="indications">indications</label>
+      <select id="indications">
+        <option>cough</option>
+        <option>insomnia</option>
+        <option>diarrhea</option>
+        <option>indigestion</option>
+        <option>loss of appetite</option>
+      </select>
+      <label for="name">type</label>
+      <select id="name">
+        <option>soup</option>
+        <option>tea</option>
+        <option>stew</option>
+        <option>congee</option>
+      </select>
+    </div>
+    <div class="row">
+      <input id="keyword" type="text" placeholder="&#xf002; search by keyword">
+      <button class="cta-button" id="search">search</button>
+      <button class="cta-button" id="showall">show all</button>
+    </div>
+
   </div>
 <?php if ($currentRole === 'admin'): ?>
   <?= '<button class="cta-button settings" style="margin-top: 2%">' . $this->Html->link(__('New Recipe'), ['action' => 'add']) . '</button>'?>
@@ -57,6 +62,7 @@
 <?php endforeach; ?>
 </section>
 <script>
+
 var url;
 if (location.hostname === "localhost" || location.hostname === "127.0.0.1"){
  url = '/eatlixir/medrecipes/all';
@@ -65,39 +71,47 @@ if (location.hostname === "localhost" || location.hostname === "127.0.0.1"){
 }
 var recipeData=[];
 var results=[];
+
 $.ajax({
   url: url,
   dataType: "json",
   contentType: "application/json",
   success: (function(data){
     recipeData = data.Medrecipes;
+    if(location.search.indexOf("?") !== -1){
+      value = location.search.substring(1).toLowerCase();
+      getCatData("indications", value);
+      renderResults();
+    }
   })
 });
 
 $('select').change(function(){
   var category = this.id;
-  var value = $(this).val();
-  recipeData.forEach(function(data){
-    var id = JSON.stringify(data['id']);
-    var result = JSON.stringify(data[category]);
-    if (result.indexOf(value) !== -1) {
-        results.push(id);
-    }
-  });
+  var value = $(this).val().toLowerCase();
+  getCatData(category, value);
   renderResults();
 });
-
+function getCatData(category, value){
+  recipeData.forEach(function(data){
+    var id = JSON.stringify(data['id']);
+    var result = JSON.stringify(data[category].toLowerCase());
+    if (result.indexOf(value) !== -1) {
+      results.push(id);
+    }
+  });
+}
 $('#showall').click(function(){
   $('.foodinfo').fadeOut(100);
   $('.foodinfo').fadeIn(100);
 });
 $('#search').click(function(){
   console.log(recipeData);
-  var keyword = $('#keyword').val();
+  var keyword = $('#keyword').val().toLowerCase();
   recipeData.forEach(function(data){
     var id = JSON.stringify(data['id']);
     for (var key in data) {
-      var result = JSON.stringify(data[key]);
+      var result = JSON.stringify(data[key]).toLowerCase();
       if (result.indexOf(keyword) !== -1) {
         results.push(id);
       }

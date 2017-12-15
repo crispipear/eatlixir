@@ -15,13 +15,18 @@
   <button id="getscore" class="cta-button">submit</button>
   <p id="resultMsg">
     <span>Your result (closest match): <span id="highestScore"></span></span>
+    <p id="status"></p>
     <p id="result"></p>
-    <button id="linktoEdit" class="cta-button"><?= $this->Html->link(__('Update your type!'), ['controller'=>'users','action' => 'edit/'.$currentID]) ?></button>
   </p>
 </div>
 </section>
 <script>
-$('#linktoEdit').hide();
+var url;
+if (location.hostname === "localhost" || location.hostname === "127.0.0.1"){
+ url = '/eatlixir/users/addtype';
+}else{
+  url = 'https://students.washington.edu/rice74/IMD351/eatlixir/users/addtype';
+}
 var typeA = ['Are you energetic?', 'Do you feel tired easily?', 'Do you sound like you are lack of strength when you talk?', 'Do you feel depressed or emotionally down?', 'Are you less durable than the others under cold air?(Winter, AC, fans)','Are you able to adapt environment and social changes?','Do you have trouble falling asleep?','Do you forget things easily?'];
 var typeB = ['Do you feel tired easily?', 'Do you have trouble breathing easily?', 'Do you feel flustered(anxious) easily?', 'Do you feel dizzy or get dizzy easily when you stand up?', 'Do you catch a cold easier than the others?','Do you prefer silence, speak less?','Do you sound like you are lack of strength when you talk?','Do you sweat easily even when you have only worked out a little bit?'];
 var typeC = ['Do your hands or feet get cold?', 'Are your stomach, back, waist and knee areas sensitive to coldness?', 'Are you afraid of cold and wear more layers than others?', 'Are you less durable than the others under cold air?(Winter, AC, fans)', 'Do you catch a cold easier than the others?','Do you feel uncomfortable or avoid eating(drinking) cold food(drinks)?','Do you get diarrhea easily when you eat(drink) cold food(drinks)?'];
@@ -76,10 +81,26 @@ function calcResult(){
   });
 
   $('#result').text(result);
-  $('#linktoEdit').show();
 
   var maxVal = Math.max.apply(Math, scores);
   var highest = scores.indexOf(maxVal);
   $('#highestScore').text(types[highest]+', score: '+scores[highest]);
+  addResult(types[highest]);
+}
+
+function addResult(type){
+  var data = {
+    "body_type": type
+  };
+  $.ajax({
+    type: "POST",
+    url: url,
+    data: JSON.stringify(data),
+    dataType: "json",
+    contentType: "application/json",
+    success: function(){
+      $('#status').text('The test result has been added to your user info.');
+    }
+  });
 }
 </script>

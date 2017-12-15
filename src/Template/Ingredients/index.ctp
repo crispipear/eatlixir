@@ -7,49 +7,53 @@
 <section class="foodDir">
   <h3 class="formTitle">Herb Ingredients Directory</h3>
   <div class="filter">
-    <label for="flavor">flavor</label>
-    <select id="flavor">
-      <option>sweet</option>
-      <option>sour</option>
-      <option>bitter</option>
-      <option>pungent</option>
-      <option>salty</option>
-    </select>
-    <label for="nature">nature</label>
-    <select id="nature">
-      <option>hot</option>
-      <option>warm</option>
-      <option>neutral</option>
-      <option>cool</option>
-      <option>cold</option>
-    </select>
-    <label for="functions">functions</label>
-    <select id="functions">
-      <option>boost immunity</option>
-      <option>tonify</option>
-      <option>replenish blood</option>
-      <option>replenish energy</option>
-      <option>detoxification</option>
-      <option>pain relief</option>
-      <option>soothe mind</option>
-    </select>
-    <label for="symptoms">symptoms</label>
-    <select id="symptoms_key">
-      <option>sweats</option>
-      <option>cough</option>
-      <option>headache</option>
-      <option>dizziness</option>
-      <option>insomnia</option>
-      <option>anxiety</option>
-      <option>diarrhea</option>
-      <option>indigestion</option>
-      <option>blood deficiency</option>
-      <option>irregular menstruation</option>
-      <option>loss of appetite</option>
-    </select>
-    <input id="keyword" type="text" placeholder="&#xf002; search by keyword">
-    <button class="cta-button" id="search">search</button>
-    <button class="cta-button" id="showall">show all</button>
+    <div class="row">
+      <label for="flavor">flavor</label>
+      <select id="flavor">
+        <option>sweet</option>
+        <option>sour</option>
+        <option>bitter</option>
+        <option>pungent</option>
+        <option>salty</option>
+      </select>
+      <label for="nature">nature</label>
+      <select id="nature">
+        <option>hot</option>
+        <option>warm</option>
+        <option>neutral</option>
+        <option>cool</option>
+        <option>cold</option>
+      </select>
+      <label for="functions">functions</label>
+      <select id="functions">
+        <option>boost immunity</option>
+        <option>tonify</option>
+        <option>replenish blood</option>
+        <option>replenish energy</option>
+        <option>detoxification</option>
+        <option>pain relief</option>
+        <option>soothe mind</option>
+      </select>
+      <label for="symptoms">symptoms</label>
+      <select id="symptoms_key">
+        <option>sweats</option>
+        <option>cough</option>
+        <option>headache</option>
+        <option>dizziness</option>
+        <option>insomnia</option>
+        <option>anxiety</option>
+        <option>diarrhea</option>
+        <option>indigestion</option>
+        <option>blood deficiency</option>
+        <option>irregular menstruation</option>
+        <option>loss of appetite</option>
+      </select>
+    </div>
+    <div class="row">
+      <input id="keyword" type="text" placeholder="&#xf002; search by keyword">
+      <button class="cta-button" id="search">search</button>
+      <button class="cta-button" id="showall">show all</button>
+    </div>
   </div>
   <?php if ($currentRole === 'admin'): ?>
     <?= '<button class="cta-button settings" style="margin-top: 2%">' . $this->Html->link(__('New Herb'), ['action' => 'add']) . '</button>'?>
@@ -90,21 +94,28 @@ $.ajax({
   contentType: "application/json",
   success: (function(data){
     herbData = data.Ingredients;
+    if(location.search.indexOf("?") !== -1){
+      value = location.search.substring(1).toLowerCase();
+      getCatData("indications", value);
+      renderResults();
+    }
   })
 });
 $('select').change(function(){
   var category = this.id;
   var value = $(this).val();
-  herbData.forEach(function(data){
-    var id = JSON.stringify(data['id']);
-    var result = JSON.stringify(data[category]);
-    if (result.indexOf(value) !== -1) {
-        results.push(id);
-    }
-  });
+  getCatData(category, value);
   renderResults();
 });
-
+function getCatData(category, value){
+  herbData.forEach(function(data){
+    var id = JSON.stringify(data['id']);
+    var result = JSON.stringify(data[category].toLowerCase());
+    if (result.indexOf(value) !== -1) {
+      results.push(id);
+    }
+  });
+}
 $('#showall').click(function(){
   $('.foodinfo').fadeOut(100);
   $('.foodinfo').fadeIn(100);
