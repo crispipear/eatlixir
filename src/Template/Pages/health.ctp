@@ -97,7 +97,7 @@
     </script>
 <section id="checker">
   <div id="tableloader"><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i></div>
-    <h3 class="formTitle2">Symtomps checker: what are your possible health issues?</h3>
+    <h3 class="formTitle2">Symptoms checker: what are your possible health issues?</h3>
     <span class='checkerMsg'>*Please be aware that this tool does not represent or repalce any legitimate medical diagnosis. This tool only provides estimate results, please
       click on <i class="fa fa-info-circle" aria-hidden="true"></i> in possible diseases section for detailed estimate diagnosis information*</span>
     <table class="container-table">

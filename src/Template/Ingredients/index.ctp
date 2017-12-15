@@ -78,8 +78,10 @@
       </div>
     </div>
   <?php endforeach; ?>
+  <h3 id="resultsNotFound" class="formTitle">Results not found</h3>
 </section>
 <script>
+$('#resultsNotFound').hide();
 var url;
 if (location.hostname === "localhost" || location.hostname === "127.0.0.1"){
  url = '/eatlixir/ingredients/all';
@@ -96,12 +98,13 @@ $.ajax({
     herbData = data.Ingredients;
     if(location.search.indexOf("?") !== -1){
       value = location.search.substring(1).toLowerCase();
-      getCatData("indications", value);
+      getCatData("symptoms_key", value);
       renderResults();
     }
   })
 });
 $('select').change(function(){
+  $('#resultsNotFound').hide();
   var category = this.id;
   var value = $(this).val();
   getCatData(category, value);
@@ -113,14 +116,18 @@ function getCatData(category, value){
     var result = JSON.stringify(data[category].toLowerCase());
     if (result.indexOf(value) !== -1) {
       results.push(id);
+    }else{
+      $('#resultsNotFound').show();
     }
   });
 }
 $('#showall').click(function(){
+  $('#resultsNotFound').hide();
   $('.foodinfo').fadeOut(100);
   $('.foodinfo').fadeIn(100);
 });
 $('#search').click(function(){
+  $('#resultsNotFound').hide();
   var keyword = $('#keyword').val();
   herbData.forEach(function(data){
     var id = JSON.stringify(data['id']);
@@ -128,6 +135,8 @@ $('#search').click(function(){
       var result = JSON.stringify(data[key]);
       if (result.indexOf(keyword) !== -1) {
         results.push(id);
+      }else{
+        $('#resultsNotFound').show();
       }
     }
   });

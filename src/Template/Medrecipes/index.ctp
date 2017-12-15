@@ -60,6 +60,7 @@
   </div>
 </div>
 <?php endforeach; ?>
+<h3 id="resultsNotFound" class="formTitle">Results not found</h3>
 </section>
 <script>
 
@@ -71,7 +72,7 @@ if (location.hostname === "localhost" || location.hostname === "127.0.0.1"){
 }
 var recipeData=[];
 var results=[];
-
+$('#resultsNotFound').hide();
 $.ajax({
   url: url,
   dataType: "json",
@@ -87,6 +88,7 @@ $.ajax({
 });
 
 $('select').change(function(){
+  $('#resultsNotFound').hide();
   var category = this.id;
   var value = $(this).val().toLowerCase();
   getCatData(category, value);
@@ -98,15 +100,18 @@ function getCatData(category, value){
     var result = JSON.stringify(data[category].toLowerCase());
     if (result.indexOf(value) !== -1) {
       results.push(id);
+    }else{
+      $('#resultsNotFound').show();
     }
   });
 }
 $('#showall').click(function(){
+  $('#resultsNotFound').hide();
   $('.foodinfo').fadeOut(100);
   $('.foodinfo').fadeIn(100);
 });
 $('#search').click(function(){
-  console.log(recipeData);
+  $('#resultsNotFound').hide();
   var keyword = $('#keyword').val().toLowerCase();
   recipeData.forEach(function(data){
     var id = JSON.stringify(data['id']);
@@ -114,6 +119,8 @@ $('#search').click(function(){
       var result = JSON.stringify(data[key]).toLowerCase();
       if (result.indexOf(keyword) !== -1) {
         results.push(id);
+      }else{
+        $('#resultsNotFound').show();
       }
     }
   });
